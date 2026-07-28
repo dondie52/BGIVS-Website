@@ -39,14 +39,15 @@ export function HomeHero() {
           </p>
         </div>
 
-        <div className="fade-up flex justify-center lg:justify-end" style={{ animationDelay: "120ms" }}>
-          <div className="flex min-h-[430px] w-full max-w-[380px] items-center justify-center rounded-2xl border border-border/60 bg-white p-8 shadow-lg sm:p-10">
-            <BgivsLogo
-              priority
-              className="h-auto w-full object-contain"
-              sizes="(max-width: 1024px) 90vw, 380px"
-            />
-          </div>
+        <div
+          className="fade-up flex justify-center lg:justify-end"
+          style={{ animationDelay: "120ms" }}
+        >
+          <BgivsLogo
+            priority
+            className="h-auto w-full max-w-[320px] object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)] sm:max-w-[380px]"
+            sizes="(max-width: 1024px) 90vw, 380px"
+          />
         </div>
       </Container>
     </section>

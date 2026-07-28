@@ -15,15 +15,13 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <span className="inline-flex shrink-0 items-center justify-center rounded-md bg-white p-1">
-            <BgivsLogo
-              priority
-              width={58}
-              height={68}
-              className="h-[52px] w-[44px] object-contain sm:h-[68px] sm:w-[58px]"
-              sizes="58px"
-            />
-          </span>
+          <BgivsLogo
+            priority
+            width={58}
+            height={68}
+            className="h-[52px] w-[44px] shrink-0 object-contain sm:h-[68px] sm:w-[58px]"
+            sizes="58px"
+          />
           <span className="min-w-0">
             <span className="block truncate font-serif text-sm font-semibold tracking-wide sm:text-base">
               {siteConfig.shortName}
