@@ -13,18 +13,40 @@ const icons = {
 type StrategicPillarCardProps = {
   pillar: StrategicPillar;
   detailed?: boolean;
+  compact?: boolean;
 };
 
-export function StrategicPillarCard({ pillar, detailed = false }: StrategicPillarCardProps) {
+export function StrategicPillarCard({
+  pillar,
+  detailed = false,
+  compact = false,
+}: StrategicPillarCardProps) {
   const Icon = icons[pillar.id as keyof typeof icons] ?? Building2;
 
   return (
-    <article className="institutional-card gold-accent-border flex h-full flex-col p-6">
-      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-navy/5 text-navy">
+    <article
+      id={pillar.id}
+      className={`institutional-card gold-accent-border scroll-mt-28 flex h-full flex-col ${compact ? "p-5" : "p-6"}`}
+    >
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-navy/5 text-navy">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className="text-xl text-navy">{pillar.name}</h3>
-      <p className="mt-3 flex-1 text-sm text-muted">{pillar.description}</p>
+      <h3 className={`text-navy ${compact ? "text-lg leading-snug" : "text-xl"}`}>
+        {pillar.name}
+      </h3>
+      <p
+        className={`mt-2 text-sm text-muted ${compact ? "line-clamp-2" : "flex-1"}`}
+      >
+        {pillar.description}
+      </p>
+      {compact ? (
+        <Link
+          href={`/pillars#${pillar.id}`}
+          className="mt-4 inline-block text-sm font-semibold text-blue hover:text-navy hover:underline"
+        >
+          Learn more
+        </Link>
+      ) : null}
       {detailed ? (
         <div className="mt-5 space-y-4 text-sm">
           <div>
@@ -53,11 +75,13 @@ export function StrategicPillarCard({ pillar, detailed = false }: StrategicPilla
           </div>
         </div>
       ) : null}
-      <div className="mt-6">
-        <Button href={pillar.cta.href} variant="outline" className="w-full sm:w-auto">
-          {pillar.cta.label}
-        </Button>
-      </div>
+      {compact ? null : (
+        <div className="mt-6">
+          <Button href={pillar.cta.href} variant="outline" className="w-full sm:w-auto">
+            {pillar.cta.label}
+          </Button>
+        </div>
+      )}
     </article>
   );
 }
@@ -66,25 +90,31 @@ export function BrandPillarCard({
   title,
   description,
   href,
+  compact = false,
 }: {
   title: string;
   description: string;
   href?: string;
+  compact?: boolean;
 }) {
   const content = (
     <>
-      <h3 className="text-xl text-navy">{title}</h3>
-      <p className="mt-3 text-sm text-muted">{description}</p>
+      <h3 className={`text-navy ${compact ? "text-lg" : "text-xl"}`}>{title}</h3>
+      <p className={`mt-2 text-sm text-muted ${compact ? "line-clamp-3" : ""}`}>
+        {description}
+      </p>
     </>
   );
 
+  const className = `institutional-card gold-accent-border block h-full ${compact ? "p-5" : "p-6"}`;
+
   if (href) {
     return (
-      <Link href={href} className="institutional-card gold-accent-border block h-full p-6">
+      <Link href={href} className={className}>
         {content}
       </Link>
     );
   }
 
-  return <article className="institutional-card gold-accent-border h-full p-6">{content}</article>;
+  return <article className={className}>{content}</article>;
 }
