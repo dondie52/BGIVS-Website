@@ -1,0 +1,108 @@
+import Link from "next/link";
+import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
+import { siteConfig } from "@/content/site";
+import { footerNav } from "@/content/navigation";
+import { programmes } from "@/content/programmes";
+import { publications } from "@/content/publications";
+
+export function Footer() {
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="bg-deep-navy text-white">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
+        <div>
+          <div className="inline-flex rounded-xl bg-white p-3">
+            <InstitutionalSeal size="md" framed={false} />
+          </div>
+          <h2 className="mt-5 font-serif text-xl text-white">{siteConfig.name}</h2>
+          <p className="mt-2 text-sm font-medium text-light-gold">{siteConfig.tagline}</p>
+          <p className="mt-4 max-w-sm text-sm text-white/75">
+            A research, training, consulting, and publishing institution advancing integrated
+            value systems for sustainable organizational and societal development.
+          </p>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-light-gold">
+            Navigate
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/80">
+            {footerNav.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="hover:text-white hover:underline">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-light-gold">
+            Programmes
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/80">
+            {programmes.slice(0, 6).map((programme) => (
+              <li key={programme.id}>
+                <Link
+                  href={`/programmes#${programme.id}`}
+                  className="hover:text-white hover:underline"
+                >
+                  {programme.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="text-sm font-semibold uppercase tracking-wider text-light-gold">
+            Publications & Contact
+          </h3>
+          <ul className="mt-4 space-y-2 text-sm text-white/80">
+            {publications.map((pub) => (
+              <li key={pub.slug}>
+                <Link
+                  href={`/research/${pub.slug}`}
+                  className="hover:text-white hover:underline"
+                >
+                  {pub.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-5 space-y-1 text-sm text-white/80">
+            <p>
+              <a href={siteConfig.emailHref} className="hover:text-white hover:underline">
+                {siteConfig.email}
+              </a>
+            </p>
+            <p>
+              <a href={siteConfig.phoneHref} className="hover:text-white hover:underline">
+                {siteConfig.phoneDisplay}
+              </a>
+            </p>
+            <p>{siteConfig.location}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 text-sm text-white/65 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+          <p>
+            © {year} {siteConfig.name}. All rights reserved.
+          </p>
+          <div className="flex gap-4">
+            <Link href="/privacy" className="hover:text-white hover:underline">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-white hover:underline">
+              Terms
+            </Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
