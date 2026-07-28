@@ -3,6 +3,8 @@ import "server-only";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
+export { isSafeRedirectPath } from "@/lib/admin/redirect";
+
 export type AdminProfile = {
   id: string;
   full_name: string | null;
@@ -101,16 +103,4 @@ export async function getOptionalAdminProfile(): Promise<{
     user: { id: user.id, email: user.email },
     profile,
   };
-}
-
-/**
- * Only allow relative redirects under /admin (open-redirect safe).
- */
-export function isSafeRedirectPath(path: string | null): boolean {
-  if (!path) return false;
-  if (!path.startsWith("/admin")) return false;
-  if (path.startsWith("//")) return false;
-  if (path.includes("://")) return false;
-  if (path.includes("\\")) return false;
-  return true;
 }

@@ -1,16 +1,9 @@
 import "server-only";
 
 import { createAdminClient } from "@/lib/supabase/admin";
+import { rateLimitBucketHash } from "@/lib/crypto-hash";
 import { getServerEnv } from "@/lib/env";
 import { PublicMessages } from "@/lib/errors";
-
-async function sha256Hex(value: string): Promise<string> {
-  const data = new TextEncoder().encode(value);
-  const digest = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(digest))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
 
 function clientIp(request: Request): string {
   const forwarded = request.headers.get("x-forwarded-for");
@@ -41,7 +34,11 @@ export async function enforceRateLimit(options: {
 
   const { rateLimitSecret } = getServerEnv();
   const ip = clientIp(request);
-  const bucketHash = await sha256Hex(`${rateLimitSecret}:${ip}:${endpoint}`);
+  const bucketHash = await rateLimitBucketHash(
+    rateLimitSecret,
+    ip,
+    endpoint,
+  );
 
   const supabase = createAdminClient();
   const { data, error } = await supabase.rpc("check_rate_limit", {

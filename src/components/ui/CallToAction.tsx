@@ -14,7 +14,7 @@ export function CallToAction({ title, description, primary, secondary }: CallToA
     <section className="navy-gradient">
       <Container className="py-16 sm:py-20">
         <div className="max-w-3xl">
-          <h2 className="text-3xl text-white sm:text-4xl">{title}</h2>
+          <h2 className="text-3xl !text-white sm:text-4xl">{title}</h2>
           <p className="mt-4 text-base text-white/85 sm:text-lg">{description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={primary.href} variant="primary">
