@@ -40,10 +40,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
           <Button href={`/research/${publication.slug}`} variant="outline">
             View Publication
           </Button>
-          <Button
-            href={`/contact?interest=book-enquiry&message=${encodeURIComponent(`I would like to request a copy of ${publication.title}.`)}`}
-            variant="primary"
-          >
+          <Button href={`/research/request/${publication.slug}`} variant="primary">
             Request a Copy
           </Button>
         </div>

@@ -1,7 +1,7 @@
 import "server-only";
 
 import { programmes as staticProgrammes } from "@/content/programmes";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 import { filterPublished } from "@/lib/content/utils";
 import type { Programme } from "@/types";
 import type { Database } from "@/types/database";
@@ -24,7 +24,7 @@ function mapProgramme(row: ProgrammeRow): Programme {
 
 export async function getPublishedProgrammes(): Promise<Programme[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("programmes")
       .select("*")
@@ -56,7 +56,7 @@ export async function getPublishedProgrammeBySlug(
   slug: string,
 ): Promise<Programme | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("programmes")
       .select("*")

@@ -42,7 +42,16 @@ npm run supabase:start
 npm run supabase:reset
 ```
 
-**Remote:**
+**Remote (recommended for this project):**
+
+1. Open the Supabase Dashboard → **SQL Editor**.
+2. Paste and run the full contents of:
+   - `supabase/migrations/20260728190000_init_bgivs_schema.sql`
+3. Then paste and run:
+   - `supabase/seed.sql`
+4. Confirm tables exist under **Table Editor**.
+
+Alternatively, after `npx supabase login` and `npx supabase link --project-ref zfncqysmkdhkuzozwhys`:
 
 ```bash
 npm run supabase:push
@@ -96,12 +105,34 @@ Also set the same secrets on the Supabase Edge Function settings for `notify-enq
 
 ## 6. First admin user (SQL)
 
-Create the Auth user first (Dashboard → Authentication → Users → Add user), then promote the profile.
+Create the Auth user first (Dashboard → Authentication → Users → Add user / Invite). Do not commit passwords.
 
-Replace the placeholders with the new user’s UUID and name:
+Then promote by email:
 
 ```sql
--- After creating the Auth user in the Dashboard, promote them to admin.
+insert into public.profiles (
+  id,
+  full_name,
+  role,
+  active
+)
+select
+  id,
+  'BGIVS Administrator',
+  'admin',
+  true
+from auth.users
+where email = '<ADMIN_EMAIL>'
+on conflict (id) do update set
+  full_name = excluded.full_name,
+  role = 'admin',
+  active = true,
+  updated_at = now();
+```
+
+Or promote by UUID after creating the Auth user:
+
+```sql
 insert into public.profiles (id, full_name, role, active)
 values (
   '<AUTH_USER_UUID>',

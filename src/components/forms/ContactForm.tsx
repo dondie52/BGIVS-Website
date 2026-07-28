@@ -50,6 +50,7 @@ export function ContactForm() {
   const [values, setValues] = useState<ContactFormValues>(seeded);
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState<string | undefined>();
 
   function updateField<K extends keyof ContactFormValues>(key: K, value: ContactFormValues[K]) {
     setValues((prev) => ({ ...prev, [key]: value }));
@@ -62,16 +63,39 @@ export function ContactForm() {
     }
   }
 
+  function focusFirstInvalid(nextErrors: FormErrors) {
+    const order: (keyof ContactFormValues)[] = [
+      "fullName",
+      "position",
+      "organization",
+      "organizationCategory",
+      "email",
+      "phone",
+      "country",
+      "interest",
+      "message",
+      "consent",
+    ];
+    const first = order.find((key) => nextErrors[key]);
+    if (!first) return;
+    const el = document.getElementById(first);
+    el?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (el instanceof HTMLElement) el.focus();
+  }
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const nextErrors = validateContactForm(values);
     setErrors(nextErrors);
     if (hasFormErrors(nextErrors)) {
       setStatus("idle");
+      setStatusMessage(undefined);
+      focusFirstInvalid(nextErrors);
       return;
     }
 
     setStatus("loading");
+    setStatusMessage(undefined);
     try {
       const response = await fetch("/api/enquiries", {
         method: "POST",
@@ -80,19 +104,57 @@ export function ContactForm() {
           ...values,
           sourcePage:
             typeof window !== "undefined" ? window.location.pathname : "/contact",
+          referrer: typeof document !== "undefined" ? document.referrer || undefined : undefined,
         }),
       });
-      if (!response.ok) throw new Error("Request failed");
+      const payload = (await response.json().catch(() => null)) as {
+        success?: boolean;
+        message?: string;
+        errors?: FormErrors;
+      } | null;
+
+      if (response.status === 400 && payload?.errors) {
+        setErrors(payload.errors);
+        setStatus("error");
+        setStatusMessage(payload.message ?? "Please review the highlighted fields.");
+        focusFirstInvalid(payload.errors);
+        return;
+      }
+
+      if (response.status === 429) {
+        setStatus("error");
+        setStatusMessage(
+          payload?.message ??
+            "Too many requests have been submitted. Please try again later.",
+        );
+        return;
+      }
+
+      if (!response.ok) {
+        setStatus("error");
+        setStatusMessage(
+          payload?.message ??
+            "We could not submit your enquiry at this time. Please try again.",
+        );
+        return;
+      }
+
       setStatus("success");
+      setStatusMessage(payload?.message);
       setValues(initialValues);
     } catch {
       setStatus("error");
+      setStatusMessage("We could not submit your enquiry at this time. Please try again.");
     }
   }
 
   return (
     <form onSubmit={handleSubmit} noValidate className="space-y-5" aria-describedby="form-privacy">
-      <FormStatus status={status} />
+      <FormStatus
+        status={status}
+        successMessage={statusMessage}
+        errorMessage={statusMessage}
+      />
 
       {/* Anti-spam honeypot — leave empty */}
       <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true">

@@ -173,6 +173,7 @@ create table public.rate_limit_events (
 create or replace function public.set_updated_at()
 returns trigger
 language plpgsql
+set search_path = public
 as $$
 begin
   new.updated_at = now();
@@ -485,6 +486,11 @@ create policy "admin_audit_logs_admin_insert"
   with check (public.has_role(array['admin']::public.user_role[]));
 
 -- rate_limit_events: RLS enabled, no anon/authenticated policies (service role only)
+
+revoke all on function public.check_rate_limit(text, text, int, int) from public;
+revoke all on function public.has_role(public.user_role[]) from public;
+grant execute on function public.check_rate_limit(text, text, int, int) to service_role;
+grant execute on function public.has_role(public.user_role[]) to authenticated, service_role;
 
 -- ---------------------------------------------------------------------------
 -- Storage buckets

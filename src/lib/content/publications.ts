@@ -3,7 +3,7 @@ import "server-only";
 import {
   publications as staticPublications,
 } from "@/content/publications";
-import { createClient } from "@/lib/supabase/server";
+import { createPublicClient } from "@/lib/supabase/public";
 import { filterPublished } from "@/lib/content/utils";
 import type { Publication } from "@/types";
 import type { Database } from "@/types/database";
@@ -28,7 +28,7 @@ function mapPublication(row: PublicationRow): Publication {
 
 export async function getPublishedPublications(): Promise<Publication[]> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("publications")
       .select("*")
@@ -60,7 +60,7 @@ export async function getPublishedPublicationBySlug(
   slug: string,
 ): Promise<Publication | null> {
   try {
-    const supabase = await createClient();
+    const supabase = createPublicClient();
     const { data, error } = await supabase
       .from("publications")
       .select("*")
