@@ -1,0 +1,13 @@
+project_id = "zfncqysmkdhkuzozwhys"
+
+[api]
+enabled = true
+
+[db]
+major_version = 17
+
+[functions.notify-enquiry]
+verify_jwt = true
+
+[functions.notify-book-request]
+verify_jwt = true

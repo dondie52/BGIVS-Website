@@ -22,7 +22,7 @@ const variants: Record<ButtonVariant, string> = {
   outline:
     "bg-transparent text-navy border border-navy/25 hover:border-gold hover:text-navy font-semibold",
   "gold-outline":
-    "bg-transparent text-gold border border-gold/70 hover:bg-gold/10 font-semibold",
+    "bg-transparent text-white border border-gold hover:bg-gold hover:text-deep-navy font-semibold",
   ghost: "bg-transparent text-blue hover:text-navy font-semibold underline-offset-4 hover:underline",
 };
 

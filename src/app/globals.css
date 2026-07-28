@@ -34,43 +34,61 @@
   --font-serif: var(--font-source-serif);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    background: var(--bgivs-white);
+    color: var(--bgivs-text);
+    font-family: var(--font-source-sans), system-ui, sans-serif;
+    line-height: 1.65;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-source-serif), Georgia, serif;
+    color: var(--bgivs-navy);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  a {
+    color: inherit;
   }
 }
 
-body {
-  background: var(--bgivs-white);
-  color: var(--bgivs-text);
-  font-family: var(--font-source-sans), system-ui, sans-serif;
-  line-height: 1.65;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-source-serif), Georgia, serif;
-  color: var(--bgivs-navy);
-  line-height: 1.2;
-  font-weight: 600;
-}
-
-a {
-  color: inherit;
+/* Ensure headings on navy surfaces stay readable even if utilities are overridden */
+.navy-gradient h1,
+.navy-gradient h2,
+.navy-gradient h3,
+.navy-gradient h4,
+.bg-deep-navy h1,
+.bg-deep-navy h2,
+.bg-deep-navy h3,
+.bg-deep-navy h4,
+.bg-navy h1,
+.bg-navy h2,
+.bg-navy h3,
+.bg-navy h4 {
+  color: var(--bgivs-white);
 }
 
 :focus-visible {

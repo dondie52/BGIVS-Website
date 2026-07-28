@@ -2,11 +2,25 @@ import Link from "next/link";
 import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
 import { siteConfig } from "@/content/site";
 import { footerNav } from "@/content/navigation";
-import { programmes } from "@/content/programmes";
-import { publications } from "@/content/publications";
+import { getPublishedProgrammes } from "@/lib/content/programmes";
+import { getPublishedPublications } from "@/lib/content/publications";
+import { getPublicSiteSettings } from "@/lib/content/settings";
 
-export function Footer() {
+export async function Footer() {
   const year = new Date().getFullYear();
+  const [programmes, publications, settings] = await Promise.all([
+    getPublishedProgrammes(),
+    getPublishedPublications(),
+    getPublicSiteSettings(),
+  ]);
+
+  const email = settings.contact_email || siteConfig.email;
+  const phone = settings.contact_phone || siteConfig.phoneDisplay;
+  const location = settings.location || siteConfig.location;
+  const name = settings.site_name || siteConfig.name;
+  const tagline = settings.tagline || siteConfig.tagline;
+  const emailHref = `mailto:${email}`;
+  const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
 
   return (
     <footer className="bg-deep-navy text-white">
@@ -15,9 +29,9 @@ export function Footer() {
           <div className="inline-flex rounded-xl bg-white p-3">
             <InstitutionalSeal size="md" framed={false} />
           </div>
-          <h2 className="mt-5 font-serif text-xl text-white">{siteConfig.name}</h2>
-          <p className="mt-2 text-sm font-medium text-light-gold">{siteConfig.tagline}</p>
-          <p className="mt-4 max-w-sm text-sm text-white/75">
+          <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
+          <p className="mt-2 text-sm font-medium text-light-gold">{tagline}</p>
+          <p className="mt-4 max-w-sm text-sm text-white/80">
             A research, training, consulting, and publishing institution advancing integrated
             value systems for sustainable organizational and societal development.
           </p>
@@ -74,16 +88,16 @@ export function Footer() {
           </ul>
           <div className="mt-5 space-y-1 text-sm text-white/80">
             <p>
-              <a href={siteConfig.emailHref} className="hover:text-white hover:underline">
-                {siteConfig.email}
+              <a href={emailHref} className="hover:text-white hover:underline">
+                {email}
               </a>
             </p>
             <p>
-              <a href={siteConfig.phoneHref} className="hover:text-white hover:underline">
-                {siteConfig.phoneDisplay}
+              <a href={phoneHref} className="hover:text-white hover:underline">
+                {phone}
               </a>
             </p>
-            <p>{siteConfig.location}</p>
+            <p>{location}</p>
           </div>
         </div>
       </div>
@@ -91,7 +105,7 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 text-sm text-white/65 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
-            © {year} {siteConfig.name}. All rights reserved.
+            © {year} {name}. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white hover:underline">

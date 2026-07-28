@@ -74,14 +74,14 @@ function NavDropdown({ group }: { group: NavGroup }) {
         <ul
           id={menuId}
           role="menu"
-          className="absolute left-0 top-full z-50 mt-2 min-w-[240px] rounded-lg border border-border bg-white py-2 shadow-lg"
+          className="absolute left-0 top-full z-[60] mt-2 max-h-[min(70vh,28rem)] min-w-[240px] max-w-[min(90vw,20rem)] overflow-y-auto rounded-lg border border-[var(--bgivs-border)] bg-[var(--bgivs-white)] py-2 text-[var(--bgivs-navy)] shadow-lg"
         >
           {group.items.map((item) => (
             <li key={item.href} role="none">
               <Link
                 role="menuitem"
                 href={item.href}
-                className="block px-4 py-2.5 text-sm text-navy hover:bg-off-white"
+                className="block px-4 py-2.5 text-sm font-medium text-[var(--bgivs-navy)] hover:bg-[var(--bgivs-off-white)] focus-visible:bg-[var(--bgivs-off-white)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--bgivs-royal-blue)]"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

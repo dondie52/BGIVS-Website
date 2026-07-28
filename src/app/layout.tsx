@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { siteConfig } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
 import "./globals.css";
@@ -53,15 +51,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${sourceSans.variable} ${sourceSerif.variable} h-full`}>
-      <body className="flex min-h-full flex-col bg-white font-sans text-foreground antialiased">
-        <a href="#main-content" className="skip-link">
-          Skip to content
-        </a>
-        <Header />
-        <main id="main-content" className="flex-1">
-          {children}
-        </main>
-        <Footer />
+      <body className="min-h-full bg-white font-sans text-foreground antialiased">
+        {children}
       </body>
     </html>
   );
