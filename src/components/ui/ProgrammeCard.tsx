@@ -23,21 +23,33 @@ type ProgrammeCardProps = {
   programme: Programme;
   index?: number;
   detailed?: boolean;
+  compact?: boolean;
 };
 
-export function ProgrammeCard({ programme, index = 0, detailed = false }: ProgrammeCardProps) {
+export function ProgrammeCard({
+  programme,
+  index = 0,
+  detailed = false,
+  compact = false,
+}: ProgrammeCardProps) {
   const Icon = icons[index % icons.length];
 
   return (
     <article
       id={programme.id}
-      className="institutional-card scroll-mt-28 flex h-full flex-col p-6"
+      className={`institutional-card scroll-mt-28 flex h-full flex-col ${compact ? "p-5" : "p-6"}`}
     >
-      <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-md bg-blue/10 text-blue">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-blue/10 text-blue">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className="text-xl text-navy">{programme.title}</h3>
-      <p className="mt-3 text-sm text-muted">{programme.overview}</p>
+      <h3 className={`text-navy ${compact ? "text-lg leading-snug" : "text-xl"}`}>
+        {programme.title}
+      </h3>
+      <p
+        className={`mt-2 text-sm text-muted ${compact ? "line-clamp-2" : ""}`}
+      >
+        {programme.overview}
+      </p>
 
       {detailed ? (
         <div className="mt-5 space-y-4 text-sm">
