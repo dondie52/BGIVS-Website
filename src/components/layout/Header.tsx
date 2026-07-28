@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { Button } from "@/components/ui/Button";
 import { DesktopNavigation } from "@/components/layout/DesktopNavigation";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
@@ -15,7 +15,15 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <InstitutionalSeal size="sm" framed={false} />
+          <span className="inline-flex shrink-0 items-center justify-center rounded-md bg-white p-1">
+            <BgivsLogo
+              priority
+              width={58}
+              height={68}
+              className="h-[52px] w-[44px] object-contain sm:h-[68px] sm:w-[58px]"
+              sizes="58px"
+            />
+          </span>
           <span className="min-w-0">
             <span className="block truncate font-serif text-sm font-semibold tracking-wide sm:text-base">
               {siteConfig.shortName}
