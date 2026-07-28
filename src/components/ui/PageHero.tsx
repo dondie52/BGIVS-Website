@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { images } from "@/lib/images";
 
 type PageHeroProps = {
   label?: string;
@@ -9,6 +11,8 @@ type PageHeroProps = {
   description?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  /** Atmospheric background; defaults to institutional hero image */
+  imageSrc?: string;
 };
 
 export function PageHero({
@@ -18,15 +22,28 @@ export function PageHero({
   description,
   primaryCta,
   secondaryCta,
+  imageSrc = images.heroAtmosphere.src,
 }: PageHeroProps) {
   return (
-    <section className="navy-gradient relative overflow-hidden text-white">
+    <section className="relative isolate overflow-hidden text-white">
+      <Image
+        src={imageSrc}
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
       <div
-        className="pointer-events-none absolute inset-0 opacity-30"
+        className="absolute inset-0 bg-gradient-to-br from-deep-navy/93 via-navy/88 to-blue/70"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-0 opacity-40"
         aria-hidden="true"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(243,201,79,0.18), transparent 35%), radial-gradient(circle at 80% 0%, rgba(8,117,184,0.35), transparent 40%)",
+            "radial-gradient(circle at 20% 20%, rgba(243,201,79,0.16), transparent 35%), radial-gradient(circle at 80% 0%, rgba(8,117,184,0.28), transparent 40%)",
         }}
       />
       <Container className="relative py-16 sm:py-20 lg:py-24">

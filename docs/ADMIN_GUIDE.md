@@ -27,7 +27,7 @@ Public pages load **published** rows from Supabase, with static TypeScript conte
 
 - Manage rows in `publications`.
 - Set `status` to `published` and provide `published_at` when releasing.
-- `cover_path` may be a site-relative path (for example `/images/publications/...`) or a storage URL.
+- `cover_path` may be a site-relative path (for example `/images/publications/...`) or a storage-relative path in the `public-media` bucket (for example `covers/...`). Public pages resolve storage paths via `getPublicMediaUrl` / `resolvePublicationCover`.
 - Public research pages and the footer list published books only.
 - “Request a Copy” on a publication detail page links to `/research/request/[slug]`.
 

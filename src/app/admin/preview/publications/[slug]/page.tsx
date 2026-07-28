@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { requireAdminUser } from "@/lib/admin/auth";
-import { getPublicMediaUrl } from "@/lib/admin/helpers";
+import { resolvePublicationCover } from "@/lib/admin/helpers";
 import { createClient } from "@/lib/supabase/server";
 
 type Props = {
@@ -21,7 +21,7 @@ export default async function PublicationPreviewPage({ params }: Props) {
 
   if (!publication) notFound();
 
-  const coverUrl = getPublicMediaUrl(publication.cover_path);
+  const coverUrl = resolvePublicationCover(publication.cover_path);
 
   return (
     <div className="min-h-screen bg-off-white px-4 py-10 sm:px-8">
@@ -39,19 +39,13 @@ export default async function PublicationPreviewPage({ params }: Props) {
 
         <div className="mt-8 grid gap-8 sm:grid-cols-[200px_1fr]">
           <div className="overflow-hidden rounded-md border border-border bg-off-white">
-            {coverUrl ? (
-              <Image
-                src={coverUrl}
-                alt=""
-                width={400}
-                height={600}
-                className="h-auto w-full object-contain"
-              />
-            ) : (
-              <div className="flex aspect-[2/3] items-center justify-center text-sm text-muted">
-                No cover
-              </div>
-            )}
+            <Image
+              src={coverUrl}
+              alt=""
+              width={400}
+              height={600}
+              className="h-auto w-full object-contain"
+            />
           </div>
           <div>
             <p className="whitespace-pre-wrap text-muted">{publication.description}</p>

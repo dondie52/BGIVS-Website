@@ -1,7 +1,7 @@
 import {
   CONTENT_STATUSES,
   PUBLICATION_TYPES,
-  getPublicMediaUrl,
+  resolvePublicationCover,
 } from "@/lib/admin/helpers";
 import type { Database } from "@/types/database";
 
@@ -14,7 +14,9 @@ export function PublicationForm({
   action: (formData: FormData) => Promise<void>;
   publication?: Publication;
 }) {
-  const coverUrl = getPublicMediaUrl(publication?.cover_path);
+  const coverUrl = publication?.cover_path
+    ? resolvePublicationCover(publication.cover_path)
+    : null;
 
   return (
     <form action={action} className="space-y-6 rounded-lg border border-border bg-white p-6" encType="multipart/form-data">

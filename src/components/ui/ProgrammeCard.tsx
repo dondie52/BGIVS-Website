@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { ProgrammePathwayDiagram } from "@/components/diagrams/ProgrammePathwayDiagram";
 import type { Programme } from "@/types";
 import {
   Building2,
@@ -51,42 +52,7 @@ export function ProgrammeCard({
         {programme.overview}
       </p>
 
-      {detailed ? (
-        <div className="mt-5 space-y-4 text-sm">
-          <div>
-            <h4 className="font-semibold text-navy">Challenges addressed</h4>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-              {programme.challenges.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-navy">Activities</h4>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-              {programme.activities.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-navy">Intended beneficiaries</h4>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-              {programme.beneficiaries.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-navy">Potential outcomes</h4>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-muted">
-              {programme.outcomes.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      ) : null}
+      {detailed ? <ProgrammePathwayDiagram programme={programme} /> : null}
 
       <div className="mt-6">
         {detailed ? (

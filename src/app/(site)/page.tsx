@@ -3,21 +3,23 @@ import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 import { BrandPillarCard } from "@/components/ui/StrategicPillarCard";
-import { StrategicPillarCard } from "@/components/ui/StrategicPillarCard";
 import { ProgrammeCard } from "@/components/ui/ProgrammeCard";
 import { BeneficiaryCard } from "@/components/ui/BeneficiaryCard";
 import { FounderCard } from "@/components/ui/FounderCard";
 import { PublicationCard } from "@/components/ui/PublicationCard";
 import { CallToAction } from "@/components/ui/CallToAction";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { FrameworkDiagram } from "@/components/diagrams/FrameworkDiagram";
+import { MetricsToMeaningDiagram } from "@/components/diagrams/MetricsToMeaningDiagram";
+import { PillarsOverviewDiagram } from "@/components/diagrams/PillarsOverviewDiagram";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
 import { siteConfig } from "@/content/site";
-import { brandPillars, institutionalChallenges } from "@/content/outcomes";
-import { strategicPillars } from "@/content/pillars";
+import { brandPillars } from "@/content/outcomes";
 import { programmes } from "@/content/programmes";
 import { homeBeneficiaries } from "@/content/beneficiaries";
 import { publications } from "@/content/publications";
 import { partnerCta } from "@/content/navigation";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -38,10 +40,12 @@ export default function HomePage() {
       <section className="bg-white py-12 sm:py-16">
         <Container>
           <SectionHeading
-            label="Institutional Introduction"
-            title="Transforming Performance into Purpose"
-            description="BGIVS advances integrated value systems through research, training, consulting, publishing, and strategic collaboration—helping organizations align performance with governance, ethics, sustainability, and meaningful impact."
+            label="Institutional Philosophy"
+            title="From Metrics to Meaning"
+            description="Performance measures matter—but they become meaningful when connected to purpose, ethics, governance, responsibility, and lasting societal value."
+            className="mb-8"
           />
+          <MetricsToMeaningDiagram />
         </Container>
       </section>
 
@@ -76,31 +80,10 @@ export default function HomePage() {
 
       <section className="bg-white py-12 sm:py-16">
         <Container>
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
-            <SectionHeading
-              title="Performance Alone Is Not Enough"
-              description="Institutions often prioritize profit, efficiency, and short-term targets while underweighting governance, ethics, accountability, sustainability, and stakeholder trust."
-            />
-            <ul className="flex flex-wrap gap-2">
-              {institutionalChallenges.map((item) => (
-                <li
-                  key={item}
-                  className="rounded-md border border-border bg-off-white px-3 py-1.5 text-sm text-muted"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Container>
-      </section>
-
-      <section className="bg-off-white py-12 sm:py-16">
-        <Container>
           <SectionHeading
             label="Our Framework"
             title="The BVSDQ–CSRDQ Framework"
-            description="A strategic tool that helps organizations translate values and responsibilities into practical, sustainable institutional strategies."
+            description="A strategic tool that helps organizations translate values and responsibilities into practical institutional strategies."
             className="mb-8"
           />
           <FrameworkDiagram />
@@ -112,18 +95,21 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <ImageBand
+        src={images.sectionResearch.src}
+        alt={images.sectionResearch.alt}
+        title="Research that shapes institutional practice"
+        description="Evidence-based frameworks, assessment methods, and knowledge products that help leaders move from disclosure to transformation."
+      />
+
+      <section className="bg-off-white py-12 sm:py-16">
         <Container>
           <SectionHeading
             label="Strategic Pillars"
             title="Four Pillars of Institutional Work"
             className="mb-8"
           />
-          <ResponsiveGrid columns={2}>
-            {strategicPillars.map((pillar) => (
-              <StrategicPillarCard key={pillar.id} pillar={pillar} compact />
-            ))}
-          </ResponsiveGrid>
+          <PillarsOverviewDiagram />
           <div className="mt-8">
             <Button href="/pillars" variant="outline">
               Explore Our Strategic Pillars
@@ -132,7 +118,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="bg-white py-12 sm:py-16">
         <Container>
           <SectionHeading
             label="Programme Areas"
@@ -158,7 +144,14 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <ImageBand
+        src={images.sectionCollaboration.src}
+        alt={images.sectionCollaboration.alt}
+        title="Partnerships that strengthen institutions"
+        description="Collaborate with BGIVS on governance reform, leadership capacity, consulting, and sustainable development programmes."
+      />
+
+      <section className="bg-off-white py-12 sm:py-16">
         <Container>
           <SectionHeading
             label="Who We Serve"
@@ -178,7 +171,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="bg-white py-12 sm:py-16">
         <Container>
           <SectionHeading
             label="Founder"
@@ -189,7 +182,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="bg-off-white py-12 sm:py-16">
         <Container>
           <SectionHeading
             label="Featured Publications"

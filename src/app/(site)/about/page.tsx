@@ -6,11 +6,13 @@ import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
 import { FounderCard } from "@/components/ui/FounderCard";
 import { CallToAction } from "@/components/ui/CallToAction";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
+import { MetricsToMeaningDiagram } from "@/components/diagrams/MetricsToMeaningDiagram";
+import { PillarsOverviewDiagram } from "@/components/diagrams/PillarsOverviewDiagram";
 import { siteConfig } from "@/content/site";
 import { coreValues } from "@/content/values";
 import { sealMeanings } from "@/content/framework";
-import { strategicPillars } from "@/content/pillars";
 import { partnerCta } from "@/content/navigation";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -26,7 +28,8 @@ export default function AboutPage() {
       <PageHero
         label="About BGIVS"
         title="Building Institutions That Create Meaningful Value"
-        description="BGIVS exists to redefine organizational success by connecting measurable performance with purpose, values, governance, responsibility, sustainability, credibility, and long-term societal impact."
+        description="BGIVS connects measurable performance with purpose, values, governance, responsibility, sustainability, and long-term societal impact."
+        imageSrc={images.sectionCollaboration.src}
       />
 
       <section className="bg-white py-16 sm:py-20">
@@ -35,21 +38,10 @@ export default function AboutPage() {
             <div>
               <SectionHeading title="Who We Are" />
               <p className="mt-4 text-muted">{siteConfig.institutionalStatement}</p>
-              <p className="mt-4 text-muted">
-                Babobiz Global Institute of Value Systems is a research, training, consulting,
-                and publishing institution.
-              </p>
             </div>
             <div>
               <SectionHeading title="What We Do" />
               <p className="mt-4 text-muted">{siteConfig.whatWeDo}</p>
-              <p className="mt-4 text-muted">
-                The institute helps governments, universities, corporations, SMEs, NGOs,
-                research institutions, and development agencies align measurable performance with
-                purpose, governance, ethics, accountability, transparency, organizational values,
-                corporate responsibility, sustainability, stakeholder trust, community impact,
-                institutional credibility, institutional legitimacy, and long-term societal value.
-              </p>
             </div>
           </div>
         </Container>
@@ -90,14 +82,9 @@ export default function AboutPage() {
           <SectionHeading
             title="Institutional Philosophy"
             description="From Metrics to Meaning"
+            className="mb-8"
           />
-          <p className="mt-6 max-w-3xl text-muted">
-            BGIVS believes that organizational success cannot be defined by performance measures
-            alone. Metrics matter—but they become meaningful when connected to purpose, ethics,
-            governance integrity, responsibility, sustainability, credibility, and legitimacy.
-            The institute works to help institutions move from short-term performance systems to
-            enduring value-driven systems.
-          </p>
+          <MetricsToMeaningDiagram />
         </Container>
       </section>
 
@@ -110,7 +97,7 @@ export default function AboutPage() {
             <div>
               <SectionHeading
                 title="The BGIVS Institutional Seal"
-                description="The circular institutional seal expresses the institute’s identity, intellectual framework, and philosophy. It is distinct from the shield-shaped BGIVS logo used in the website header, hero, and footer."
+                description="The circular institutional seal expresses the institute’s identity and philosophy. It is distinct from the shield-shaped logo used in the header, hero, and footer."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {sealMeanings.map((item) => (
@@ -128,14 +115,7 @@ export default function AboutPage() {
       <section className="bg-off-white py-16 sm:py-20">
         <Container>
           <SectionHeading title="Strategic Priorities" className="mb-10" />
-          <ResponsiveGrid columns={2}>
-            {strategicPillars.map((pillar) => (
-              <article key={pillar.id} className="institutional-card p-6">
-                <h3 className="text-xl text-navy">{pillar.name}</h3>
-                <p className="mt-3 text-sm text-muted">{pillar.description}</p>
-              </article>
-            ))}
-          </ResponsiveGrid>
+          <PillarsOverviewDiagram />
         </Container>
       </section>
 
