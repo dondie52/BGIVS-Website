@@ -26,14 +26,12 @@ export async function Footer() {
     <footer className="bg-deep-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div>
-          <div className="inline-flex rounded-xl bg-white p-3">
-            <BgivsLogo
-              width={110}
-              height={165}
-              className="h-auto w-[110px] object-contain"
-              sizes="110px"
-            />
-          </div>
+          <BgivsLogo
+            width={110}
+            height={165}
+            className="h-auto w-[110px] object-contain"
+            sizes="110px"
+          />
           <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
           <p className="mt-2 text-sm font-medium text-light-gold">{tagline}</p>
           <p className="mt-4 max-w-sm text-sm text-white/80">
