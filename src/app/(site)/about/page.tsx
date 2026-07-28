@@ -109,8 +109,8 @@ export default function AboutPage() {
             </div>
             <div>
               <SectionHeading
-                title="Meaning of the Institutional Seal"
-                description="The BGIVS seal expresses the institute’s identity, intellectual framework, and philosophy."
+                title="The BGIVS Institutional Seal"
+                description="The circular institutional seal expresses the institute’s identity, intellectual framework, and philosophy. It is distinct from the shield-shaped BGIVS logo used in the website header, hero, and footer."
               />
               <div className="mt-8 grid gap-4 sm:grid-cols-2">
                 {sealMeanings.map((item) => (

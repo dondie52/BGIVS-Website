@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { siteConfig } from "@/content/site";
 import { footerNav } from "@/content/navigation";
 import { getPublishedProgrammes } from "@/lib/content/programmes";
@@ -27,7 +27,12 @@ export async function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div>
           <div className="inline-flex rounded-xl bg-white p-3">
-            <InstitutionalSeal size="md" framed={false} />
+            <BgivsLogo
+              width={110}
+              height={165}
+              className="h-auto w-[110px] object-contain"
+              sizes="110px"
+            />
           </div>
           <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
           <p className="mt-2 text-sm font-medium text-light-gold">{tagline}</p>

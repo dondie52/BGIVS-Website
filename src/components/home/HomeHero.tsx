@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { siteConfig } from "@/content/site";
 import { partnerCta } from "@/content/navigation";
 
@@ -40,8 +40,12 @@ export function HomeHero() {
         </div>
 
         <div className="fade-up flex justify-center lg:justify-end" style={{ animationDelay: "120ms" }}>
-          <div className="rounded-2xl border border-white/15 bg-white p-6 shadow-xl sm:p-8">
-            <InstitutionalSeal size="xl" framed={false} priority />
+          <div className="flex min-h-[430px] w-full max-w-[380px] items-center justify-center rounded-2xl border border-border/60 bg-white p-8 shadow-lg sm:p-10">
+            <BgivsLogo
+              priority
+              className="h-auto w-full object-contain"
+              sizes="(max-width: 1024px) 90vw, 380px"
+            />
           </div>
         </div>
       </Container>

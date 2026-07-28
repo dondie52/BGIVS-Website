@@ -1,5 +1,4 @@
-import Image from "next/image";
-import { images } from "@/lib/images";
+import { BgivsSeal } from "@/components/brand/BgivsSeal";
 
 type InstitutionalSealProps = {
   size?: "sm" | "md" | "lg" | "xl";
@@ -15,6 +14,10 @@ const sizes = {
   xl: "h-56 w-56 sm:h-72 sm:w-72",
 };
 
+/**
+ * Framed display of the BGIVS institutional seal for formal contexts.
+ * Prefer importing BgivsSeal directly when no frame/size helper is needed.
+ */
 export function InstitutionalSeal({
   size = "lg",
   framed = true,
@@ -22,13 +25,11 @@ export function InstitutionalSeal({
   priority = false,
 }: InstitutionalSealProps) {
   const image = (
-    <Image
-      src={images.seal.src}
-      alt={images.seal.alt}
-      width={images.seal.width}
-      height={images.seal.height}
+    <BgivsSeal
       priority={priority}
       className={`object-contain ${sizes[size]} ${className}`}
+      width={1024}
+      height={1024}
     />
   );
 

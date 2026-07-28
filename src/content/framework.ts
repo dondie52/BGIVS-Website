@@ -91,38 +91,33 @@ export const frameworkMethods = [
 
 export const sealMeanings = [
   {
-    title: "Half Gold and Blue Globe",
+    title: "Globe",
     description:
-      "Represents global reach and the dual relationship between internal organizational values and external institutional responsibility.",
+      "Global reach and the relationship between internal and external value systems.",
   },
   {
-    title: "Bar Chart",
+    title: "Bar chart and upward arrow",
     description:
-      "Represents measurable performance, institutional analysis, evidence, and progress.",
+      "Measurable performance, development, progress, and transformation.",
   },
   {
-    title: "Upward Arrow",
+    title: "Laurel wreath",
     description:
-      "Represents growth, improvement, transformation, strategic advancement, and sustainable success.",
+      "Excellence, credibility, legitimacy, and institutional authority.",
   },
   {
-    title: "Laurel Wreath",
+    title: "Open book",
     description:
-      "Represents excellence, credibility, achievement, institutional authority, and legitimacy.",
-  },
-  {
-    title: "Open Book",
-    description:
-      "Represents research, publishing, education, training, knowledge production, and scholarship.",
+      "Research, education, publishing, and knowledge production.",
   },
   {
     title: "BVSDQ–CSRDQ",
     description:
-      "Represents the institute’s integrated value-systems framework.",
+      "The institute’s integrated value-systems framework.",
   },
   {
     title: "From Metrics to Meaning",
     description:
-      "Represents the institute’s philosophy of moving beyond measurements and outputs to meaningful institutional and societal impact.",
+      "The institute’s guiding philosophy.",
   },
 ];

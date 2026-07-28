@@ -1,7 +1,13 @@
 export const images = {
+  logo: {
+    src: "/images/bgivs-logo.png",
+    alt: "BGIVS shield logo",
+    width: 1024,
+    height: 1536,
+  },
   seal: {
     src: "/images/bgivs-institutional-seal.png",
-    alt: "Official institutional seal of Babobiz Global Institute of Value Systems (BGIVS), featuring a globe, laurel wreath, open book, and the BVSDQ–CSRDQ framework mark with the tagline From Metrics to Meaning",
+    alt: "BGIVS institutional seal",
     width: 1024,
     height: 1024,
   },
