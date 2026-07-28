@@ -63,7 +63,15 @@ Then load seed data (SQL Editor or `psql` against the remote connection string):
 # Example using the SQL Editor: paste contents of supabase/seed.sql
 ```
 
-Confirm tables exist: `profiles`, `enquiries`, `enquiry_notes`, `publications`, `book_requests`, `programmes`, `services`, `site_settings`, `admin_audit_logs`, `rate_limit_events`.
+## 3b. Public form insert policies (required for enquiry / book-request APIs)
+
+After the initial schema migration, also apply:
+
+- `supabase/migrations/20260728220000_public_form_inserts.sql`
+
+This adds write-only anon insert policies for `enquiries` and `book_requests`, and grants `check_rate_limit` to `anon` / `authenticated`. Without it, form APIs that fall back to the publishable key cannot persist rows.
+
+The App Router also emails admins via Resend when a database insert cannot complete, so set `RESEND_API_KEY` and `ADMIN_NOTIFICATION_EMAIL` on Vercel even if Supabase insert is temporarily unavailable.
 
 ## 4. Environment variables
 

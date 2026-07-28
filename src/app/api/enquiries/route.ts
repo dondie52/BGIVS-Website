@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { createFormClient, hasServiceRoleKey, hasSupabaseConfig } from "@/lib/supabase/form";
 import { getServerEnv } from "@/lib/env";
 import { createErrorId, PublicMessages } from "@/lib/errors";
+import { sendEnquiryNotificationEmail } from "@/lib/notify/email";
 import { enforceRateLimit, verifyTurnstile } from "@/lib/rate-limit";
 import {
   enquiryFieldErrors,
@@ -14,31 +16,32 @@ function emailDomain(email: string): string {
   return at >= 0 ? email.slice(at + 1) : "unknown";
 }
 
-async function notifyEnquiry(
-  enquiryId: string,
-): Promise<void> {
+async function notifyEnquiry(enquiryId: string): Promise<boolean> {
   try {
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return false;
+
     const supabase = createAdminClient();
     const { error } = await supabase.functions.invoke("notify-enquiry", {
       body: { enquiryId },
     });
 
-    if (error) {
-      // Fallback to direct functions URL with service role.
-      const { supabaseUrl, serviceRoleKey } = getServerEnv();
-      await fetch(`${supabaseUrl}/functions/v1/notify-enquiry`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${serviceRoleKey}`,
-        },
-        body: JSON.stringify({ enquiryId }),
-      });
-    }
+    if (!error) return true;
+
+    const { supabaseUrl, serviceRoleKey } = getServerEnv();
+    const response = await fetch(`${supabaseUrl}/functions/v1/notify-enquiry`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${serviceRoleKey}`,
+      },
+      body: JSON.stringify({ enquiryId }),
+    });
+    return response.ok;
   } catch (error) {
-    console.error("[enquiries] notify failed", {
+    console.error("[enquiries] notify edge invoke failed", {
       message: error instanceof Error ? error.message : "unknown",
     });
+    return false;
   }
 }
 
@@ -96,45 +99,120 @@ export async function POST(request: Request) {
     }
 
     const data = parsed.data;
-    const supabase = createAdminClient();
+    let enquiryId: string | null = null;
+    let persisted = false;
+    let insertErrorMessage: string | undefined;
 
-    const { data: inserted, error } = await supabase
-      .from("enquiries")
-      .insert({
-        full_name: data.fullName,
-        position_role: data.positionRole,
-        organization: data.organization,
-        organization_category: data.organizationCategory,
-        email: data.email,
-        phone: data.phone ?? null,
-        country: data.country,
-        programme_or_service: data.programmeOrService,
-        message: data.message,
-        consent: data.consent,
-        source_page: data.sourcePage ?? null,
-        referrer: data.referrer ?? null,
-      })
-      .select("id")
-      .single();
+    if (hasSupabaseConfig()) {
+      try {
+        const supabase = createFormClient();
+        const row = {
+          full_name: data.fullName,
+          position_role: data.positionRole,
+          organization: data.organization,
+          organization_category: data.organizationCategory,
+          email: data.email,
+          phone: data.phone ?? null,
+          country: data.country,
+          programme_or_service: data.programmeOrService,
+          message: data.message,
+          consent: data.consent,
+          source_page: data.sourcePage ?? null,
+          referrer: data.referrer ?? null,
+        };
 
-    if (error || !inserted) {
-      console.error("[enquiries] insert failed", {
-        errorId,
-        message: error?.message,
-        emailDomain: emailDomain(data.email),
-      });
+        if (hasServiceRoleKey()) {
+          const { data: inserted, error } = await supabase
+            .from("enquiries")
+            .insert(row)
+            .select("id")
+            .single();
+
+          if (error || !inserted) {
+            insertErrorMessage = error?.message ?? "insert returned no row";
+            console.error("[enquiries] insert failed", {
+              errorId,
+              message: insertErrorMessage,
+              emailDomain: emailDomain(data.email),
+            });
+          } else {
+            enquiryId = inserted.id;
+            persisted = true;
+          }
+        } else {
+          // Anon/publishable inserts are write-only (no SELECT policy). Do not
+          // chain .select() or PostgREST will reject a successful insert.
+          const { error } = await supabase.from("enquiries").insert(row);
+          if (error) {
+            insertErrorMessage = error.message;
+            console.error("[enquiries] insert failed", {
+              errorId,
+              message: insertErrorMessage,
+              emailDomain: emailDomain(data.email),
+            });
+          } else {
+            persisted = true;
+          }
+        }
+      } catch (error) {
+        insertErrorMessage =
+          error instanceof Error ? error.message : "insert threw";
+        console.error("[enquiries] insert unexpected failure", {
+          errorId,
+          message: insertErrorMessage,
+        });
+      }
+    } else {
+      insertErrorMessage = "Supabase is not configured";
+      console.error("[enquiries] missing Supabase config", { errorId });
+    }
+
+    if (persisted) {
+      void (async () => {
+        if (enquiryId) {
+          const notified = await notifyEnquiry(enquiryId);
+          if (notified) return;
+        }
+        await sendEnquiryNotificationEmail({
+          ...data,
+          enquiryId,
+        });
+      })();
+
       return NextResponse.json(
-        { success: false, message: PublicMessages.server, errorId },
-        { status: 500 },
+        { success: true, message: PublicMessages.enquirySuccess },
+        { status: 201 },
       );
     }
 
-    // Fire-and-forget notification; never fail the HTTP response for this.
-    void notifyEnquiry(inserted.id);
+    // Last-resort delivery: accept the enquiry via email so visitors are not blocked
+    // when the database/RLS/service-role path is misconfigured.
+    const emailed = await sendEnquiryNotificationEmail({
+      ...data,
+      enquiryId: null,
+    });
+
+    if (emailed.ok) {
+      console.warn("[enquiries] delivered via email fallback", {
+        errorId,
+        insertErrorMessage,
+        emailDomain: emailDomain(data.email),
+      });
+      return NextResponse.json(
+        { success: true, message: PublicMessages.enquirySuccess },
+        { status: 201 },
+      );
+    }
+
+    console.error("[enquiries] email fallback failed", {
+      errorId,
+      insertErrorMessage,
+      emailError: emailed.error,
+    });
 
     return NextResponse.json(
-      { success: true, message: PublicMessages.enquirySuccess },
-      { status: 201 },
+      { success: false, message: PublicMessages.server, errorId },
+      { status: 500 },
     );
   } catch (error) {
     console.error("[enquiries] unexpected error", {

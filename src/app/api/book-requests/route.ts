@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { createFormClient, hasServiceRoleKey, hasSupabaseConfig } from "@/lib/supabase/form";
 import { getServerEnv } from "@/lib/env";
 import { createErrorId, PublicMessages } from "@/lib/errors";
+import { sendBookRequestNotificationEmail } from "@/lib/notify/email";
 import { enforceRateLimit, verifyTurnstile } from "@/lib/rate-limit";
 import {
   bookRequestFieldErrors,
@@ -14,28 +16,35 @@ function emailDomain(email: string): string {
   return at >= 0 ? email.slice(at + 1) : "unknown";
 }
 
-async function notifyBookRequest(bookRequestId: string): Promise<void> {
+async function notifyBookRequest(bookRequestId: string): Promise<boolean> {
   try {
+    if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return false;
+
     const supabase = createAdminClient();
     const { error } = await supabase.functions.invoke("notify-book-request", {
       body: { bookRequestId },
     });
 
-    if (error) {
-      const { supabaseUrl, serviceRoleKey } = getServerEnv();
-      await fetch(`${supabaseUrl}/functions/v1/notify-book-request`, {
+    if (!error) return true;
+
+    const { supabaseUrl, serviceRoleKey } = getServerEnv();
+    const response = await fetch(
+      `${supabaseUrl}/functions/v1/notify-book-request`,
+      {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${serviceRoleKey}`,
         },
         body: JSON.stringify({ bookRequestId }),
-      });
-    }
+      },
+    );
+    return response.ok;
   } catch (error) {
     console.error("[book-requests] notify failed", {
       message: error instanceof Error ? error.message : "unknown",
     });
+    return false;
   }
 }
 
@@ -92,80 +101,134 @@ export async function POST(request: Request) {
     }
 
     const data = parsed.data;
-    const supabase = createAdminClient();
+    let bookRequestId: string | null = null;
+    let persisted = false;
+    let insertErrorMessage: string | undefined;
 
-    const { data: publication, error: publicationError } = await supabase
-      .from("publications")
-      .select("id")
-      .eq("slug", data.publicationSlug)
-      .eq("status", "published")
-      .maybeSingle();
+    if (hasSupabaseConfig()) {
+      try {
+        const supabase = createFormClient();
 
-    if (publicationError) {
-      console.error("[book-requests] publication lookup failed", {
-        errorId,
-        message: publicationError.message,
-      });
-      return NextResponse.json(
-        {
-          success: false,
-          message: PublicMessages.bookRequestServer,
+        const { data: publication, error: publicationError } = await supabase
+          .from("publications")
+          .select("id")
+          .eq("slug", data.publicationSlug)
+          .eq("status", "published")
+          .maybeSingle();
+
+        if (publicationError) {
+          insertErrorMessage = publicationError.message;
+          console.error("[book-requests] publication lookup failed", {
+            errorId,
+            message: publicationError.message,
+          });
+        } else if (!publication) {
+          insertErrorMessage = "publication not found in database";
+        } else {
+          const row = {
+            publication_id: publication.id,
+            full_name: data.fullName,
+            organization: data.organization ?? null,
+            email: data.email,
+            phone: data.phone ?? null,
+            country: data.country,
+            quantity: data.quantity,
+            message: data.message ?? null,
+            consent: data.consent,
+          };
+
+          if (hasServiceRoleKey()) {
+            const { data: inserted, error } = await supabase
+              .from("book_requests")
+              .insert(row)
+              .select("id")
+              .single();
+
+            if (error || !inserted) {
+              insertErrorMessage = error?.message ?? "insert returned no row";
+              console.error("[book-requests] insert failed", {
+                errorId,
+                message: insertErrorMessage,
+                emailDomain: emailDomain(data.email),
+              });
+            } else {
+              bookRequestId = inserted.id;
+              persisted = true;
+            }
+          } else {
+            const { error } = await supabase.from("book_requests").insert(row);
+            if (error) {
+              insertErrorMessage = error.message;
+              console.error("[book-requests] insert failed", {
+                errorId,
+                message: insertErrorMessage,
+                emailDomain: emailDomain(data.email),
+              });
+            } else {
+              persisted = true;
+            }
+          }
+        }
+      } catch (error) {
+        insertErrorMessage =
+          error instanceof Error ? error.message : "insert threw";
+        console.error("[book-requests] insert unexpected failure", {
           errorId,
-        },
-        { status: 500 },
-      );
+          message: insertErrorMessage,
+        });
+      }
+    } else {
+      insertErrorMessage = "Supabase is not configured";
     }
 
-    if (!publication) {
+    if (persisted) {
+      void (async () => {
+        if (bookRequestId) {
+          const notified = await notifyBookRequest(bookRequestId);
+          if (notified) return;
+        }
+        await sendBookRequestNotificationEmail({
+          ...data,
+          bookRequestId,
+        });
+      })();
+
       return NextResponse.json(
-        {
-          success: false,
-          message: PublicMessages.validation,
-          errors: {
-            publicationSlug: "The selected publication is not available.",
-          },
-        },
-        { status: 400 },
+        { success: true, message: PublicMessages.bookRequestSuccess },
+        { status: 201 },
       );
     }
 
-    const { data: inserted, error } = await supabase
-      .from("book_requests")
-      .insert({
-        publication_id: publication.id,
-        full_name: data.fullName,
-        organization: data.organization ?? null,
-        email: data.email,
-        phone: data.phone ?? null,
-        country: data.country,
-        quantity: data.quantity,
-        message: data.message ?? null,
-        consent: data.consent,
-      })
-      .select("id")
-      .single();
+    const emailed = await sendBookRequestNotificationEmail({
+      ...data,
+      bookRequestId: null,
+    });
 
-    if (error || !inserted) {
-      console.error("[book-requests] insert failed", {
+    if (emailed.ok) {
+      console.warn("[book-requests] delivered via email fallback", {
         errorId,
-        message: error?.message,
+        insertErrorMessage,
         emailDomain: emailDomain(data.email),
       });
       return NextResponse.json(
-        {
-          success: false,
-          message: PublicMessages.bookRequestServer,
-          errorId,
-        },
-        { status: 500 },
+        { success: true, message: PublicMessages.bookRequestSuccess },
+        { status: 201 },
       );
     }
 
-    void notifyBookRequest(inserted.id);
+    console.error("[book-requests] email fallback failed", {
+      errorId,
+      insertErrorMessage,
+      emailError: emailed.error,
+    });
 
     return NextResponse.json(
-      { success: true, message: PublicMessages.bookRequestSuccess },
-      { status: 201 },
+      {
+        success: false,
+        message: PublicMessages.bookRequestServer,
+        errorId,
+      },
+      { status: 500 },
     );
   } catch (error) {
     console.error("[book-requests] unexpected error", {
