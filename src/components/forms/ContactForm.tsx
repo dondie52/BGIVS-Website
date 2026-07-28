@@ -73,10 +73,14 @@ export function ContactForm() {
 
     setStatus("loading");
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/enquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
+        body: JSON.stringify({
+          ...values,
+          sourcePage:
+            typeof window !== "undefined" ? window.location.pathname : "/contact",
+        }),
       });
       if (!response.ok) throw new Error("Request failed");
       setStatus("success");

@@ -77,7 +77,7 @@ export async function requireAdminRole(): Promise<{
 }> {
   const result = await requireAdminUser();
   if (result.profile.role !== "admin") {
-    redirect("/admin/login");
+    redirect("/admin");
   }
   return result;
 }

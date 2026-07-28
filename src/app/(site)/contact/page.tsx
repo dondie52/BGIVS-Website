@@ -46,9 +46,8 @@ export default function ContactPage() {
                 </p>
               </div>
               <p className="mt-8 max-w-md text-sm text-muted">
-                Please use the form to share your enquiry. This initial form uses a demo
-                submission handler and can later be connected to an email service, API route,
-                database, or CRM.
+                Please use the form to share your enquiry. BGIVS will respond using the
+                contact details you provide.
               </p>
             </div>
 
