@@ -1,0 +1,42 @@
+import Link from "next/link";
+import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
+import { Button } from "@/components/ui/Button";
+import { DesktopNavigation } from "@/components/layout/DesktopNavigation";
+import { MobileNavigation } from "@/components/layout/MobileNavigation";
+import { siteConfig } from "@/content/site";
+import { navGroups, partnerCta } from "@/content/navigation";
+
+const desktopExtraLinks = [
+  { label: "Contact", href: "/contact" },
+];
+
+export function Header() {
+  return (
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <InstitutionalSeal size="sm" framed={false} />
+          <span className="min-w-0">
+            <span className="block truncate font-serif text-sm font-semibold tracking-wide sm:text-base">
+              {siteConfig.shortName}
+            </span>
+            <span className="hidden truncate text-xs text-white/70 sm:block">
+              {siteConfig.tagline}
+            </span>
+          </span>
+        </Link>
+
+        <DesktopNavigation groups={navGroups} links={desktopExtraLinks} />
+
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:block">
+            <Button href={partnerCta.href} variant="primary" className="text-xs sm:text-sm">
+              {partnerCta.label}
+            </Button>
+          </div>
+          <MobileNavigation groups={navGroups} links={desktopExtraLinks} />
+        </div>
+      </div>
+    </header>
+  );
+}
