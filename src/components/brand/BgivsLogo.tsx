@@ -27,6 +27,7 @@ export function BgivsLogo({
       width={width}
       height={height}
       priority={priority}
+      quality={82}
       sizes={sizes}
       className={className}
     />
