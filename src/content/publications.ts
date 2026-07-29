@@ -68,11 +68,11 @@ export const knowledgeResources: KnowledgeResource[] = [
   {
     slug: "bgivs-organogram",
     title: "Babobiz Global Institute of Value Systems (BGIVS) - Organogram",
-    type: "Institutional document",
+    type: "Institutional governance document",
     categoryId: "institutional-guides",
     description:
       "The governance, executive, functional and support structure of the Babobiz Global Institute of Value Systems.",
-    href: "/research/organogram",
+    href: "/knowledge/institutional-documents/bgivs-organogram",
     actionLabel: "View Organogram",
   },
 ];
