@@ -5,6 +5,18 @@ export const images = {
     width: 731,
     height: 1024,
   },
+  circularLogo: {
+    src: "/images/bgivs-circular-logo.jpeg",
+    alt: "BGIVS circular logo",
+    width: 200,
+    height: 200,
+  },
+  shieldSeal: {
+    src: "/images/bgivs-shield-seal.jpeg",
+    alt: "BGIVS official shield seal",
+    width: 1024,
+    height: 1024,
+  },
   seal: {
     src: "/images/bgivs-institutional-seal.png",
     alt: "BGIVS institutional seal",
