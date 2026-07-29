@@ -36,9 +36,9 @@ export const knowledgeResources: KnowledgeResource[] = [
     type: "Research paper PDF",
     categoryId: "research-reports",
     description:
-      "A research paper on business value systems and corporate successfulness using evidence from Botswana.",
-    href: "/docs/knowledge/A1%20How%20Business%20Value%20Systems%20Drive%20Corporate%20Successfulness%20A.pdf",
-    actionLabel: "Read Paper",
+      "Examines how business value systems contribute to corporate success, drawing on evidence from Botswana.",
+    href: "/knowledge/a1-business-value-systems-corporate-successfulness.pdf",
+    actionLabel: "View Paper",
     external: true,
   },
   {
@@ -48,9 +48,9 @@ export const knowledgeResources: KnowledgeResource[] = [
     type: "Research paper PDF",
     categoryId: "research-reports",
     description:
-      "A research paper exploring the link between school curriculum and entrepreneurship in King William's Town, Eastern Cape.",
-    href: "/docs/knowledge/A2%20Bridging%20Education%20and%20Enterprise%20B.pdf",
-    actionLabel: "Read Paper",
+      "Explores the relationship between school curriculum, enterprise development and entrepreneurship education.",
+    href: "/knowledge/a2-bridging-education-and-enterprise.pdf",
+    actionLabel: "View Paper",
     external: true,
   },
   {
@@ -60,9 +60,9 @@ export const knowledgeResources: KnowledgeResource[] = [
     type: "Research paper PDF",
     categoryId: "research-reports",
     description:
-      "A research paper on the BVSD-CSRD Involvement Model and the integration of business values and social responsibility in practice.",
-    href: "/docs/knowledge/A3%20The%20BVSD%20CSRD%20Involvement%20Model%20Integrating%20Business%20Values%20and%20Social%20Responsibility%20in%20Practice.pdf",
-    actionLabel: "Read Paper",
+      "Presents a model connecting business values and corporate social-responsibility disclosure in organisational practice.",
+    href: "/knowledge/a3-bvsd-csrd-involvement-model.pdf",
+    actionLabel: "View Paper",
     external: true,
   },
   {
