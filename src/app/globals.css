@@ -190,6 +190,53 @@ img.site-logo {
   object-position: center;
 }
 
+.navbar-brand {
+  display: inline-flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.75rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.navbar-logo-frame {
+  position: relative;
+  display: block;
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+  overflow: hidden;
+  background: #033b76;
+  border: 1px solid rgba(220, 168, 28, 0.75);
+  border-radius: 8px;
+}
+
+.navbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 58%;
+  display: block;
+  width: 72px;
+  max-width: none;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+
+.navbar-title {
+  min-width: 0;
+  color: #ffffff;
+  font-family: var(--font-source-serif), Georgia, serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  white-space: normal;
+}
+
+.navbar-title strong {
+  color: #e0aa18;
+}
+
 .hero-slogan,
 .tagline,
 .logo-caption {
@@ -200,6 +247,40 @@ img.site-logo {
   .hero-logo-wrapper {
     width: min(92vw, 420px);
     margin-top: 28px;
+  }
+}
+
+@media (min-width: 640px) {
+  .navbar-title {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-brand {
+    flex: 0 1 auto;
+  }
+
+  .navbar-title {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-frame {
+    flex-basis: 50px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .navbar-logo {
+    width: 56px;
+  }
+
+  .navbar-title {
+    font-size: 0.9rem;
+    white-space: normal;
   }
 }
 
