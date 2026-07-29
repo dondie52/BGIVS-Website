@@ -14,15 +14,17 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex min-w-0 flex-1 items-center gap-3 lg:flex-none">
-          <BgivsLogo
-            priority
-            className="site-logo h-[60px] w-auto shrink-0 object-contain lg:h-[76px]"
-            sizes="(max-width: 640px) 60px, 76px"
-          />
-          <span className="min-w-0 whitespace-normal font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
+        <Link href="/" className="navbar-brand">
+          <span className="navbar-logo-frame" aria-hidden="true">
+            <BgivsLogo
+              priority
+              className="navbar-logo"
+              sizes="(max-width: 768px) 59px, 72px"
+            />
+          </span>
+          <span className="navbar-title">
             {siteConfig.name}{" "}
-            <span className="text-light-gold">({siteConfig.shortName})</span>
+            <strong>({siteConfig.shortName})</strong>
           </span>
         </Link>
 
