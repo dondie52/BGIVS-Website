@@ -2,8 +2,7 @@ import type { FrameworkArea } from "@/types";
 
 export const frameworkIntro = {
   title: "The BVSDQ–CSRDQ Framework",
-  subtitle:
-    "Business Value System Disclosure Quality (BVSDQ) and Corporate Social Responsibility Disclosure Quality (CSRDQ)",
+  subtitle: "A Strategic Tool for Business Successfulness",
   summary:
     "The BVSDQ–CSRDQ Framework integrates internal organizational values, governance, strategy, ethics, performance, and disclosure quality with external corporate responsibility, sustainability, accountability, stakeholder impact, and disclosure quality.",
   explanation:
@@ -18,7 +17,7 @@ export const frameworkAreas: FrameworkArea[] = [
   {
     id: "bvsdq",
     title: "BVSDQ",
-    subtitle: "Business Value System Disclosure Quality · Internal Institutional Value",
+    subtitle: "Internal Institutional Value",
     items: [
       "Business values",
       "Organizational culture",
@@ -34,8 +33,7 @@ export const frameworkAreas: FrameworkArea[] = [
   {
     id: "csrdq",
     title: "CSRDQ",
-    subtitle:
-      "Corporate Social Responsibility Disclosure Quality · External Institutional Responsibility",
+    subtitle: "External Institutional Responsibility",
     items: [
       "Corporate social responsibility",
       "Sustainability",
