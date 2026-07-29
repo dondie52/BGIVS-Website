@@ -13,7 +13,7 @@ export const images = {
   },
   founder: {
     src: "/images/founder-placeholder.jpg",
-    alt: "Dr. Lindunda Wamunyima, Author and Founder of Babobiz Global Institute of Value Systems (BGIVS)",
+    alt: "Professional portrait placeholder for Dr. Lindunda Wamunyima, Founder and Framework Developer of BGIVS",
     width: 1024,
     height: 1536,
   },

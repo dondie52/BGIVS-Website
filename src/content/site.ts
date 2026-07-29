@@ -1,11 +1,9 @@
 export const siteConfig = {
   name: "Babobiz Global Institute of Value Systems",
   shortName: "BGIVS",
-  /** Full institutional title with abbreviation, e.g. for hero and page headings */
-  nameWithAbbreviation: "Babobiz Global Institute of Value Systems (BGIVS)",
   tagline: "From Metrics to Meaning",
   description:
-    "Babobiz Global Institute of Value Systems (BGIVS) advances research, training, consulting, publishing, governance, corporate responsibility, and sustainable institutional transformation through the BVSDQ–CSRDQ Framework.",
+    "Babobiz Global Institute of Value Systems advances research, training, consulting, publishing, governance, corporate responsibility, and sustainable institutional transformation through the BVSDQ–CSRDQ Framework.",
   email: "kabisoilw@gmail.com",
   phone: "+267 73 251 171",
   phoneDisplay: "+267 73 251 171",

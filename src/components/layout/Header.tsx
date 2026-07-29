@@ -23,11 +23,12 @@ export function Header() {
             sizes="58px"
           />
           <span className="min-w-0">
-            <span className="block truncate font-serif text-base font-semibold tracking-wide sm:text-lg">
-              {siteConfig.shortName}
+            <span className="block font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
+              {siteConfig.name}{" "}
+              <span className="text-light-gold">({siteConfig.shortName})</span>
             </span>
-            <span className="hidden truncate text-xs text-white/75 sm:block md:text-[0.8rem]">
-              {siteConfig.name}
+            <span className="mt-0.5 hidden truncate text-xs text-white/70 lg:block">
+              {siteConfig.tagline}
             </span>
           </span>
         </Link>

@@ -18,12 +18,12 @@ const sourceSerif = Source_Serif_4({
 
 export const metadata: Metadata = {
   ...createPageMetadata({
-    title: siteConfig.nameWithAbbreviation,
+    title: siteConfig.shortName,
     description: siteConfig.description,
     path: "/",
   }),
   metadataBase: new URL(siteConfig.url),
-  applicationName: siteConfig.nameWithAbbreviation,
+  applicationName: siteConfig.shortName,
   authors: [{ name: siteConfig.name }],
   keywords: [
     "Babobiz Global Institute of Value Systems",

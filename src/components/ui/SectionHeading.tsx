@@ -25,9 +25,7 @@ export function SectionHeading({
       {label ? (
         <p className={`section-label mb-3 ${light ? "text-light-gold" : ""}`}>{label}</p>
       ) : null}
-      <h2 className={`text-3xl sm:text-4xl lg:text-5xl ${light ? "text-white" : "text-navy"}`}>
-        {title}
-      </h2>
+      <h2 className={`text-3xl sm:text-4xl ${light ? "text-white" : "text-navy"}`}>{title}</h2>
       {description ? (
         <p className={`mt-4 text-base sm:text-lg ${light ? "text-white/85" : "text-muted"}`}>
           {description}

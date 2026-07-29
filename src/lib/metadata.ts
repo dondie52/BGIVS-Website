@@ -16,8 +16,8 @@ export function createPageMetadata({
 }: PageMetaInput): Metadata {
   const url = `${siteConfig.url}${path}`;
   const fullTitle =
-    title === siteConfig.shortName || title === siteConfig.nameWithAbbreviation
-      ? `${siteConfig.nameWithAbbreviation} | ${siteConfig.tagline}`
+    title === siteConfig.shortName
+      ? `${siteConfig.shortName} | ${siteConfig.tagline}`
       : `${title} | ${siteConfig.shortName}`;
 
   return {
