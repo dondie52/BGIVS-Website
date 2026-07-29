@@ -24,12 +24,37 @@ export function HomeHero() {
           </p>
         </div>
 
-        <div className="fade-up flex justify-center" style={{ animationDelay: "120ms" }}>
-          <BgivsLogo
-            priority
-            className="hero-shield"
-            sizes="(max-width: 640px) 78vw, 430px"
-          />
+        <div
+          className="hero-logo-block fade-up"
+          style={{ animationDelay: "120ms" }}
+        >
+          <div className="hero-logo-crop">
+            <BgivsLogo
+              priority
+              className="hero-shield"
+              sizes="(max-width: 640px) 92vw, 520px"
+            />
+          </div>
+
+          <svg
+            className="hero-tagline"
+            viewBox="0 0 600 110"
+            role="img"
+            aria-label="From Metrics to Meaning"
+          >
+            <defs>
+              <path id="hero-tagline-curve" d="M 90 25 Q 300 115 510 25" />
+            </defs>
+            <text fill="#FFFFFF">
+              <textPath
+                href="#hero-tagline-curve"
+                startOffset="50%"
+                textAnchor="middle"
+              >
+                From Metrics to Meaning
+              </textPath>
+            </text>
+          </svg>
         </div>
       </Container>
     </section>
