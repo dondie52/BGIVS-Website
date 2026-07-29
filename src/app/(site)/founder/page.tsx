@@ -1,6 +1,7 @@
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { FounderPortrait } from "@/components/ui/FounderCard";
 import { PublicationCard } from "@/components/ui/PublicationCard";
 import { CallToAction } from "@/components/ui/CallToAction";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
@@ -27,9 +28,14 @@ export default function FounderPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <SectionHeading title="Biography" />
-          <p className="mt-4 max-w-3xl text-muted">{founderContent.biography}</p>
-          <p className="mt-4 max-w-3xl text-muted">{founderContent.contribution}</p>
+          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+            <FounderPortrait />
+            <div>
+              <SectionHeading title="Biography" />
+              <p className="mt-4 text-muted">{founderContent.biography}</p>
+              <p className="mt-4 text-muted">{founderContent.contribution}</p>
+            </div>
+          </div>
         </Container>
       </section>
 
