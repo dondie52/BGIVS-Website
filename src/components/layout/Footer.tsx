@@ -20,7 +20,11 @@ export async function Footer() {
   const name = settings.site_name || siteConfig.name;
   const tagline = settings.tagline || siteConfig.tagline;
   const emailHref = `mailto:${email}`;
-  const phoneHref = `tel:${phone.replace(/\s+/g, "")}`;
+  const firstPhone = phone.match(/(?:\+?267)?\s*\d{2}\s*\d{3}\s*\d{3}|\d{8}/)?.[0];
+  const phoneDigits = firstPhone?.replace(/\D/g, "") ?? "";
+  const phoneHref = phoneDigits
+    ? `tel:+${phoneDigits.startsWith("267") ? phoneDigits : `267${phoneDigits}`}`
+    : siteConfig.phoneHref;
 
   return (
     <footer className="bg-deep-navy text-white">

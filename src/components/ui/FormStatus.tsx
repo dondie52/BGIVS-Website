@@ -7,7 +7,7 @@ type FormStatusProps = {
 export function FormStatus({
   status,
   successMessage = "Thank you. Your enquiry has been received. BGIVS will respond using the contact details you provided.",
-  errorMessage = "Something went wrong while submitting your enquiry. Please try again or email kabisoilw@gmail.com.",
+  errorMessage = "Something went wrong while submitting your enquiry. Please try again or email info@BGIVS.com.",
 }: FormStatusProps) {
   if (status === "idle") return null;
 
@@ -43,7 +43,7 @@ export function FormStatus({
       className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800"
     >
       {errorMessage ||
-        "Something went wrong while submitting your enquiry. Please try again or email kabisoilw@gmail.com."}
+        "Something went wrong while submitting your enquiry. Please try again or email info@BGIVS.com."}
     </div>
   );
 }

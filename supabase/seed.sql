@@ -478,8 +478,8 @@ on conflict (slug) do update set
 -- Site settings
 -- ---------------------------------------------------------------------------
 insert into public.site_settings (key, value, description) values
-  ('contact_email', to_jsonb('kabisoilw@gmail.com'::text), 'Primary contact email'),
-  ('contact_phone', to_jsonb('+267 73 251 171'::text), 'Primary contact phone'),
+  ('contact_email', to_jsonb('info@BGIVS.com'::text), 'Primary contact email'),
+  ('contact_phone', to_jsonb('Orange: 72603182 / Mascom: 77889707'::text), 'Primary contact phone'),
   ('location', to_jsonb('Gaborone, Botswana'::text), 'Institute location'),
   ('site_name', to_jsonb('Babobiz Global Institute of Value Systems'::text), 'Full institute name'),
   ('short_name', to_jsonb('BGIVS'::text), 'Short institute name'),

@@ -84,7 +84,7 @@ async function sendResendEmail(options: {
 function mailConfig() {
   const apiKey = process.env.RESEND_API_KEY ?? "";
   const adminEmail =
-    process.env.ADMIN_NOTIFICATION_EMAIL ?? "kabisoilw@gmail.com";
+    process.env.ADMIN_NOTIFICATION_EMAIL ?? "info@BGIVS.com";
   const fromEmail =
     process.env.RESEND_FROM_EMAIL ?? "BGIVS <onboarding@resend.dev>";
   const siteUrl =
