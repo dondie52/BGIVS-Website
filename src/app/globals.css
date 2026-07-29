@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --bgivs-navy: #061d3b;
-  --bgivs-deep-navy: #0b1427;
+  --bgivs-navy: #04152f;
+  --bgivs-deep-navy: #04152f;
   --bgivs-blue: #07558f;
   --bgivs-royal-blue: #0875b8;
-  --bgivs-gold: #d9a326;
-  --bgivs-bright-gold: #f3c94f;
-  --bgivs-light-gold: #f6dfa0;
+  --bgivs-gold: #f9ce5b;
+  --bgivs-gold-dark: #e8a828;
+  --bgivs-bright-gold: #ffe28a;
+  --bgivs-light-gold: #f9ce5b;
   --bgivs-white: #ffffff;
   --bgivs-off-white: #f7f8fa;
   --bgivs-text: #172033;
@@ -26,6 +27,7 @@
   --color-blue: var(--bgivs-blue);
   --color-royal-blue: var(--bgivs-royal-blue);
   --color-gold: var(--bgivs-gold);
+  --color-gold-dark: var(--bgivs-gold-dark);
   --color-bright-gold: var(--bgivs-bright-gold);
   --color-light-gold: var(--bgivs-light-gold);
   --color-off-white: var(--bgivs-off-white);
@@ -127,7 +129,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--bgivs-gold);
+  color: var(--bgivs-gold-dark);
 }
 
 .institutional-card {
@@ -139,12 +141,12 @@
 }
 
 .institutional-card:hover {
-  border-color: color-mix(in srgb, var(--bgivs-gold) 55%, var(--bgivs-border));
+  border-color: color-mix(in srgb, var(--bgivs-gold-dark) 55%, var(--bgivs-border));
   box-shadow: 0 8px 24px rgba(6, 29, 59, 0.08);
 }
 
 .gold-accent-border {
-  border-top: 3px solid var(--bgivs-gold);
+  border-top: 3px solid var(--bgivs-gold-dark);
 }
 
 .navy-gradient {
@@ -208,7 +210,7 @@ img.site-logo {
   height: 64px;
   overflow: hidden;
   background: #033b76;
-  border: 1px solid rgba(220, 168, 28, 0.75);
+  border: 1px solid color-mix(in srgb, var(--bgivs-gold-dark) 75%, transparent);
   border-radius: 8px;
 }
 
@@ -234,7 +236,7 @@ img.site-logo {
 }
 
 .navbar-title strong {
-  color: #e0aa18;
+  color: var(--bgivs-gold);
 }
 
 .hero-slogan,
