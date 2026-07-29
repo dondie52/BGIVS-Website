@@ -17,10 +17,8 @@ export function Header() {
         <Link href="/" className="flex min-w-0 items-center gap-3">
           <BgivsLogo
             priority
-            width={58}
-            height={68}
-            className="h-[52px] w-[44px] shrink-0 object-contain sm:h-[68px] sm:w-[58px]"
-            sizes="58px"
+            className="h-14 w-auto shrink-0 object-contain sm:h-16 lg:h-[72px]"
+            sizes="72px"
           />
           <span className="min-w-0">
             <span className="block font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
