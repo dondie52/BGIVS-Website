@@ -6,7 +6,8 @@ import { EmptyState } from "@/components/ui/EmptyState";
 import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
 import { CallToAction } from "@/components/ui/CallToAction";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
-import { publicationCategories } from "@/content/publications";
+import { KnowledgeResourceCard } from "@/components/ui/KnowledgeResourceCard";
+import { knowledgeResources, publicationCategories } from "@/content/publications";
 import { getPublishedPublications } from "@/lib/content/publications";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -52,24 +53,38 @@ export default async function ResearchPage() {
         <Container>
           <SectionHeading
             title="Knowledge Categories"
-            description="Additional publication categories will be populated as new approved materials become available."
+            description="Approved BGIVS resources, research papers, institutional documents, and knowledge materials."
             className="mb-10"
           />
           <div className="grid gap-6">
             {publicationCategories
               .filter((category) => category.id !== "books")
-              .map((category) => (
-                <div key={category.id} id={category.id} className="scroll-mt-28">
-                  <h3 className="mb-3 text-xl text-navy">{category.name}</h3>
-                  <EmptyState
-                    title={`${category.name} coming soon`}
-                    message={
-                      category.emptyMessage ??
-                      "New research publications will be added as they become available."
-                    }
-                  />
-                </div>
-              ))}
+              .map((category) => {
+                const resources = knowledgeResources.filter(
+                  (resource) => resource.categoryId === category.id,
+                );
+
+                return (
+                  <section key={category.id} id={category.id} className="scroll-mt-28">
+                    <h3 className="mb-3 text-xl text-navy">{category.name}</h3>
+                    {resources.length > 0 ? (
+                      <ResponsiveGrid columns={3}>
+                        {resources.map((resource) => (
+                          <KnowledgeResourceCard key={resource.slug} resource={resource} />
+                        ))}
+                      </ResponsiveGrid>
+                    ) : (
+                      <EmptyState
+                        title={`${category.name} coming soon`}
+                        message={
+                          category.emptyMessage ??
+                          "New research publications will be added as they become available."
+                        }
+                      />
+                    )}
+                  </section>
+                );
+              })}
           </div>
         </Container>
       </section>

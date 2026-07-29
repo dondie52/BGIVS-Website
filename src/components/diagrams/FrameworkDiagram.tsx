@@ -1,3 +1,5 @@
+"use client";
+
 import { frameworkAreas } from "@/content/framework";
 import { ArrowDown, ArrowRight } from "lucide-react";
 

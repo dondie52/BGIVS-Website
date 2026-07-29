@@ -1,4 +1,4 @@
-import type { Publication, PublicationCategory } from "@/types";
+import type { KnowledgeResource, Publication, PublicationCategory } from "@/types";
 
 export const publicationCategories: PublicationCategory[] = [
   { id: "books", name: "Books" },
@@ -19,13 +19,61 @@ export const publicationCategories: PublicationCategory[] = [
   },
   {
     id: "institutional-guides",
-    name: "Institutional Guides",
+    name: "Institutional Documents",
     emptyMessage: "New research publications will be added as they become available.",
   },
   {
     id: "training-materials",
     name: "Training Materials",
     emptyMessage: "New research publications will be added as they become available.",
+  },
+];
+
+export const knowledgeResources: KnowledgeResource[] = [
+  {
+    slug: "business-value-systems-corporate-successfulness-botswana",
+    title: "How Business Value Systems Drive Corporate Successfulness: Evidence from Botswana",
+    type: "Research paper PDF",
+    categoryId: "research-reports",
+    description:
+      "Examines how business value systems contribute to corporate success, drawing on evidence from Botswana.",
+    href: "/knowledge/a1-business-value-systems-corporate-successfulness.pdf",
+    actionLabel: "View Paper",
+    external: true,
+  },
+  {
+    slug: "bridging-education-and-enterprise",
+    title:
+      "Bridging Education and Enterprise: Exploring the Link Between School Curriculum and Entrepreneurship in King William's Town, Eastern Cape",
+    type: "Research paper PDF",
+    categoryId: "research-reports",
+    description:
+      "Explores the relationship between school curriculum, enterprise development and entrepreneurship education.",
+    href: "/knowledge/a2-bridging-education-and-enterprise.pdf",
+    actionLabel: "View Paper",
+    external: true,
+  },
+  {
+    slug: "bvsd-csrd-involvement-model",
+    title:
+      "The BVSD-CSRD Involvement Model: Integrating Business Values and Social Responsibility in Practice",
+    type: "Research paper PDF",
+    categoryId: "research-reports",
+    description:
+      "Presents a model connecting business values and corporate social-responsibility disclosure in organisational practice.",
+    href: "/knowledge/a3-bvsd-csrd-involvement-model.pdf",
+    actionLabel: "View Paper",
+    external: true,
+  },
+  {
+    slug: "bgivs-organogram",
+    title: "Babobiz Global Institute of Value Systems (BGIVS) - Organogram",
+    type: "Institutional governance document",
+    categoryId: "institutional-guides",
+    description:
+      "The governance, executive, functional and support structure of the Babobiz Global Institute of Value Systems.",
+    href: "/knowledge/institutional-documents/bgivs-organogram",
+    actionLabel: "View Organogram",
   },
 ];
 
