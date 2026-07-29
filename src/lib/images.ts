@@ -31,16 +31,16 @@ export const images = {
   },
   publications: {
     bvsdq: {
-      src: "/images/publications/bvsdq-csrdq-framework.jpg",
-      alt: "Book cover for BVSDQ–CSRDQ Framework: A Strategic Tool for Business Successfulness by Dr. Lindunda Wamunyima",
-      width: 1600,
-      height: 1132,
+      src: "/images/publications/bvsdq-csrdq-framework.jpeg",
+      alt: "BVSDQ–CSRDQ Framework book cover",
+      width: 600,
+      height: 900,
     },
     botswana: {
-      src: "/images/publications/business-values-botswana.jpg",
-      alt: "Book cover for Business Values and Corporate Citizenship in Botswana: A Strategic Framework for Sustainable Development by Dr. Lindunda Wamunyima",
-      width: 1600,
-      height: 1113,
+      src: "/images/publications/business-values-botswana.jpeg",
+      alt: "Business Values and Corporate Citizenship in Botswana book cover",
+      width: 600,
+      height: 900,
     },
   },
 } as const;

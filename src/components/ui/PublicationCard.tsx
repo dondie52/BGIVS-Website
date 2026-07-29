@@ -10,16 +10,15 @@ type PublicationCardProps = {
 export function PublicationCard({ publication }: PublicationCardProps) {
   return (
     <article className="institutional-card overflow-hidden">
-      <div className="bg-off-white px-6 pt-6">
-        <div className="mx-auto aspect-[2/3] w-full max-w-[220px] overflow-hidden rounded-md bg-white shadow-md">
-          <Image
-            src={publication.image}
-            alt={`Cover of ${publication.title} by ${publication.author}`}
-            width={440}
-            height={660}
-            className="h-full w-full object-contain"
-          />
-        </div>
+      <div className="flex items-center justify-center bg-off-white px-5 py-8">
+        <Image
+          src={publication.image}
+          alt={`Cover of ${publication.title} by ${publication.author}`}
+          width={420}
+          height={630}
+          className="h-auto w-auto max-w-full rounded-sm object-contain shadow-[0_8px_24px_rgba(0,0,0,0.16)]"
+          style={{ maxHeight: "360px" }}
+        />
       </div>
       <div className="p-6">
         <p className="section-label mb-2">Book</p>

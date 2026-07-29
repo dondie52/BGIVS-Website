@@ -59,17 +59,16 @@ export default async function PublicationDetailPage({ params }: Props) {
           />
 
           <div className="mt-10 grid gap-10 lg:grid-cols-[280px_1fr]">
-            <div className="rounded-2xl border border-border bg-off-white p-6">
-              <div className="mx-auto aspect-[2/3] w-full max-w-[240px] overflow-hidden rounded-md bg-white shadow-md">
-                <Image
-                  src={publication.image}
-                  alt={`Cover of ${publication.title} by ${publication.author}`}
-                  width={480}
-                  height={720}
-                  className="h-full w-full object-contain"
-                  priority
-                />
-              </div>
+            <div className="flex items-center justify-center rounded-2xl border border-border bg-off-white p-5 sm:p-8">
+              <Image
+                src={publication.image}
+                alt={`Cover of ${publication.title} by ${publication.author}`}
+                width={420}
+                height={630}
+                className="h-auto w-auto max-w-full rounded-sm object-contain shadow-[0_8px_24px_rgba(0,0,0,0.16)]"
+                style={{ maxHeight: "680px", maxWidth: "min(100%, 420px)" }}
+                priority
+              />
             </div>
 
             <div>
