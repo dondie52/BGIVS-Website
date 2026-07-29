@@ -2,8 +2,8 @@ export const images = {
   logo: {
     src: "/images/bgivs-logo.png",
     alt: "BGIVS shield logo",
-    width: 731,
-    height: 1024,
+    width: 609,
+    height: 694,
   },
   circularLogo: {
     src: "/images/bgivs-circular-logo.png",

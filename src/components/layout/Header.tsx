@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { images } from "@/lib/images";
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { Button } from "@/components/ui/Button";
 import { DesktopNavigation } from "@/components/layout/DesktopNavigation";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
@@ -16,14 +15,10 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex min-w-0 items-center gap-3">
-          <Image
-            src={images.circularLogo.src}
-            alt={images.circularLogo.alt}
-            width={images.circularLogo.width}
-            height={images.circularLogo.height}
+          <BgivsLogo
             priority
-            className="logo h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-[68px] lg:w-[68px]"
-            sizes="68px"
+            className="site-logo h-[60px] w-auto shrink-0 object-contain lg:h-[76px]"
+            sizes="(max-width: 640px) 60px, 76px"
           />
           <span className="min-w-0">
             <span className="block font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
