@@ -76,6 +76,17 @@ export type PublicationCategory = {
   emptyMessage?: string;
 };
 
+export type KnowledgeResource = {
+  slug: string;
+  title: string;
+  type: string;
+  categoryId: string;
+  description: string;
+  href: string;
+  actionLabel: string;
+  external?: boolean;
+};
+
 export type FrameworkArea = {
   id: string;
   title: string;
