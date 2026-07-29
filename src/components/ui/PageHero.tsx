@@ -26,7 +26,7 @@ export function PageHero({
         aria-hidden="true"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 20% 20%, rgba(243,201,79,0.18), transparent 35%), radial-gradient(circle at 80% 0%, rgba(8,117,184,0.35), transparent 40%)",
+            "radial-gradient(circle at 20% 20%, rgba(249,206,91,0.18), transparent 35%), radial-gradient(circle at 80% 0%, rgba(8,117,184,0.35), transparent 40%)",
         }}
       />
       <Container className="relative py-16 sm:py-20 lg:py-24">

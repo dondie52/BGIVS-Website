@@ -16,11 +16,11 @@ type ButtonProps = {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gold text-deep-navy hover:bg-bright-gold border border-gold font-semibold shadow-sm",
+    "bg-gold text-deep-navy hover:bg-bright-gold border border-gold-dark font-semibold shadow-sm",
   secondary:
     "bg-white text-navy hover:bg-off-white border border-white/80 font-semibold",
   outline:
-    "bg-transparent text-navy border border-navy/25 hover:border-gold hover:text-navy font-semibold",
+    "bg-transparent text-navy border border-navy/25 hover:border-gold-dark hover:text-navy font-semibold",
   "gold-outline":
     "bg-transparent text-white border border-gold hover:bg-gold hover:text-deep-navy font-semibold",
   ghost: "bg-transparent text-blue hover:text-navy font-semibold underline-offset-4 hover:underline",

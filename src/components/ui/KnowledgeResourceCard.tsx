@@ -10,7 +10,7 @@ type KnowledgeResourceCardProps = {
 
 export function KnowledgeResourceCard({ resource }: KnowledgeResourceCardProps) {
   const actionClass =
-    "mt-auto inline-flex items-center gap-2 rounded-md border border-navy/25 px-4 py-2 text-sm font-semibold text-navy transition hover:border-gold hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royal-blue";
+    "mt-auto inline-flex items-center gap-2 rounded-md border border-navy/25 px-4 py-2 text-sm font-semibold text-navy transition hover:border-gold-dark hover:text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royal-blue";
 
   return (
     <article className="institutional-card gold-accent-border flex h-full flex-col p-6">

@@ -23,7 +23,7 @@ export function SectionHeading({
       className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""} ${className}`}
     >
       {label ? (
-        <p className={`section-label mb-3 ${light ? "text-light-gold" : ""}`}>{label}</p>
+        <p className={`section-label mb-3 ${light ? "text-gold" : ""}`}>{label}</p>
       ) : null}
       <h2 className={`text-3xl sm:text-4xl ${light ? "text-white" : "text-navy"}`}>{title}</h2>
       {description ? (
