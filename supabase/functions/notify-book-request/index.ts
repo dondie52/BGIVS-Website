@@ -206,7 +206,7 @@ Deno.serve(async (req) => {
   const siteUrl =
     Deno.env.get("SITE_URL") ?? "https://bgivs-website.vercel.app";
   const adminEmail =
-    Deno.env.get("ADMIN_NOTIFICATION_EMAIL") ?? "kabisoilw@gmail.com";
+    Deno.env.get("ADMIN_NOTIFICATION_EMAIL") ?? "info@BGIVS.com";
   const resendApiKey = Deno.env.get("RESEND_API_KEY") ?? "";
   const fromEmail =
     Deno.env.get("RESEND_FROM_EMAIL") ?? "BGIVS <onboarding@resend.dev>";

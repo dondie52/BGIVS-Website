@@ -30,7 +30,7 @@ export function getFormRuntimeEnv() {
       process.env.RATE_LIMIT_SECRET ?? "bgivs-dev-rate-limit-secret",
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY ?? "",
     adminNotificationEmail:
-      process.env.ADMIN_NOTIFICATION_EMAIL ?? "kabisoilw@gmail.com",
+      process.env.ADMIN_NOTIFICATION_EMAIL ?? "info@BGIVS.com",
     resendApiKey: process.env.RESEND_API_KEY ?? "",
     resendFromEmail:
       process.env.RESEND_FROM_EMAIL ?? "BGIVS <onboarding@resend.dev>",

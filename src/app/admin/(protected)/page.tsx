@@ -14,6 +14,7 @@ export default async function AdminOverviewPage() {
     newBookRequests,
     publishedPublications,
     publishedProgrammes,
+    trackedVisits,
     recentEnquiries,
     recentBookRequests,
   ] = await Promise.all([
@@ -37,6 +38,9 @@ export default async function AdminOverviewPage() {
       .from("programmes")
       .select("id", { count: "exact", head: true })
       .eq("status", "published"),
+    supabase
+      .from("visitor_events")
+      .select("id", { count: "exact", head: true }),
     supabase
       .from("enquiries")
       .select("id, full_name, email, status, submitted_at, organization")
@@ -71,6 +75,11 @@ export default async function AdminOverviewPage() {
       value: publishedProgrammes.count ?? 0,
       href: "/admin/programmes",
     },
+    {
+      label: "Tracked visits",
+      value: trackedVisits.count ?? 0,
+      href: "/admin/visitors",
+    },
   ];
 
   return (
@@ -80,7 +89,7 @@ export default async function AdminOverviewPage() {
         description="Snapshot of enquiries, book requests, and published content."
       />
 
-      <div className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+      <div className="mb-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-6">
         {stats.map((stat) => (
           <Link
             key={stat.label}

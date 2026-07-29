@@ -31,6 +31,12 @@ export default function TermsPage() {
             engagements.
           </p>
           <p>
+            Visitors must not attempt to misuse website forms, interfere with site security, or
+            submit false, unlawful, or harmful content. BGIVS may use rate limiting, audit logs,
+            consent-based analytics, and administrative review to protect the website and improve
+            institutional services.
+          </p>
+          <p>
             All institutional names, marks, and content remain the property of their respective
             owners. For permissions or formal correspondence, contact{" "}
             <a href={siteConfig.emailHref} className="font-semibold text-blue hover:underline">

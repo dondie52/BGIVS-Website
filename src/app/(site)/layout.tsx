@@ -1,6 +1,8 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ConsentAnalytics } from "@/components/analytics/ConsentAnalytics";
 import { siteConfig } from "@/content/site";
+import { Suspense } from "react";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -35,6 +37,9 @@ export default function SiteLayout({
         {children}
       </main>
       <Footer />
+      <Suspense fallback={null}>
+        <ConsentAnalytics />
+      </Suspense>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
