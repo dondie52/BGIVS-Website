@@ -21,7 +21,7 @@ import { partnerCta } from "@/content/navigation";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: siteConfig.shortName,
+  title: siteConfig.nameWithAbbreviation,
   description: siteConfig.description,
   path: "/",
 });
@@ -100,7 +100,7 @@ export default function HomePage() {
           <SectionHeading
             label="Our Framework"
             title="The BVSDQ–CSRDQ Framework"
-            description="A strategic tool that helps organizations translate values and responsibilities into practical, sustainable institutional strategies."
+            description="Business Value System Disclosure Quality (BVSDQ) and Corporate Social Responsibility Disclosure Quality (CSRDQ)—a strategic tool that helps organizations translate values and responsibilities into practical, sustainable institutional strategies."
             className="mb-8"
           />
           <FrameworkDiagram />
@@ -181,8 +181,8 @@ export default function HomePage() {
       <section className="bg-off-white py-12 sm:py-16">
         <Container>
           <SectionHeading
-            label="Founder"
-            title="Founder and Framework Developer"
+            label="Author and Founder"
+            title="Author and Founder"
             className="mb-8"
           />
           <FounderCard compact />

@@ -73,7 +73,11 @@ function FrameworkPanel({
 
   return (
     <div className={`rounded-xl border p-5 shadow-sm ${tones[tone]}`}>
-      <h3 className={`text-lg ${tone === "gold" ? "text-navy" : "text-white"}`}>{title}</h3>
+      <h3
+        className={`text-base font-semibold leading-snug sm:text-lg ${tone === "gold" ? "text-navy" : "text-white"}`}
+      >
+        {title}
+      </h3>
       <p className={`mt-1 text-sm ${tone === "gold" ? "text-muted" : "text-white/85"}`}>
         {subtitle}
       </p>

@@ -32,7 +32,9 @@ export async function Footer() {
             className="h-auto w-[110px] object-contain"
             sizes="110px"
           />
-          <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
+          <h2 className="mt-5 font-serif text-xl !text-white sm:text-2xl">
+            {name} ({settings.short_name || siteConfig.shortName})
+          </h2>
           <p className="mt-2 text-sm font-medium text-light-gold">{tagline}</p>
           <p className="mt-4 max-w-sm text-sm text-white/80">
             A research, training, consulting, and publishing institution advancing integrated
