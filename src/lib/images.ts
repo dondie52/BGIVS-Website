@@ -6,10 +6,10 @@ export const images = {
     height: 1024,
   },
   circularLogo: {
-    src: "/images/bgivs-circular-logo.jpeg",
+    src: "/images/bgivs-circular-logo.png",
     alt: "BGIVS circular logo",
-    width: 200,
-    height: 200,
+    width: 608,
+    height: 692,
   },
   shieldSeal: {
     src: "/images/bgivs-shield-seal.jpeg",

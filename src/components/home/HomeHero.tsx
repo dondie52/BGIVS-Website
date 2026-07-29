@@ -42,14 +42,13 @@ export function HomeHero() {
 
         <div className="fade-up mt-8 flex justify-center" style={{ animationDelay: "120ms" }}>
           <Image
-            src={images.shieldSeal.src}
-            alt={images.shieldSeal.alt}
-            width={images.shieldSeal.width}
-            height={images.shieldSeal.height}
+            src={images.circularLogo.src}
+            alt={images.circularLogo.alt}
+            width={images.circularLogo.width}
+            height={images.circularLogo.height}
             priority
-            className="h-auto w-full max-w-[280px] object-contain drop-shadow-[0_8px_24px_rgba(0,0,0,0.35)] sm:max-w-[420px]"
+            className="hero-logo h-auto w-full max-w-[280px] object-contain sm:max-w-[420px]"
             sizes="(max-width: 640px) 280px, 420px"
-            style={{ mixBlendMode: "multiply" }}
           />
         </div>
       </Container>

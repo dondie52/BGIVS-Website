@@ -22,7 +22,7 @@ export function Header() {
             width={images.circularLogo.width}
             height={images.circularLogo.height}
             priority
-            className="h-12 w-12 shrink-0 rounded-full object-contain sm:h-14 sm:w-14 lg:h-[68px] lg:w-[68px]"
+            className="logo h-12 w-12 shrink-0 object-contain sm:h-14 sm:w-14 lg:h-[68px] lg:w-[68px]"
             sizes="68px"
           />
           <span className="min-w-0">
