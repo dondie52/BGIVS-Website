@@ -33,10 +33,10 @@ export function createPageMetadata({
       type: "website",
       images: [
         {
-          url: `${siteConfig.url}/images/bgivs-logo.png`,
-          width: 1024,
-          height: 1536,
-          alt: "BGIVS shield logo",
+          url: `${siteConfig.url}/images/bgivs-logo.jpeg`,
+          width: 911,
+          height: 1280,
+          alt: "Babobiz Global Institute of Value Systems logo",
         },
       ],
     },
@@ -44,7 +44,7 @@ export function createPageMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [`${siteConfig.url}/images/bgivs-logo.png`],
+      images: [`${siteConfig.url}/images/bgivs-logo.jpeg`],
     },
     robots: noIndex ? { index: false, follow: false } : { index: true, follow: true },
   };

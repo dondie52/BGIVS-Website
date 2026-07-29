@@ -11,7 +11,7 @@ type BgivsLogoProps = {
 
 /**
  * Official BGIVS shield-shaped logo.
- * Always uses /images/bgivs-logo.png — never the institutional seal.
+ * Always uses /images/bgivs-logo.jpeg — never the institutional seal.
  */
 export function BgivsLogo({
   className = "h-auto w-full object-contain",
