@@ -1,6 +1,6 @@
 export const images = {
   logo: {
-    src: "/images/bgivs-logo-white-tagline-v2.png",
+    src: "/images/bgivs-logo-transparent-white-tagline-v3.png",
     alt: "Babobiz Global Institute of Value Systems logo",
     width: 609,
     height: 694,
