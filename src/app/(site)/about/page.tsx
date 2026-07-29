@@ -16,7 +16,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "About BGIVS",
   description:
-    "Learn about Babobiz Global Institute of Value Systems—its mission, vision, core values, institutional seal, and commitment to integrated value systems.",
+    "Learn about Babobiz Global Institute of Value Systems (BGIVS)—its mission, vision, core values, institutional seal, and commitment to integrated value systems.",
   path: "/about",
 });
 
@@ -24,9 +24,9 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
-        label="About BGIVS"
+        label={siteConfig.nameWithAbbreviation}
         title="Building Institutions That Create Meaningful Value"
-        description="BGIVS exists to redefine organizational success by connecting measurable performance with purpose, values, governance, responsibility, sustainability, credibility, and long-term societal impact."
+        description={`${siteConfig.shortName} exists to redefine organizational success by connecting measurable performance with purpose, values, governance, responsibility, sustainability, credibility, and long-term societal impact.`}
       />
 
       <section className="bg-white py-16 sm:py-20">
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <SectionHeading title="Founder Introduction" className="mb-10" />
+          <SectionHeading title="Author and Founder" className="mb-10" />
           <FounderCard compact />
         </Container>
       </section>

@@ -43,12 +43,16 @@ export default function FrameworkPage() {
               <p className="mt-4 max-w-3xl text-muted">{frameworkIntro.explanation}</p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <div className="rounded-xl border border-border bg-off-white p-5">
-                  <h3 className="text-lg text-navy">BVSDQ</h3>
-                  <p className="mt-2 text-sm text-muted">{frameworkIntro.bvsdqFull}</p>
+                  <h3 className="text-lg text-navy sm:text-xl">
+                    {frameworkIntro.bvsdqFull} (BVSDQ)
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">Internal institutional value systems</p>
                 </div>
                 <div className="rounded-xl border border-border bg-off-white p-5">
-                  <h3 className="text-lg text-navy">CSRDQ</h3>
-                  <p className="mt-2 text-sm text-muted">{frameworkIntro.csrdqFull}</p>
+                  <h3 className="text-lg text-navy sm:text-xl">
+                    {frameworkIntro.csrdqFull} (CSRDQ)
+                  </h3>
+                  <p className="mt-2 text-sm text-muted">External institutional responsibility</p>
                 </div>
               </div>
             </div>
@@ -89,7 +93,7 @@ export default function FrameworkPage() {
           <ResponsiveGrid columns={3}>
             {frameworkAreas.map((area) => (
               <article key={area.id} className="institutional-card gold-accent-border p-6">
-                <h3 className="text-xl text-navy">{area.title}</h3>
+                <h3 className="text-xl text-navy sm:text-2xl">{area.title}</h3>
                 <p className="mt-2 text-sm font-medium text-blue">{area.subtitle}</p>
                 <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm text-muted">
                   {area.items.map((item) => (

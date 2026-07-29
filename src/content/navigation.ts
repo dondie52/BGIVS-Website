@@ -9,7 +9,7 @@ export const primaryNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Research and Publications", href: "/research" },
   { label: "Governance", href: "/governance" },
-  { label: "Founder", href: "/founder" },
+  { label: "Author and Founder", href: "/founder" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -22,7 +22,7 @@ export const navGroups: NavGroup[] = [
       { label: "Mission and Vision", href: "/about#mission-vision" },
       { label: "Core Values", href: "/about#core-values" },
       { label: "Institutional Seal", href: "/about#institutional-seal" },
-      { label: "Founder", href: "/founder" },
+      { label: "Author and Founder", href: "/founder" },
       { label: "Governance", href: "/governance" },
     ],
   },
@@ -58,7 +58,7 @@ export const footerNav: NavLink[] = [
   { label: "Services", href: "/services" },
   { label: "Research and Publications", href: "/research" },
   { label: "Governance", href: "/governance" },
-  { label: "Founder", href: "/founder" },
+  { label: "Author and Founder", href: "/founder" },
   { label: "Contact", href: "/contact" },
 ];
 

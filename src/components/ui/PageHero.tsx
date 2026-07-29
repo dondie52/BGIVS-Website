@@ -31,9 +31,9 @@ export function PageHero({
       />
       <Container className="relative py-16 sm:py-20 lg:py-24">
         {label ? <p className="section-label mb-4 text-light-gold">{label}</p> : null}
-        <h1 className="max-w-4xl text-4xl !text-white sm:text-5xl lg:text-[3.25rem]">{title}</h1>
+        <h1 className="max-w-4xl text-4xl !text-white sm:text-5xl lg:text-6xl">{title}</h1>
         {subtitle ? (
-          <p className="mt-4 max-w-3xl text-lg font-medium text-light-gold sm:text-xl">
+          <p className="mt-4 max-w-3xl text-xl font-medium text-light-gold sm:text-2xl">
             {subtitle}
           </p>
         ) : null}

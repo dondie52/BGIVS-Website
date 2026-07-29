@@ -17,10 +17,13 @@ export function HomeHero() {
       />
       <Container className="relative grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2 lg:gap-14 lg:py-24">
         <div className="fade-up">
-          <p className="section-label mb-4 text-light-gold">{siteConfig.name}</p>
-          <h1 className="max-w-xl font-serif text-4xl !text-white sm:text-5xl lg:text-6xl">
-            {siteConfig.tagline}
+          <h1 className="max-w-2xl font-serif text-3xl leading-tight !text-white sm:text-4xl lg:text-5xl xl:text-[3.35rem]">
+            {siteConfig.name}{" "}
+            <span className="whitespace-nowrap text-light-gold">({siteConfig.shortName})</span>
           </h1>
+          <p className="mt-5 max-w-xl font-serif text-2xl font-semibold text-bright-gold sm:text-3xl lg:text-4xl">
+            {siteConfig.tagline}
+          </p>
           <p className="mt-6 max-w-xl text-base text-white/85 sm:text-lg">
             Transforming governments, universities, corporations, SMEs, NGOs, and development
             institutions from performance-driven organizations into sustainable, value-driven

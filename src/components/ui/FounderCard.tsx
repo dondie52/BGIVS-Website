@@ -22,19 +22,19 @@ export function FounderCard({ compact = false }: FounderCardProps) {
             />
           </div>
           <p className="mt-3 text-center text-xs text-muted">
-            Official high-resolution portrait to be added when provided.
+            Portrait of Dr. Lindunda Wamunyima, Author and Founder.
           </p>
         </div>
         <div className="p-6 sm:p-8">
           <p className="section-label mb-2">{founderContent.role}</p>
-          <h3 className="text-2xl text-navy sm:text-3xl">{founderContent.name}</h3>
+          <h3 className="text-2xl text-navy sm:text-3xl lg:text-4xl">{founderContent.name}</h3>
           <p className="mt-4 text-sm text-muted sm:text-base">{founderContent.biography}</p>
           {!compact ? (
             <p className="mt-4 text-sm text-muted sm:text-base">{founderContent.contribution}</p>
           ) : null}
           <div className="mt-6">
             <Button href="/founder" variant="outline">
-              Learn More About the Founder
+              Learn More About the Author and Founder
             </Button>
           </div>
         </div>
@@ -57,7 +57,7 @@ export function FounderPortrait() {
         />
       </div>
       <p className="mt-3 text-center text-xs text-muted">
-        Professional portrait placeholder until an approved high-resolution portrait is provided.
+        Portrait of Dr. Lindunda Wamunyima, Author and Founder.
       </p>
     </div>
   );

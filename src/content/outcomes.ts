@@ -52,10 +52,11 @@ export const brandPillars = [
 
 export const founderContent = {
   name: "Dr. Lindunda Wamunyima",
-  role: "Founder and Framework Developer",
-  subtitle: "Founder and Developer of the BVSDQ–CSRDQ Framework",
+  role: "Author and Founder",
+  subtitle:
+    "Author and Founder of Babobiz Global Institute of Value Systems (BGIVS) · Developer of the BVSDQ–CSRDQ Framework",
   biography:
-    "Dr. Lindunda Wamunyima is an educator, academic leader, researcher, and author whose work focuses on governance, value systems, accountability, institutional transformation, and sustainable development. He is the developer of the BVSDQ–CSRDQ Model, a strategic framework integrating Business Value System Disclosure Quality with Corporate Social Responsibility Disclosure Quality.",
+    "Dr. Lindunda Wamunyima is an educator, academic leader, researcher, and author whose work focuses on governance, value systems, accountability, institutional transformation, and sustainable development. He is the developer of the BVSDQ–CSRDQ Model, a strategic framework integrating Business Value System Disclosure Quality (BVSDQ) with Corporate Social Responsibility Disclosure Quality (CSRDQ).",
   contribution:
     "Through research, publishing, training, advocacy, and institutional consulting, Dr. Wamunyima contributes to the development of responsible, ethical, accountable, sustainable, credible, and legitimate organizations.",
   researchInterests: [

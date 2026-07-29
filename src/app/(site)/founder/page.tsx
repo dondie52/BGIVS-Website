@@ -10,9 +10,9 @@ import { publications } from "@/content/publications";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Founder",
+  title: "Author and Founder",
   description:
-    "Meet Dr. Lindunda Wamunyima, Founder of Babobiz Global Institute of Value Systems and developer of the BVSDQ–CSRDQ Framework.",
+    "Meet Dr. Lindunda Wamunyima, Author and Founder of Babobiz Global Institute of Value Systems (BGIVS) and developer of the BVSDQ–CSRDQ Framework.",
   path: "/founder",
 });
 
@@ -20,7 +20,7 @@ export default function FounderPage() {
   return (
     <>
       <PageHero
-        label="Founder"
+        label="Author and Founder"
         title={founderContent.name}
         subtitle={founderContent.subtitle}
         description="Educator, academic leader, researcher, and author focused on governance, value systems, accountability, institutional transformation, and sustainable development."
@@ -59,7 +59,7 @@ export default function FounderPage() {
         <Container>
           <SectionHeading
             title="Framework Development"
-            description="Dr. Wamunyima is the developer of the BVSDQ–CSRDQ Model, integrating Business Value System Disclosure Quality with Corporate Social Responsibility Disclosure Quality."
+            description="Dr. Wamunyima is the developer of the BVSDQ–CSRDQ Model, integrating Business Value System Disclosure Quality (BVSDQ) with Corporate Social Responsibility Disclosure Quality (CSRDQ)."
           />
           <p className="mt-6 max-w-3xl text-muted">
             The framework supports institutions seeking to align internal values, governance,
@@ -88,7 +88,7 @@ export default function FounderPage() {
       </section>
 
       <CallToAction
-        title="Collaborate With the Founder and BGIVS"
+        title="Collaborate With the Author, Founder, and BGIVS"
         description="Enquire about research collaboration, speaking or training engagements, publishing, or institutional consulting."
         primary={{
           label: "Contact the Institute",
