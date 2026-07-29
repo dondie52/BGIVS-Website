@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { siteConfig } from "@/content/site";
 import { footerNav } from "@/content/navigation";
 import { getPublishedProgrammes } from "@/lib/content/programmes";
@@ -26,11 +25,10 @@ export async function Footer() {
     <footer className="bg-deep-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div>
-          <BgivsLogo
-            width={110}
-            height={155}
-            className="h-auto w-[110px] object-contain"
-            sizes="110px"
+          <img
+            src="/images/bgivs-company-seal.jpeg"
+            alt="BGIVS company seal"
+            className="h-[110px] w-[110px] object-cover object-center"
           />
           <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
           <p className="mt-2 text-sm font-medium text-light-gold">{tagline}</p>
