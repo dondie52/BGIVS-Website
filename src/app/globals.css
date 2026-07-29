@@ -13,6 +13,7 @@
   --bgivs-text: #172033;
   --bgivs-muted: #5d6878;
   --bgivs-border: #d9dee7;
+  --header-height: 84px;
   --background: var(--bgivs-white);
   --foreground: var(--bgivs-text);
 }
@@ -150,6 +151,10 @@
   background: linear-gradient(145deg, var(--bgivs-navy) 0%, #0a2f5c 55%, var(--bgivs-blue) 100%);
 }
 
+.home-hero-container {
+  padding-top: calc(var(--header-height) + 2rem);
+}
+
 .site-logo,
 .hero-shield {
   background: transparent !important;
@@ -190,6 +195,12 @@ img.hero-shield {
   .hero-shield {
     width: min(78vw, 360px);
     margin-top: 28px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --header-height: 100px;
   }
 }
 

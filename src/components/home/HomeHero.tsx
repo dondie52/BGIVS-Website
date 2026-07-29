@@ -4,7 +4,7 @@ import { siteConfig } from "@/content/site";
 
 export function HomeHero() {
   return (
-    <section className="navy-gradient relative overflow-hidden">
+    <section className="home-hero-section navy-gradient relative overflow-hidden">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         aria-hidden="true"
@@ -13,7 +13,7 @@ export function HomeHero() {
             "radial-gradient(circle at 15% 25%, rgba(243,201,79,0.16), transparent 32%), radial-gradient(circle at 85% 15%, rgba(8,117,184,0.35), transparent 42%)",
         }}
       />
-      <Container className="relative py-16 sm:py-20 lg:py-24">
+      <Container className="home-hero-container relative pb-16 sm:pb-20 lg:pb-24">
         <div className="fade-up mx-auto max-w-3xl text-center">
           <h1 className="font-serif text-3xl leading-snug !text-white sm:text-4xl lg:text-5xl">
             {siteConfig.name}{" "}
