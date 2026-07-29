@@ -12,10 +12,10 @@ export const images = {
     height: 1024,
   },
   founder: {
-    src: "/images/founder-placeholder.jpg",
-    alt: "Professional portrait placeholder for Dr. Lindunda Wamunyima, Founder and Framework Developer of BGIVS",
-    width: 1024,
-    height: 1536,
+    src: "/images/dr-lindunda-wamunyima.jpg",
+    alt: "Dr. Lindunda Wamunyima, Founder and Framework Developer of BGIVS",
+    width: 800,
+    height: 1067,
   },
   publications: {
     bvsdq: {
