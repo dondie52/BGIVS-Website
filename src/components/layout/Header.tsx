@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { DesktopNavigation } from "@/components/layout/DesktopNavigation";
 import { MobileNavigation } from "@/components/layout/MobileNavigation";
@@ -15,9 +16,13 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="navbar-brand">
           <span className="navbar-logo-frame">
-            <img
+            <Image
               src="/images/bgivs-company-seal.jpeg"
               alt="BGIVS company seal"
+              width={72}
+              height={72}
+              priority
+              sizes="(max-width: 768px) 56px, 72px"
               className="navbar-logo"
             />
           </span>

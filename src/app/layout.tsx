@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 import { siteConfig } from "@/content/site";
 import { createPageMetadata } from "@/lib/metadata";
@@ -24,6 +24,10 @@ export const metadata: Metadata = {
   }),
   metadataBase: new URL(siteConfig.url),
   applicationName: siteConfig.shortName,
+  manifest: "/manifest.webmanifest",
+  category: "education",
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -50,6 +54,12 @@ export const metadata: Metadata = {
     "Governance training",
     "Institutional consulting Botswana",
   ],
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#04152f",
 };
 
 export default function RootLayout({

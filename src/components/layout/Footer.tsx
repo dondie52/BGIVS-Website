@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { siteConfig } from "@/content/site";
 import { footerNav } from "@/content/navigation";
 import { getPublishedProgrammes } from "@/lib/content/programmes";
@@ -25,9 +26,12 @@ export async function Footer() {
     <footer className="bg-deep-navy text-white">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr] lg:px-8">
         <div>
-          <img
+          <Image
             src="/images/bgivs-company-seal.jpeg"
             alt="BGIVS company seal"
+            width={110}
+            height={110}
+            sizes="110px"
             className="h-[110px] w-[110px] object-cover object-center"
           />
           <h2 className="mt-5 font-serif text-xl !text-white">{name}</h2>
