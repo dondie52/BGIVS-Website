@@ -203,26 +203,24 @@ img.site-logo {
 }
 
 .navbar-logo-frame {
-  position: relative;
-  display: block;
-  flex: 0 0 64px;
-  width: 64px;
-  height: 64px;
+  display: flex;
+  flex: 0 0 72px;
+  width: 72px;
+  height: 72px;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  background: #033b76;
-  border: 1px solid color-mix(in srgb, var(--bgivs-gold-dark) 75%, transparent);
-  border-radius: 8px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
 }
 
 .navbar-logo {
-  position: absolute;
-  left: 50%;
-  top: 58%;
   display: block;
-  width: 72px;
-  max-width: none;
-  height: auto;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .navbar-title {
@@ -271,13 +269,9 @@ img.site-logo {
 
 @media (max-width: 768px) {
   .navbar-logo-frame {
-    flex-basis: 50px;
-    width: 50px;
-    height: 50px;
-  }
-
-  .navbar-logo {
+    flex-basis: 56px;
     width: 56px;
+    height: 56px;
   }
 
   .navbar-title {
