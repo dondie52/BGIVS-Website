@@ -154,18 +154,27 @@
 .hero-shield {
   background: transparent !important;
   border: none;
+  border-radius: 0;
   box-shadow: none;
+  clip-path: none;
+  filter: none;
+  transform: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 img.site-logo,
 img.hero-shield {
   display: block;
   background: transparent;
+  object-fit: contain;
+  object-position: center;
 }
 
 .hero-shield {
   display: block;
   width: min(82vw, 430px);
+  max-width: 430px;
   height: auto;
   margin: 32px auto 40px;
   object-fit: contain;

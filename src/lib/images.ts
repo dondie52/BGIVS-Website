@@ -1,9 +1,9 @@
 export const images = {
   logo: {
-    src: "/images/bgivs-logo.png",
-    alt: "BGIVS shield logo",
-    width: 609,
-    height: 694,
+    src: "/images/bgivs-logo.jpeg",
+    alt: "Babobiz Global Institute of Value Systems logo",
+    width: 911,
+    height: 1280,
   },
   circularLogo: {
     src: "/images/bgivs-circular-logo.png",

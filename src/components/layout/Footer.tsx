@@ -28,7 +28,7 @@ export async function Footer() {
         <div>
           <BgivsLogo
             width={110}
-            height={165}
+            height={155}
             className="h-auto w-[110px] object-contain"
             sizes="110px"
           />
