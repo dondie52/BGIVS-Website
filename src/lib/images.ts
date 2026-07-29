@@ -24,8 +24,8 @@ export const images = {
     height: 1024,
   },
   founder: {
-    src: "/images/founder-placeholder.jpg",
-    alt: "Portrait of Dr. Lindunda Wamunyima, Founder and Framework Developer of BGIVS",
+    src: "/images/founder-portrait.jpeg",
+    alt: "Dr. Lindunda Wamunyima, Author, Founder and Framework Developer",
     width: 810,
     height: 1080,
   },

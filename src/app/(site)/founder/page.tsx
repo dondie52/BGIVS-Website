@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -6,6 +7,7 @@ import { CallToAction } from "@/components/ui/CallToAction";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
 import { founderContent } from "@/content/outcomes";
 import { publications } from "@/content/publications";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -27,6 +29,18 @@ export default function FounderPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
+          <div className="mb-10 flex justify-center">
+            <Image
+              src={images.founder.src}
+              alt={images.founder.alt}
+              width={images.founder.width}
+              height={images.founder.height}
+              priority
+              className="h-auto w-auto rounded-[10px] object-contain shadow-[0_8px_24px_rgba(0,0,0,0.16)]"
+              style={{ maxWidth: "min(100%, 420px)", maxHeight: "600px" }}
+              sizes="(max-width: 640px) min(88vw, 360px), 420px"
+            />
+          </div>
           <SectionHeading title="Biography" />
           <p className="mt-4 max-w-3xl text-muted">{founderContent.biography}</p>
           <p className="mt-4 max-w-3xl text-muted">{founderContent.contribution}</p>
