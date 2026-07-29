@@ -134,7 +134,7 @@ export function ContactForm() {
         setStatus("error");
         setStatusMessage(
           payload?.message ??
-            "We could not submit your enquiry at this time. Please try again.",
+            "We could not submit your enquiry at this time. Please try again or email kabisoilw@gmail.com.",
         );
         return;
       }
@@ -144,7 +144,9 @@ export function ContactForm() {
       setValues(initialValues);
     } catch {
       setStatus("error");
-      setStatusMessage("We could not submit your enquiry at this time. Please try again.");
+      setStatusMessage(
+        "We could not submit your enquiry at this time. Please try again or email kabisoilw@gmail.com.",
+      );
     }
   }
 

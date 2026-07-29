@@ -1,8 +1,9 @@
 import "server-only";
 
+import { createFormClient, hasServiceRoleKey } from "@/lib/supabase/form";
 import { createAdminClient } from "@/lib/supabase/admin";
 import { rateLimitBucketHash } from "@/lib/crypto-hash";
-import { getServerEnv } from "@/lib/env";
+import { getFormRuntimeEnv } from "@/lib/env";
 import { PublicMessages } from "@/lib/errors";
 
 function clientIp(request: Request): string {
@@ -32,7 +33,7 @@ export async function enforceRateLimit(options: {
     windowSeconds = 900,
   } = options;
 
-  const { rateLimitSecret } = getServerEnv();
+  const { rateLimitSecret } = getFormRuntimeEnv();
   const ip = clientIp(request);
   const bucketHash = await rateLimitBucketHash(
     rateLimitSecret,
@@ -40,29 +41,42 @@ export async function enforceRateLimit(options: {
     endpoint,
   );
 
-  const supabase = createAdminClient();
-  const { data, error } = await supabase.rpc("check_rate_limit", {
-    p_bucket_hash: bucketHash,
-    p_endpoint: endpoint,
-    p_max_requests: maxRequests,
-    p_window_seconds: windowSeconds,
-  });
+  try {
+    const supabase = hasServiceRoleKey()
+      ? createAdminClient()
+      : createFormClient();
+    const { data, error } = await supabase.rpc("check_rate_limit", {
+      p_bucket_hash: bucketHash,
+      p_endpoint: endpoint,
+      p_max_requests: maxRequests,
+      p_window_seconds: windowSeconds,
+    });
 
-  if (error) {
-    console.error("[rate-limit] check failed", { endpoint, message: error.message });
-    // Fail closed would block all traffic on infra issues; fail open with log.
+    if (error) {
+      console.error("[rate-limit] check failed", {
+        endpoint,
+        message: error.message,
+      });
+      // Fail open with log so forms stay available during infra issues.
+      return { ok: true };
+    }
+
+    if (data === false) {
+      return {
+        ok: false,
+        status: 429,
+        message: PublicMessages.rateLimit,
+      };
+    }
+
+    return { ok: true };
+  } catch (error) {
+    console.error("[rate-limit] unexpected failure", {
+      endpoint,
+      message: error instanceof Error ? error.message : "unknown",
+    });
     return { ok: true };
   }
-
-  if (data === false) {
-    return {
-      ok: false,
-      status: 429,
-      message: PublicMessages.rateLimit,
-    };
-  }
-
-  return { ok: true };
 }
 
 /**
@@ -72,7 +86,7 @@ export async function enforceRateLimit(options: {
 export async function verifyTurnstile(
   token: string | undefined,
 ): Promise<boolean> {
-  const { turnstileSecretKey } = getServerEnv();
+  const { turnstileSecretKey } = getFormRuntimeEnv();
 
   if (!turnstileSecretKey) {
     return true;
