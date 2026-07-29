@@ -1,7 +1,6 @@
-import Image from "next/image";
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { images } from "@/lib/images";
 import { siteConfig } from "@/content/site";
 import { partnerCta } from "@/content/navigation";
 
@@ -41,14 +40,10 @@ export function HomeHero() {
         </div>
 
         <div className="fade-up mt-8 flex justify-center" style={{ animationDelay: "120ms" }}>
-          <Image
-            src={images.circularLogo.src}
-            alt={images.circularLogo.alt}
-            width={images.circularLogo.width}
-            height={images.circularLogo.height}
+          <BgivsLogo
             priority
-            className="hero-logo h-auto w-full max-w-[280px] object-contain sm:max-w-[420px]"
-            sizes="(max-width: 640px) 280px, 420px"
+            className="hero-shield h-auto w-full max-w-[300px] object-contain sm:max-w-[420px]"
+            sizes="(max-width: 640px) 300px, 420px"
           />
         </div>
       </Container>

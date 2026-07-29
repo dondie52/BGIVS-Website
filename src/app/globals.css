@@ -150,15 +150,15 @@
   background: linear-gradient(145deg, var(--bgivs-navy) 0%, #0a2f5c 55%, var(--bgivs-blue) 100%);
 }
 
-.logo,
-.hero-logo {
+.site-logo,
+.hero-shield {
   background: transparent !important;
   border: none;
   box-shadow: none;
 }
 
-img.logo,
-img.hero-logo {
+img.site-logo,
+img.hero-shield {
   display: block;
   background: transparent;
 }
