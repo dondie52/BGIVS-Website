@@ -39,15 +39,12 @@ export function HomeHero() {
           </p>
         </div>
 
-        <div className="fade-up mt-8 flex justify-center" style={{ animationDelay: "120ms" }}>
-          <div>
-            <BgivsLogo
-              priority
-              className="hero-shield h-auto w-full max-w-[300px] object-contain sm:max-w-[420px]"
-              sizes="(max-width: 640px) 300px, 420px"
-            />
-            <p className="hero-slogan">From Metrics to Meaning</p>
-          </div>
+        <div className="fade-up flex justify-center" style={{ animationDelay: "120ms" }}>
+          <BgivsLogo
+            priority
+            className="hero-shield"
+            sizes="(max-width: 640px) 78vw, 430px"
+          />
         </div>
       </Container>
     </section>
