@@ -78,5 +78,6 @@ Published programmes, services, and publications are read from Supabase with a *
 - Mission and vision statements are used exactly as approved.
 - Only approved publications are listed; other categories use honest empty states.
 - Governance leadership names and founder portrait remain placeholders until official assets are provided.
+- Atmospheric section imagery and CSS diagrams are used across home, about, framework, pillars, and programmes to reduce dense prose.
 - ISBN numbers are not displayed until verified.
 - Privacy retention: no automated deletion until BGIVS approves a retention period.

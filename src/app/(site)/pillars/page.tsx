@@ -1,9 +1,12 @@
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { StrategicPillarCard } from "@/components/ui/StrategicPillarCard";
 import { CallToAction } from "@/components/ui/CallToAction";
+import { PillarsOverviewDiagram } from "@/components/diagrams/PillarsOverviewDiagram";
 import { strategicPillars } from "@/content/pillars";
 import { partnerCta } from "@/content/navigation";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -19,8 +22,19 @@ export default function PillarsPage() {
       <PageHero
         label="What We Do"
         title="Strategic Pillars"
-        description="BGIVS advances integrated value systems through four connected institutional pillars that guide research, training, consulting, and knowledge dissemination."
+        description="Four connected pillars guide research, training, consulting, and knowledge dissemination."
+        imageSrc={images.sectionResearch.src}
       />
+      <section className="bg-off-white py-16 sm:py-20">
+        <Container>
+          <SectionHeading
+            title="Pillar Overview"
+            description="Each pillar reinforces the others around integrated institutional value systems."
+            className="mb-10"
+          />
+          <PillarsOverviewDiagram />
+        </Container>
+      </section>
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <div className="grid gap-8">

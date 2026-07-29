@@ -3,6 +3,7 @@ import "server-only";
 import {
   publications as staticPublications,
 } from "@/content/publications";
+import { resolvePublicationCover } from "@/lib/admin/helpers";
 import { createPublicClient } from "@/lib/supabase/public";
 import { filterPublished } from "@/lib/content/utils";
 import type { Publication } from "@/types";
@@ -20,7 +21,7 @@ function mapPublication(row: PublicationRow): Publication {
     author: row.author ?? "",
     publisher: row.publisher ?? "",
     category: "Books",
-    image: row.cover_path ?? "/images/publications/placeholder.jpg",
+    image: resolvePublicationCover(row.cover_path),
     description: row.description ?? "",
     topics: row.topics ?? [],
   };

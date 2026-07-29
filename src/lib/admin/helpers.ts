@@ -67,12 +67,28 @@ export function formatDateTime(value: string | null | undefined): string {
   }
 }
 
+/**
+ * Resolve a media path to a browser-usable URL.
+ * - Absolute http(s) URLs are returned as-is
+ * - Site-relative paths (`/images/...`) stay as public static assets
+ * - Storage-relative paths (`covers/...`) map to the public-media bucket
+ */
 export function getPublicMediaUrl(path: string | null | undefined): string | null {
   if (!path) return null;
   if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  if (path.startsWith("/")) return path;
+
   const base = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  if (!base) return path;
+  if (!base) return null;
   return `${base}/storage/v1/object/public/public-media/${path.replace(/^\//, "")}`;
+}
+
+export function resolvePublicationCover(path: string | null | undefined): string {
+  return getPublicMediaUrl(path) ?? "/images/publications/placeholder.jpg";
+}
+
+export function isImageMediaPath(path: string): boolean {
+  return /\.(avif|gif|jpe?g|png|svg|webp)$/i.test(path);
 }
 
 export function formString(formData: FormData, key: string): string {

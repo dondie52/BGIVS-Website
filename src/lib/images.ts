@@ -17,7 +17,31 @@ export const images = {
     width: 1024,
     height: 1536,
   },
+  heroAtmosphere: {
+    src: "/images/hero-atmosphere.jpg",
+    alt: "",
+    width: 1536,
+    height: 1024,
+  },
+  sectionResearch: {
+    src: "/images/section-research.jpg",
+    alt: "Quiet research desk with books and papers beside a sunlit window",
+    width: 1536,
+    height: 1024,
+  },
+  sectionCollaboration: {
+    src: "/images/section-collaboration.jpg",
+    alt: "Modern conference room prepared for institutional collaboration",
+    width: 1536,
+    height: 1024,
+  },
   publications: {
+    placeholder: {
+      src: "/images/publications/placeholder.jpg",
+      alt: "Publication cover placeholder",
+      width: 1024,
+      height: 1536,
+    },
     bvsdq: {
       src: "/images/publications/bvsdq-csrdq-framework.jpg",
       alt: "Book cover for BVSDQ–CSRDQ Framework: A Strategic Tool for Business Successfulness by Dr. Lindunda Wamunyima",

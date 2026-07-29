@@ -1,9 +1,12 @@
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProgrammeCard } from "@/components/ui/ProgrammeCard";
 import { CallToAction } from "@/components/ui/CallToAction";
+import { ProgrammeMapDiagram } from "@/components/diagrams/ProgrammeMapDiagram";
 import { getPublishedProgrammes } from "@/lib/content/programmes";
 import { partnerCta } from "@/content/navigation";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const revalidate = 60;
@@ -23,8 +26,19 @@ export default async function ProgrammesPage() {
       <PageHero
         label="Programmes"
         title="Programme Areas"
-        description="BGIVS designs programmes that help institutions align performance with purpose, responsibility, sustainability, and meaningful impact. Programme schedules and fees will be shared upon enquiry."
+        description="Programmes that help institutions align performance with purpose, responsibility, and meaningful impact. Schedules and fees are shared upon enquiry."
+        imageSrc={images.sectionCollaboration.src}
       />
+      <section className="bg-off-white py-16 sm:py-20">
+        <Container>
+          <SectionHeading
+            title="Where We Work"
+            description="Jump to a sector pathway, then explore the challenges, activities, and outcomes."
+            className="mb-10"
+          />
+          <ProgrammeMapDiagram programmes={programmes} />
+        </Container>
+      </section>
       <section className="bg-white py-16 sm:py-20">
         <Container>
           <div className="grid gap-8">
