@@ -20,14 +20,9 @@ export function Header() {
             className="site-logo h-[60px] w-auto shrink-0 object-contain lg:h-[76px]"
             sizes="(max-width: 640px) 60px, 76px"
           />
-          <span className="min-w-0">
-            <span className="block font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
-              {siteConfig.name}{" "}
-              <span className="text-light-gold">({siteConfig.shortName})</span>
-            </span>
-            <span className="mt-0.5 hidden truncate text-xs text-white/70 lg:block">
-              {siteConfig.tagline}
-            </span>
+          <span className="min-w-0 font-serif text-xs font-semibold leading-snug tracking-wide sm:text-sm lg:text-base">
+            {siteConfig.name}{" "}
+            <span className="text-light-gold">({siteConfig.shortName})</span>
           </span>
         </Link>
 

@@ -163,21 +163,25 @@ img.hero-shield {
   background: transparent;
 }
 
-.hero-slogan {
-  margin-top: 12px;
-  margin-bottom: 24px;
-  text-align: center;
-  font-family: var(--font-source-serif), Georgia, serif;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: #d4af37;
+.hero-shield {
+  display: block;
+  width: min(82vw, 430px);
+  height: auto;
+  margin: 32px auto 40px;
+  object-fit: contain;
+  background: transparent;
 }
 
-@media (min-width: 641px) {
-  .hero-slogan {
-    font-size: 1.375rem;
+.hero-slogan,
+.tagline,
+.logo-caption {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  .hero-shield {
+    width: min(78vw, 360px);
+    margin-top: 28px;
   }
 }
 
