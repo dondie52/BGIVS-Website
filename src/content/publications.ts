@@ -37,7 +37,7 @@ export const publications: Publication[] = [
     author: "Dr. Lindunda Wamunyima",
     publisher: "Babobiz Knowledge Press",
     category: "Books",
-    image: "/images/publications/bvsdq-csrdq-framework.jpg",
+    image: "/images/publications/bvsdq-csrdq-framework.jpeg",
     description:
       "A practical framework integrating Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality into a unified and measurable institutional approach. The publication examines how ethics, governance, strategy, transparency, stakeholder trust, and responsible business practices can support sustainable organizational performance.",
     topics: [
@@ -60,7 +60,7 @@ export const publications: Publication[] = [
     author: "Dr. Lindunda Wamunyima",
     publisher: "Babobiz Knowledge Press",
     category: "Books",
-    image: "/images/publications/business-values-botswana.jpg",
+    image: "/images/publications/business-values-botswana.jpeg",
     description:
       "An African-centred framework examining how business values and corporate citizenship can strengthen governance, stakeholder trust, inclusive growth, responsible enterprise development, and national sustainability.",
     topics: [

@@ -26,7 +26,7 @@ insert into public.publications (
   'Babobiz Knowledge Press',
   'A practical framework integrating Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality into a unified and measurable institutional approach. The publication examines how ethics, governance, strategy, transparency, stakeholder trust, and responsible business practices can support sustainable organizational performance.',
   'book',
-  '/images/publications/bvsdq-csrdq-framework.jpg',
+  '/images/publications/bvsdq-csrdq-framework.jpeg',
   array[
     'Business values',
     'Governance',
@@ -52,7 +52,7 @@ insert into public.publications (
   'Babobiz Knowledge Press',
   'An African-centred framework examining how business values and corporate citizenship can strengthen governance, stakeholder trust, inclusive growth, responsible enterprise development, and national sustainability.',
   'book',
-  '/images/publications/business-values-botswana.jpg',
+  '/images/publications/business-values-botswana.jpeg',
   array[
     'Ethical leadership',
     'Corporate governance',
