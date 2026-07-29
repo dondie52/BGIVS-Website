@@ -1,8 +1,6 @@
 import { BgivsLogo } from "@/components/brand/BgivsLogo";
-import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/content/site";
-import { partnerCta } from "@/content/navigation";
 
 export function HomeHero() {
   return (
@@ -17,24 +15,11 @@ export function HomeHero() {
       />
       <Container className="relative py-16 sm:py-20 lg:py-24">
         <div className="fade-up mx-auto max-w-3xl text-center">
-          <p className="section-label mb-4 text-light-gold">{siteConfig.name}</p>
-          <h1 className="font-serif text-4xl !text-white sm:text-5xl lg:text-6xl">
-            {siteConfig.tagline}
+          <h1 className="font-serif text-3xl leading-snug !text-white sm:text-4xl lg:text-5xl">
+            {siteConfig.name}{" "}
+            <span className="text-light-gold">({siteConfig.shortName})</span>
           </h1>
-          <p className="mt-6 text-base text-white/85 sm:text-lg">
-            Transforming governments, universities, corporations, SMEs, NGOs, and development
-            institutions from performance-driven organizations into sustainable, value-driven
-            systems.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Button href="/framework" variant="primary">
-              Explore the BVSDQ–CSRDQ Framework
-            </Button>
-            <Button href={partnerCta.href} variant="gold-outline">
-              {partnerCta.label}
-            </Button>
-          </div>
-          <p className="mt-6 text-sm font-medium tracking-wide text-white/70">
+          <p className="mt-6 text-sm font-medium tracking-wide text-white/70 sm:text-base">
             Research. Training. Consulting. Publishing. Institutional Transformation.
           </p>
         </div>
