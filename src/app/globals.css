@@ -152,70 +152,42 @@
 }
 
 .home-hero-section {
-  --logo-background-blue: #033b74;
-  background: var(--logo-background-blue);
+  --logo-background-blue: #033b76;
+  background-color: var(--logo-background-blue);
+  background-image: none;
 }
 
 .home-hero-container {
   padding-top: calc(var(--header-height) + 2rem);
 }
 
-.site-logo,
-.hero-shield {
-  background: transparent !important;
+.hero-logo-wrapper {
+  width: min(92vw, 520px);
+  margin: 32px auto 40px;
+  background-color: var(--logo-background-blue);
+  background-image: none;
+  text-align: center;
+}
+
+.hero-logo {
+  display: block;
+  width: min(100%, 520px);
+  height: auto;
+  margin: 0 auto;
+  background-color: var(--logo-background-blue);
+  background-image: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
-  clip-path: none;
-  transform: none;
   object-fit: contain;
   object-position: center;
 }
 
-img.site-logo,
-img.hero-shield {
+img.site-logo {
   display: block;
   background: transparent;
   object-fit: contain;
   object-position: center;
-}
-
-.hero-shield {
-  display: block;
-  width: 100%;
-  max-width: none;
-  height: auto;
-  margin: 0;
-  object-fit: contain;
-  background: var(--logo-background-blue);
-}
-
-.hero-logo-block {
-  width: min(92vw, 520px);
-  margin: 32px auto 40px;
-  text-align: center;
-}
-
-.hero-logo-crop {
-  aspect-ratio: 911 / 1000;
-  overflow: hidden;
-  background: var(--logo-background-blue);
-}
-
-.hero-tagline {
-  display: block;
-  width: 92%;
-  height: auto;
-  margin: -0.75rem auto 0;
-  overflow: visible;
-}
-
-.hero-tagline text {
-  fill: #ffffff;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 38px;
-  font-style: italic;
-  font-weight: 700;
 }
 
 .hero-slogan,
@@ -225,13 +197,9 @@ img.hero-shield {
 }
 
 @media (max-width: 640px) {
-  .hero-logo-block {
+  .hero-logo-wrapper {
     width: min(92vw, 420px);
     margin-top: 28px;
-  }
-
-  .hero-tagline text {
-    font-size: 35px;
   }
 }
 
