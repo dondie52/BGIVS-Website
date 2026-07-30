@@ -123,6 +123,28 @@ export const publications: Publication[] = [
       "Corporate citizenship",
     ],
   },
+  {
+    slug: "barotse-change-volume-1",
+    title: "Barotse Change",
+    subtitle:
+      "A Purely Barotzish Mindset Change Advocacy for a Completely Independent Barotseland in the Transition Period and Beyond — Volume I",
+    author: "Dr. Lindunda Wamunyima",
+    publisher: "Babobiz Knowledge Press",
+    category: "Books",
+    image: "/images/publications/barotse-change-volume-1.jpeg",
+    description:
+      "A structured advocacy for identity, justice, and self-determination that examines Barotseland's historical and political journey, the impact of the 1964 Agreement abrogation, and the governance, identity, and nationhood questions shaping the transition period and beyond.",
+    topics: [
+      "Barotseland history",
+      "Identity and nationhood",
+      "Justice and self-determination",
+      "Governance",
+      "1964 Barotseland Agreement",
+      "Mindset change",
+      "Transition planning",
+      "National renewal",
+    ],
+  },
 ];
 
 export function getPublicationBySlug(slug: string): Publication | undefined {

@@ -26,6 +26,14 @@ function mapPublication(row: PublicationRow): Publication {
   };
 }
 
+function mergeWithStaticPublications(databasePublications: Publication[]): Publication[] {
+  const databaseSlugs = new Set(databasePublications.map((publication) => publication.slug));
+  return [
+    ...databasePublications,
+    ...staticPublications.filter((publication) => !databaseSlugs.has(publication.slug)),
+  ];
+}
+
 export async function getPublishedPublications(): Promise<Publication[]> {
   try {
     const supabase = createPublicClient();
@@ -47,7 +55,7 @@ export async function getPublishedPublications(): Promise<Publication[]> {
       return staticPublications;
     }
 
-    return published.map(mapPublication);
+    return mergeWithStaticPublications(published.map(mapPublication));
   } catch (error) {
     console.error("[content/publications] unexpected list error", {
       message: error instanceof Error ? error.message : "unknown",
