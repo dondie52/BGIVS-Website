@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -9,7 +8,6 @@ import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
 import { KnowledgeResourceCard } from "@/components/ui/KnowledgeResourceCard";
 import { knowledgeResources, publicationCategories } from "@/content/publications";
 import { getPublishedPublications } from "@/lib/content/publications";
-import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const revalidate = 60;
@@ -34,21 +32,12 @@ export default async function ResearchPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
-          <div className="mb-10 flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
-            <SectionHeading
-              id="books"
-              title="Books"
-              description="Featured publications currently available for enquiry."
-            />
-            <Image
-              src={images.founder.src}
-              alt={images.founder.alt}
-              width={images.founder.width}
-              height={images.founder.height}
-              className="h-28 w-28 rounded-xl object-cover object-top shadow-sm"
-              sizes="112px"
-            />
-          </div>
+          <SectionHeading
+            id="books"
+            title="Books"
+            description="Featured publications currently available for enquiry."
+            className="mb-10"
+          />
           <ResponsiveGrid columns={2}>
             {publications.map((publication) => (
               <PublicationCard key={publication.slug} publication={publication} />
