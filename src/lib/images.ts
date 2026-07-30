@@ -1,3 +1,5 @@
+import founderPortrait from "../../docs/WhatsApp Image 2026-07-29 at 14.19.36.jpeg";
+
 export const images = {
   logo: {
     src: "/images/bgivs-original-logo.jpeg",
@@ -24,10 +26,10 @@ export const images = {
     height: 1024,
   },
   founder: {
-    src: "/images/founder-portrait-official.jpeg",
+    src: founderPortrait,
     alt: "Dr. Lindunda Wamunyima, Author, Founder and Framework Developer",
-    width: 405,
-    height: 540,
+    width: founderPortrait.width,
+    height: founderPortrait.height,
   },
   publications: {
     bvsdq: {
