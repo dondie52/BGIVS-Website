@@ -24,10 +24,10 @@ export const images = {
     height: 1024,
   },
   founder: {
-    src: "/images/founder-portrait.jpeg",
+    src: "/images/founder-portrait-official.jpeg",
     alt: "Dr. Lindunda Wamunyima, Author, Founder and Framework Developer",
-    width: 810,
-    height: 1080,
+    width: 405,
+    height: 540,
   },
   publications: {
     bvsdq: {
