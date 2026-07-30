@@ -1,14 +1,15 @@
+import Image from "next/image";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PublicationCard } from "@/components/ui/PublicationCard";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { InstitutionalSeal } from "@/components/ui/InstitutionalSeal";
 import { CallToAction } from "@/components/ui/CallToAction";
 import { ResponsiveGrid } from "@/components/ui/ResponsiveGrid";
 import { KnowledgeResourceCard } from "@/components/ui/KnowledgeResourceCard";
 import { knowledgeResources, publicationCategories } from "@/content/publications";
 import { getPublishedPublications } from "@/lib/content/publications";
+import { images } from "@/lib/images";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const revalidate = 60;
@@ -39,7 +40,14 @@ export default async function ResearchPage() {
               title="Books"
               description="Featured publications currently available for enquiry."
             />
-            <InstitutionalSeal size="md" />
+            <Image
+              src={images.founder.src}
+              alt={images.founder.alt}
+              width={images.founder.width}
+              height={images.founder.height}
+              className="h-28 w-28 rounded-xl object-cover object-top shadow-sm"
+              sizes="112px"
+            />
           </div>
           <ResponsiveGrid columns={2}>
             {publications.map((publication) => (
