@@ -106,7 +106,7 @@ export default function HomePage() {
           <FrameworkDiagram />
           <div className="mt-8">
             <Button href="/framework" variant="primary">
-              Discover the Framework
+              Explore the Complete Framework
             </Button>
           </div>
         </Container>
@@ -126,7 +126,7 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/pillars" variant="outline">
-              Explore Our Strategic Pillars
+              View All Strategic Pillars
             </Button>
           </div>
         </Container>
@@ -152,7 +152,7 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/programmes" variant="outline">
-              View All Programmes
+              Explore All Programmes
             </Button>
           </div>
         </Container>
@@ -172,7 +172,7 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/programmes" variant="outline">
-              See Who We Serve
+              Explore Beneficiaries
             </Button>
           </div>
         </Container>
