@@ -35,7 +35,7 @@ export default function HomePage() {
     <>
       <HomeHero />
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="section bg-white">
         <Container>
           <SectionHeading
             label="Institutional Introduction"
@@ -45,7 +45,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="section bg-off-white">
         <Container>
           <SectionHeading
             label="Core Brand Message"
@@ -74,7 +74,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="section bg-white">
         <Container>
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
             <SectionHeading
@@ -95,7 +95,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="section bg-off-white">
         <Container>
           <SectionHeading
             label="Our Framework"
@@ -106,13 +106,13 @@ export default function HomePage() {
           <FrameworkDiagram />
           <div className="mt-8">
             <Button href="/framework" variant="primary">
-              Discover the Framework
+              Explore the Complete Framework
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="section bg-white">
         <Container>
           <SectionHeading
             label="Strategic Pillars"
@@ -126,13 +126,13 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/pillars" variant="outline">
-              Explore Our Strategic Pillars
+              View All Strategic Pillars
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="section bg-off-white">
         <Container>
           <SectionHeading
             label="Programme Areas"
@@ -152,13 +152,13 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/programmes" variant="outline">
-              View All Programmes
+              Explore All Programmes
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="section bg-white">
         <Container>
           <SectionHeading
             label="Who We Serve"
@@ -172,13 +172,13 @@ export default function HomePage() {
           </ResponsiveGrid>
           <div className="mt-8">
             <Button href="/programmes" variant="outline">
-              See Who We Serve
+              Explore Beneficiaries
             </Button>
           </div>
         </Container>
       </section>
 
-      <section className="bg-off-white py-12 sm:py-16">
+      <section className="section bg-off-white">
         <Container>
           <SectionHeading
             label="Founder"
@@ -189,7 +189,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
+      <section className="section bg-white">
         <Container>
           <SectionHeading
             label="Featured Publications"
