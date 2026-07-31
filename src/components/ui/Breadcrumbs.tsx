@@ -12,7 +12,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
             <li key={`${item.label}-${index}`} className="flex items-center gap-2">
               {index > 0 ? <span aria-hidden="true">/</span> : null}
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition-colors duration-150 hover:text-navy hover:underline">
+                <Link href={item.href} className="hover:text-navy hover:underline">
                   {item.label}
                 </Link>
               ) : (

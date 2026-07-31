@@ -53,7 +53,7 @@ export async function Footer() {
           <ul className="mt-4 space-y-2 text-sm text-white/80">
             {footerNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition-colors duration-150 hover:text-white hover:underline">
+                <Link href={item.href} className="hover:text-white hover:underline">
                   {item.label}
                 </Link>
               </li>
@@ -70,7 +70,7 @@ export async function Footer() {
               <li key={programme.id}>
                 <Link
                   href={`/programmes#${programme.id}`}
-                  className="transition-colors duration-150 hover:text-white hover:underline"
+                  className="hover:text-white hover:underline"
                 >
                   {programme.title}
                 </Link>
@@ -88,7 +88,7 @@ export async function Footer() {
               <li key={pub.slug}>
                 <Link
                   href={`/research/${pub.slug}`}
-                  className="transition-colors duration-150 hover:text-white hover:underline"
+                  className="hover:text-white hover:underline"
                 >
                   {pub.title}
                 </Link>
@@ -97,12 +97,12 @@ export async function Footer() {
           </ul>
           <div className="mt-5 space-y-1 text-sm text-white/80">
             <p>
-              <a href={emailHref} className="transition-colors duration-150 hover:text-white hover:underline">
+              <a href={emailHref} className="hover:text-white hover:underline">
                 {email}
               </a>
             </p>
             <p>
-              <a href={phoneHref} className="transition-colors duration-150 hover:text-white hover:underline">
+              <a href={phoneHref} className="hover:text-white hover:underline">
                 {phone}
               </a>
             </p>
@@ -117,10 +117,10 @@ export async function Footer() {
             © {year} {name}. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link href="/privacy" className="transition-colors duration-150 hover:text-white hover:underline">
+            <Link href="/privacy" className="hover:text-white hover:underline">
               Privacy
             </Link>
-            <Link href="/terms" className="transition-colors duration-150 hover:text-white hover:underline">
+            <Link href="/terms" className="hover:text-white hover:underline">
               Terms
             </Link>
           </div>

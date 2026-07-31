@@ -56,13 +56,13 @@ export function MobileNavigation({ groups }: MobileNavigationProps) {
           >
             <button
               type="button"
-              className="absolute inset-0 bg-deep-navy/60 animate-fade-in backdrop-blur-sm"
+              className="absolute inset-0 bg-deep-navy/60"
               aria-label="Close menu overlay"
               onClick={() => setOpen(false)}
             />
             <div
               id={panelId}
-              className="absolute inset-y-0 right-0 flex h-dvh w-full max-w-sm flex-col bg-white shadow-xl slide-in-right"
+              className="absolute inset-y-0 right-0 flex h-dvh w-full max-w-sm flex-col bg-white shadow-xl"
             >
               <div className="flex shrink-0 items-center justify-between border-b border-border px-4 py-4">
                 <p className="font-serif text-lg font-semibold text-navy">Menu</p>
@@ -84,7 +84,7 @@ export function MobileNavigation({ groups }: MobileNavigationProps) {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy transition-colors duration-150 hover:bg-off-white"
+                        className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy hover:bg-off-white"
                         onClick={() => setOpen(false)}
                       >
                         {link.label}
@@ -122,7 +122,7 @@ export function MobileNavigation({ groups }: MobileNavigationProps) {
     <div className="xl:hidden">
       <button
         type="button"
-        className="inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white transition-all duration-200 hover:bg-white/15"
+        className="inline-flex items-center justify-center rounded-md border border-white/20 p-2 text-white hover:bg-white/10"
         aria-expanded={open}
         aria-controls={panelId}
         aria-label={open ? "Close menu" : "Open menu"}
@@ -149,14 +149,14 @@ function MobileGroup({
     <div className="border-b border-border py-2">
       <button
         type="button"
-        className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm font-semibold text-navy transition-colors duration-150 hover:bg-off-white"
+        className="flex w-full items-center justify-between rounded-md px-3 py-2.5 text-left text-sm font-semibold text-navy hover:bg-off-white"
         aria-expanded={expanded}
         aria-controls={id}
         onClick={() => setExpanded((prev) => !prev)}
       >
         {group.label}
         <ChevronDown
-          className={`h-4 w-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+          className={`h-4 w-4 transition ${expanded ? "rotate-180" : ""}`}
         />
       </button>
       {expanded ? (
@@ -165,7 +165,7 @@ function MobileGroup({
             <li key={item.href}>
               <Link
                 href={item.href}
-                className="block rounded-md px-3 py-2 text-sm text-muted transition-colors duration-150 hover:bg-off-white hover:text-navy"
+                className="block rounded-md px-3 py-2 text-sm text-muted hover:bg-off-white hover:text-navy"
                 onClick={onNavigate}
               >
                 {item.label}

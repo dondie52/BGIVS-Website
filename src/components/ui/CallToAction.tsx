@@ -34,7 +34,7 @@ export function CallToAction({ title, description, primary, secondary }: CallToA
 
 export function InlineLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
-    <Link href={href} className="font-semibold text-blue transition-colors duration-150 hover:text-navy hover:underline">
+    <Link href={href} className="font-semibold text-blue hover:text-navy hover:underline">
       {children}
     </Link>
   );

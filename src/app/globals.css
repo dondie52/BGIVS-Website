@@ -63,33 +63,13 @@
     line-height: 1.65;
   }
 
-  h1 {
-    font-family: var(--font-source-serif), Georgia, serif;
-    color: var(--bgivs-navy);
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-  }
-
-  h2 {
-    font-family: var(--font-source-serif), Georgia, serif;
-    color: var(--bgivs-navy);
-    line-height: 1.15;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-
-  h3 {
-    font-family: var(--font-source-serif), Georgia, serif;
-    color: var(--bgivs-navy);
-    line-height: 1.25;
-    font-weight: 600;
-  }
-
+  h1,
+  h2,
+  h3,
   h4 {
     font-family: var(--font-source-serif), Georgia, serif;
     color: var(--bgivs-navy);
-    line-height: 1.3;
+    line-height: 1.2;
     font-weight: 600;
   }
 
@@ -156,14 +136,13 @@
   border: 1px solid var(--bgivs-border);
   border-radius: 0.75rem;
   background: var(--bgivs-white);
-  box-shadow: 0 1px 3px rgba(6, 29, 59, 0.05), 0 1px 2px rgba(6, 29, 59, 0.03);
-  transition: border-color 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-shadow: 0 1px 2px rgba(6, 29, 59, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .institutional-card:hover {
   border-color: color-mix(in srgb, var(--bgivs-gold-dark) 55%, var(--bgivs-border));
-  box-shadow: 0 12px 32px rgba(6, 29, 59, 0.12), 0 4px 8px rgba(6, 29, 59, 0.06);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6, 29, 59, 0.08);
 }
 
 .gold-accent-border {
@@ -320,62 +299,4 @@ img.site-logo {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease both;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.slide-in-right {
-  animation: slideInRight 0.6s ease both;
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.slide-in-left {
-  animation: slideInLeft 0.6s ease both;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInMenuScale {
-  from {
-    opacity: 0;
-    transform: scale(0.95) translateY(-4px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
-}
-
-.animate-fade-in {
-  animation: fadeInMenuScale 0.15s ease-out;
 }
