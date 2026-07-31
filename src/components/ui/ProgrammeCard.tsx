@@ -39,12 +39,12 @@ export function ProgrammeCard({
   return (
     <article
       id={programme.id}
-      className={`institutional-card scroll-mt-28 flex h-full flex-col ${compact ? "p-4 sm:p-5" : "p-5 sm:p-6"}`}
+      className={`institutional-card scroll-mt-28 flex h-full flex-col ${compact ? "p-5" : "p-6"}`}
     >
-      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue/10 text-blue transition-all duration-300 group-hover:bg-blue/15">
+      <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-md bg-blue/10 text-blue">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className={`text-navy font-serif font-bold leading-snug ${compact ? "text-base sm:text-lg" : "text-lg sm:text-xl"}`}>
+      <h3 className={`text-navy ${compact ? "text-lg leading-snug" : "text-xl"}`}>
         {programme.title}
       </h3>
       <p
@@ -101,9 +101,9 @@ export function ProgrammeCard({
         ) : (
           <Link
             href={`/programmes#${programme.id}`}
-            className="text-sm font-semibold text-blue transition-colors duration-150 hover:text-navy hover:underline"
+            className="text-sm font-semibold text-blue hover:text-navy hover:underline"
           >
-            Explore {programme.title.split(" ")[0]}
+            Learn More
           </Link>
         )}
       </div>

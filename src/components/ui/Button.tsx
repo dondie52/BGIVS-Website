@@ -16,14 +16,14 @@ type ButtonProps = {
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-gold text-deep-navy hover:bg-bright-gold border border-gold-dark font-semibold shadow-sm hover:shadow-md active:shadow-sm active:scale-95 transition-all",
+    "bg-gold text-deep-navy hover:bg-bright-gold border border-gold-dark font-semibold shadow-sm",
   secondary:
-    "bg-white text-navy hover:bg-off-white border border-white/80 font-semibold shadow-sm hover:shadow-md active:shadow-sm active:scale-95 transition-all",
+    "bg-white text-navy hover:bg-off-white border border-white/80 font-semibold",
   outline:
-    "bg-transparent text-navy border border-navy/25 hover:border-gold-dark hover:text-navy font-semibold hover:bg-white/40 active:bg-white/20 transition-colors",
+    "bg-transparent text-navy border border-navy/25 hover:border-gold-dark hover:text-navy font-semibold",
   "gold-outline":
-    "bg-transparent text-white border border-gold hover:bg-gold hover:text-deep-navy font-semibold shadow-sm hover:shadow-md active:shadow-sm active:scale-95 transition-all",
-  ghost: "bg-transparent text-blue hover:text-navy font-semibold underline-offset-4 hover:underline transition-colors",
+    "bg-transparent text-white border border-gold hover:bg-gold hover:text-deep-navy font-semibold",
+  ghost: "bg-transparent text-blue hover:text-navy font-semibold underline-offset-4 hover:underline",
 };
 
 export function Button({
@@ -36,7 +36,7 @@ export function Button({
   onClick,
   ariaLabel,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royal-blue disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:shadow-none ${variants[variant]} ${className}`;
+  const classes = `inline-flex items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-royal-blue disabled:cursor-not-allowed disabled:opacity-60 ${variants[variant]} ${className}`;
 
   if (href) {
     return (

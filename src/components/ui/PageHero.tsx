@@ -29,16 +29,16 @@ export function PageHero({
             "radial-gradient(circle at 20% 20%, rgba(249,206,91,0.18), transparent 35%), radial-gradient(circle at 80% 0%, rgba(8,117,184,0.35), transparent 40%)",
         }}
       />
-      <Container className="relative py-12 sm:py-16 lg:py-20">
+      <Container className="relative py-16 sm:py-20 lg:py-24">
         {label ? <p className="section-label mb-4 text-light-gold">{label}</p> : null}
-        <h1 style={{ fontSize: "clamp(2.25rem, 9vw, 3.5rem)" }} className="font-serif font-bold leading-tight !text-white max-w-4xl">{title}</h1>
+        <h1 className="max-w-4xl text-4xl !text-white sm:text-5xl lg:text-[3.25rem]">{title}</h1>
         {subtitle ? (
           <p className="mt-4 max-w-3xl text-lg font-medium text-light-gold sm:text-xl">
             {subtitle}
           </p>
         ) : null}
         {description ? (
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-white/85 sm:text-lg">{description}</p>
+          <p className="mt-5 max-w-3xl text-base text-white/85 sm:text-lg">{description}</p>
         ) : null}
         {(primaryCta || secondaryCta) && (
           <div className="mt-8 flex flex-wrap gap-3">
@@ -57,7 +57,7 @@ export function PageHero({
         <nav aria-label="Breadcrumb" className="mt-10 text-sm text-white/70">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="transition-colors duration-150 hover:text-white">
+              <Link href="/" className="hover:text-white">
                 Home
               </Link>
             </li>
