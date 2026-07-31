@@ -12,10 +12,10 @@ type CallToActionProps = {
 export function CallToAction({ title, description, primary, secondary }: CallToActionProps) {
   return (
     <section className="navy-gradient">
-      <Container className="py-12 sm:py-16 lg:py-20">
+      <Container className="py-16 sm:py-20">
         <div className="max-w-3xl">
-          <h2 style={{ fontSize: "clamp(2rem, 8vw, 2.75rem)" }} className="font-serif font-bold leading-tight !text-white">{title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-white/85 sm:text-lg">{description}</p>
+          <h2 className="text-3xl !text-white sm:text-4xl">{title}</h2>
+          <p className="mt-4 text-base text-white/85 sm:text-lg">{description}</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={primary.href} variant="primary">
               {primary.label}

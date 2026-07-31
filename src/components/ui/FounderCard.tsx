@@ -23,7 +23,7 @@ export function FounderCard({ compact = false }: FounderCardProps) {
       </div>
       <div className="p-5 sm:p-6">
         <p className="section-label mb-2">{founderContent.role}</p>
-        <h3 className="font-serif font-bold text-xl sm:text-2xl text-navy">{founderContent.name}</h3>
+        <h3 className="text-2xl text-navy sm:text-3xl">{founderContent.name}</h3>
         <p className="mt-4 text-sm text-muted sm:text-base">{founderContent.biography}</p>
         {!compact ? (
           <p className="mt-4 text-sm text-muted sm:text-base">{founderContent.contribution}</p>
