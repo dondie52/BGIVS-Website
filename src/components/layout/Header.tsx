@@ -13,8 +13,8 @@ const desktopExtraLinks = [
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-navy/95 text-white backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="navbar-brand">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:gap-4 sm:px-6 lg:px-8">
+        <Link href="/" className="navbar-brand flex-shrink-0">
           <span className="navbar-logo-frame">
             <Image
               src="/images/bgivs-company-seal.jpeg"
@@ -22,13 +22,12 @@ export function Header() {
               width={72}
               height={72}
               priority
-              sizes="(max-width: 768px) 56px, 72px"
+              sizes="(max-width: 640px) 44px, (max-width: 768px) 52px, 72px"
               className="navbar-logo"
             />
           </span>
-          <span className="navbar-title">
-            {siteConfig.name}{" "}
-            <strong>({siteConfig.shortName})</strong>
+          <span className="navbar-title hidden text-xs font-bold leading-tight sm:block sm:text-sm lg:text-base">
+            {siteConfig.shortName}
           </span>
         </Link>
 

@@ -10,17 +10,17 @@ type PublicationCardProps = {
 export function PublicationCard({ publication }: PublicationCardProps) {
   return (
     <article className="institutional-card overflow-hidden">
-      <div className="flex items-center justify-center bg-gradient-to-br from-off-white via-white to-off-white px-5 py-8 transition-all duration-300 group-hover:bg-gradient-to-br group-hover:from-white group-hover:via-off-white group-hover:to-white">
+      <div className="flex items-center justify-center bg-gradient-to-br from-off-white via-white to-off-white px-4 py-6 transition-all duration-300 sm:px-5 sm:py-8">
         <Image
           src={publication.image}
           alt={`Cover of ${publication.title} by ${publication.author}`}
-          width={420}
-          height={630}
-          className="h-auto w-auto max-w-full rounded-sm object-contain shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.16)]"
-          style={{ maxHeight: "360px" }}
+          width={300}
+          height={450}
+          className="h-auto w-auto max-w-full rounded-sm object-contain shadow-sm"
+          style={{ maxHeight: "280px" }}
         />
       </div>
-      <div className="p-6">
+      <div className="p-4 sm:p-5">
         <p className="section-label mb-2">Book</p>
         <h3 className="text-xl text-navy">
           <Link
