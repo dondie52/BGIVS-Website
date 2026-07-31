@@ -57,7 +57,7 @@ export function PageHero({
         <nav aria-label="Breadcrumb" className="mt-10 text-sm text-white/70">
           <ol className="flex flex-wrap items-center gap-2">
             <li>
-              <Link href="/" className="hover:text-white">
+              <Link href="/" className="transition-colors duration-150 hover:text-white">
                 Home
               </Link>
             </li>

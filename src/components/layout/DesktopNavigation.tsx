@@ -20,7 +20,7 @@ export function DesktopNavigation({ groups, links }: DesktopNavigationProps) {
         <Link
           key={link.href}
           href={link.href}
-          className="rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white"
+          className="rounded-md px-3 py-2 text-sm font-medium text-white/90 transition-all duration-200 hover:bg-white/15 hover:text-white"
         >
           {link.label}
         </Link>
@@ -55,7 +55,7 @@ function NavDropdown({ group }: { group: NavGroup }) {
     <div className="relative" ref={containerRef}>
       <button
         type="button"
-        className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white"
+        className="inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium text-white/90 transition-all duration-200 hover:bg-white/15 hover:text-white"
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={menuId}
@@ -68,20 +68,20 @@ function NavDropdown({ group }: { group: NavGroup }) {
         }}
       >
         {group.label}
-        <ChevronDown className={`h-4 w-4 transition ${open ? "rotate-180" : ""}`} aria-hidden="true" />
+        <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${open ? "rotate-180" : ""}`} aria-hidden="true" />
       </button>
       {open ? (
         <ul
           id={menuId}
           role="menu"
-          className="absolute left-0 top-full z-[60] mt-2 max-h-[min(70vh,28rem)] min-w-[240px] max-w-[min(90vw,20rem)] overflow-y-auto rounded-lg border border-[var(--bgivs-border)] bg-[var(--bgivs-white)] py-2 text-[var(--bgivs-navy)] shadow-lg"
+          className="absolute left-0 top-full z-[60] mt-2 max-h-[min(70vh,28rem)] min-w-[240px] max-w-[min(90vw,20rem)] overflow-y-auto rounded-lg border border-[var(--bgivs-border)] bg-[var(--bgivs-white)] py-2 text-[var(--bgivs-navy)] shadow-lg animate-fade-in"
         >
           {group.items.map((item) => (
             <li key={item.href} role="none">
               <Link
                 role="menuitem"
                 href={item.href}
-                className="block px-4 py-2.5 text-sm font-medium text-[var(--bgivs-navy)] hover:bg-[var(--bgivs-off-white)] focus-visible:bg-[var(--bgivs-off-white)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--bgivs-royal-blue)]"
+                className="block px-4 py-2.5 text-sm font-medium text-[var(--bgivs-navy)] transition-colors duration-150 hover:bg-[var(--bgivs-off-white)] focus-visible:bg-[var(--bgivs-off-white)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[var(--bgivs-royal-blue)]"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
