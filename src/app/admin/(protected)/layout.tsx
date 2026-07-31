@@ -1,4 +1,4 @@
-import { AdminSidebar } from "@/components/admin/AdminSidebar";
+import { AdminShell } from "@/components/admin/AdminShell";
 import { requireAdminUser } from "@/lib/admin/auth";
 
 export const metadata = {
@@ -13,15 +13,12 @@ export default async function AdminProtectedLayout({
   const { user, profile } = await requireAdminUser();
 
   return (
-    <div className="flex min-h-screen bg-off-white">
-      <AdminSidebar
-        role={profile.role}
-        email={user.email}
-        fullName={profile.full_name}
-      />
-      <div className="flex min-w-0 flex-1 flex-col">
-        <div className="flex-1 px-4 py-6 sm:px-6 lg:px-8">{children}</div>
-      </div>
-    </div>
+    <AdminShell
+      role={profile.role}
+      email={user.email}
+      fullName={profile.full_name}
+    >
+      {children}
+    </AdminShell>
   );
 }
