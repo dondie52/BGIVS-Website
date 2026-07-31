@@ -1,30 +1,30 @@
+import { BgivsLogo } from "@/components/brand/BgivsLogo";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
-import { partnerCta } from "@/content/navigation";
+import { siteConfig } from "@/content/site";
 
 export function HomeHero() {
   return (
     <section className="home-hero-section relative overflow-hidden">
-      <Container className="home-hero-container relative py-12 sm:py-16 lg:py-20">
-        <div className="fade-up mx-auto max-w-2xl text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-light-gold">
-            Research · Training · Consulting · Publishing
-          </p>
-          <h1 className="font-serif text-4xl font-bold leading-tight !text-white sm:text-5xl lg:text-6xl">
-            Building Responsible, Sustainable and Value-Driven Institutions
+      <Container className="home-hero-container relative pb-16 sm:pb-20 lg:pb-24">
+        <div className="fade-up mx-auto max-w-3xl text-center">
+          <h1 className="font-serif text-3xl leading-snug !text-white sm:text-4xl lg:text-5xl">
+            {siteConfig.name}{" "}
+            <span className="text-light-gold">({siteConfig.shortName})</span>
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-white/90 sm:text-lg">
-            BGIVS helps governments, universities, businesses, and development organisations align governance, performance, ethics, sustainability, and stakeholder responsibility.
+          <p className="mt-6 text-sm font-medium tracking-wide text-white/70 sm:text-base">
+            Research. Training. Consulting. Publishing. Institutional Transformation.
           </p>
+        </div>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
-            <Button href="/framework" variant="primary">
-              Explore the Framework
-            </Button>
-            <Button href={partnerCta.href} variant="gold-outline">
-              Partner With BGIVS
-            </Button>
-          </div>
+        <div
+          className="hero-logo-wrapper fade-up"
+          style={{ animationDelay: "120ms" }}
+        >
+          <BgivsLogo
+            priority
+            className="hero-logo"
+            sizes="(max-width: 640px) 92vw, 520px"
+          />
         </div>
       </Container>
     </section>

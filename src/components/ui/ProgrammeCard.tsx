@@ -39,7 +39,7 @@ export function ProgrammeCard({
   return (
     <article
       id={programme.id}
-      className={`institutional-card scroll-mt-28 flex h-full flex-col ${compact ? "p-4 sm:p-5" : "p-5 sm:p-6"}`}
+      className={`institutional-card scroll-mt-28 flex h-full flex-col ${compact ? "p-5" : "p-6"}`}
     >
       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue/10 text-blue transition-all duration-300 group-hover:bg-blue/15">
         <Icon className="h-5 w-5" aria-hidden="true" />
@@ -103,7 +103,7 @@ export function ProgrammeCard({
             href={`/programmes#${programme.id}`}
             className="text-sm font-semibold text-blue transition-colors duration-150 hover:text-navy hover:underline"
           >
-            Explore {programme.title.split(" ")[0]}
+            Learn More
           </Link>
         )}
       </div>

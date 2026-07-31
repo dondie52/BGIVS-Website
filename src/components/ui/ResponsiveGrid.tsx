@@ -18,7 +18,7 @@ export function ResponsiveGrid({
   className = "",
 }: ResponsiveGridProps) {
   return (
-    <div className={`grid grid-cols-1 gap-4 sm:gap-6 ${columnClasses[columns]} ${className}`}>
+    <div className={`grid grid-cols-1 gap-6 ${columnClasses[columns]} ${className}`}>
       {children}
     </div>
   );
