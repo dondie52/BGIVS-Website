@@ -17,11 +17,10 @@ export function HomeHero() {
         </div>
 
         <div
-          className="hero-logo-wrapper fade-up"
+          className="hero-logo-wrapper fade-up hidden sm:block"
           style={{ animationDelay: "120ms" }}
         >
           <BgivsLogo
-            priority
             className="hero-logo"
             sizes="(max-width: 640px) 92vw, 520px"
           />
