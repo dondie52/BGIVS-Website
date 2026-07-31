@@ -70,6 +70,14 @@ export const founderContent = {
     "Research",
     "Publishing",
   ],
+  competences: [
+    "Business management",
+    "Institutional leadership",
+    "Framework development",
+    "Research methodology",
+    "Strategic consulting",
+    "Organizational transformation",
+  ],
   vision:
     "Dr. Wamunyima’s institutional vision is reflected in BGIVS: to advance integrated value systems so that institutions move from metrics to meaning—building organizations that are ethical, accountable, sustainable, credible, and legitimate.",
 };
