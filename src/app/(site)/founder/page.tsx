@@ -65,6 +65,22 @@ export default function FounderPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <Container>
+          <SectionHeading title="Competences" className="mb-8" />
+          <ul className="flex flex-wrap gap-2">
+            {founderContent.competences.map((competence) => (
+              <li
+                key={competence}
+                className="rounded-full border border-border bg-off-white px-4 py-2 text-sm text-navy"
+              >
+                {competence}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <Container>
           <SectionHeading
             title="Framework Development"
             description="Dr. Wamunyima is the developer of the BVSDQ–CSRDQ Model, integrating Business Value System Disclosure Quality with Corporate Social Responsibility Disclosure Quality."
