@@ -18,7 +18,7 @@ export function BeneficiaryCard({
       </p>
       <Link
         href={beneficiary.href}
-        className="mt-4 inline-block text-sm font-semibold text-blue hover:text-navy hover:underline"
+        className="mt-4 inline-block text-sm font-semibold text-blue transition-colors duration-150 hover:text-navy hover:underline"
       >
         Explore related work
       </Link>

@@ -63,7 +63,7 @@ export function LoginForm() {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full rounded-md border border-border px-3 py-2.5 text-sm text-navy focus:border-royal-blue focus:outline-none focus:ring-2 focus:ring-royal-blue/20"
+          className="w-full rounded-md border border-border bg-white px-3 py-2.5 text-sm text-navy shadow-sm transition-all duration-200 hover:border-border/70 focus:border-royal-blue focus:outline-none focus:ring-2 focus:ring-royal-blue/20"
         />
       </div>
 
@@ -79,14 +79,14 @@ export function LoginForm() {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full rounded-md border border-border px-3 py-2.5 text-sm text-navy focus:border-royal-blue focus:outline-none focus:ring-2 focus:ring-royal-blue/20"
+          className="w-full rounded-md border border-border bg-white px-3 py-2.5 text-sm text-navy shadow-sm transition-all duration-200 hover:border-border/70 focus:border-royal-blue focus:outline-none focus:ring-2 focus:ring-royal-blue/20"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-md bg-navy px-4 py-2.5 text-sm font-semibold text-white hover:bg-deep-navy disabled:opacity-60"
+        className="w-full rounded-md bg-navy px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-deep-navy hover:shadow-md active:scale-95 disabled:opacity-60 disabled:hover:shadow-sm"
       >
         {loading ? "Signing in…" : "Sign in"}
       </button>
