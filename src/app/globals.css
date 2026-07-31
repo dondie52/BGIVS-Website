@@ -61,7 +61,12 @@
     background: var(--bgivs-white);
     color: var(--bgivs-text);
     font-family: var(--font-source-sans), system-ui, sans-serif;
-    line-height: 1.65;
+    line-height: 1.6;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+  }
+
+  p {
+    line-height: 1.7;
   }
 
   h1 {

@@ -44,7 +44,7 @@ export function ProgrammeCard({
       <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-blue/10 text-blue transition-all duration-300 group-hover:bg-blue/15">
         <Icon className="h-5 w-5" aria-hidden="true" />
       </div>
-      <h3 className={`text-navy ${compact ? "text-lg leading-snug" : "text-xl"}`}>
+      <h3 className={`text-navy font-serif font-bold leading-snug ${compact ? "text-base sm:text-lg" : "text-lg sm:text-xl"}`}>
         {programme.title}
       </h3>
       <p

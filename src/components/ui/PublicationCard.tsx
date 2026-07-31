@@ -22,7 +22,7 @@ export function PublicationCard({ publication }: PublicationCardProps) {
       </div>
       <div className="p-4 sm:p-5">
         <p className="section-label mb-2">Book</p>
-        <h3 className="text-xl text-navy">
+        <h3 className="font-serif font-bold text-lg sm:text-xl text-navy">
           <Link
             href={`/research/${publication.slug}`}
             className="transition-colors duration-150 hover:text-blue hover:underline"
