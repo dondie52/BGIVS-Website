@@ -26,6 +26,12 @@ export function PublicationForm({
         <Field label="Subtitle" name="subtitle" defaultValue={publication?.subtitle ?? ""} />
         <Field label="Author" name="author" defaultValue={publication?.author ?? ""} />
         <Field label="Publisher" name="publisher" defaultValue={publication?.publisher ?? ""} />
+        <Field
+          label="ISBN"
+          name="isbn"
+          defaultValue={publication?.isbn ?? ""}
+          hint="Leave blank until the official ISBN is issued."
+        />
         <label className="text-sm">
           <span className="mb-1 block font-semibold text-navy">Type</span>
           <select

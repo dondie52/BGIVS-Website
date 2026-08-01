@@ -27,7 +27,7 @@ export default async function ResearchPage() {
       <PageHero
         label="Knowledge"
         title="Research and Publications"
-        description="BGIVS publishes books, research, and institutional knowledge that advance value systems, governance, corporate responsibility, and sustainable development. ISBN details will be displayed once officially verified."
+        description="BGIVS publishes books, research, and institutional knowledge that advance value systems, governance, corporate responsibility, and sustainable development."
       />
 
       <section className="bg-white py-16 sm:py-20">

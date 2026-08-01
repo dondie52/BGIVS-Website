@@ -106,10 +106,18 @@ export default async function PublicationDetailPage({ params }: Props) {
                 <SocialSharePlaceholder title={publication.title} />
               </div>
 
-              <p className="mt-6 text-sm text-muted">
-                ISBN details will be displayed once officially verified. Publication pricing and
-                fulfilment options will be confirmed through direct enquiry.
-              </p>
+              {publication.isbn ? (
+                <p className="mt-6 text-sm text-muted">
+                  <span className="font-semibold text-navy">ISBN:</span> {publication.isbn}.
+                  Publication pricing and fulfilment options will be confirmed through direct
+                  enquiry.
+                </p>
+              ) : (
+                <p className="mt-6 text-sm text-muted">
+                  ISBN details will be displayed once officially verified. Publication pricing and
+                  fulfilment options will be confirmed through direct enquiry.
+                </p>
+              )}
             </div>
           </div>
         </Container>

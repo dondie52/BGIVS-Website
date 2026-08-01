@@ -78,5 +78,5 @@ Published programmes, services, and publications are read from Supabase with a *
 - Mission and vision statements are used exactly as approved.
 - Only approved publications are listed; other categories use honest empty states.
 - Governance leadership names and founder portrait remain placeholders until official assets are provided.
-- ISBN numbers are not displayed until verified.
+- ISBN numbers are displayed on a publication once entered in the admin panel; publications without a verified ISBN show a pending notice instead.
 - Privacy retention: no automated deletion until BGIVS approves a retention period.
