@@ -179,6 +179,7 @@ export type Database = {
           publication_type: PublicationType;
           cover_path: string | null;
           document_path: string | null;
+          isbn: string | null;
           topics: string[];
           status: ContentStatus;
           featured: boolean;
@@ -198,6 +199,7 @@ export type Database = {
           publication_type?: PublicationType;
           cover_path?: string | null;
           document_path?: string | null;
+          isbn?: string | null;
           topics?: string[];
           status?: ContentStatus;
           featured?: boolean;
@@ -217,6 +219,7 @@ export type Database = {
           publication_type?: PublicationType;
           cover_path?: string | null;
           document_path?: string | null;
+          isbn?: string | null;
           topics?: string[];
           status?: ContentStatus;
           featured?: boolean;

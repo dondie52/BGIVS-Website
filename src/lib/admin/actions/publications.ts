@@ -44,6 +44,7 @@ function publicationPayload(formData: FormData) {
     subtitle: formOptionalString(formData, "subtitle"),
     author: formOptionalString(formData, "author"),
     publisher: formOptionalString(formData, "publisher"),
+    isbn: formOptionalString(formData, "isbn"),
     description: formOptionalString(formData, "description") ?? "",
     publication_type: publicationType || "book",
     topics: parseCommaList(formData.get("topics")),

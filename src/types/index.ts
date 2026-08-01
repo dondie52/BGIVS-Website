@@ -68,6 +68,7 @@ export type Publication = {
   image: string;
   description: string;
   topics: string[];
+  isbn?: string;
 };
 
 export type PublicationCategory = {

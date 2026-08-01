@@ -88,6 +88,7 @@ export const publications: Publication[] = [
     image: "/images/publications/bvsdq-csrdq-framework.jpeg",
     description:
       "A practical framework integrating Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality into a unified and measurable institutional approach. The publication examines how ethics, governance, strategy, transparency, stakeholder trust, and responsible business practices can support sustainable organizational performance.",
+    isbn: "978-99968-79-66-1",
     topics: [
       "Business values",
       "Governance",
@@ -111,6 +112,7 @@ export const publications: Publication[] = [
     image: "/images/publications/business-values-botswana.jpeg",
     description:
       "An African-centred framework examining how business values and corporate citizenship can strengthen governance, stakeholder trust, inclusive growth, responsible enterprise development, and national sustainability.",
+    isbn: "978-99968-79-64-7",
     topics: [
       "Ethical leadership",
       "Corporate governance",
@@ -134,6 +136,7 @@ export const publications: Publication[] = [
     image: "/images/publications/barotse-change-volume-1.jpeg",
     description:
       "A structured advocacy for identity, justice, and self-determination that examines Barotseland's historical and political journey, the impact of the 1964 Agreement abrogation, and the governance, identity, and nationhood questions shaping the transition period and beyond.",
+    isbn: "978-99968-79-62-3",
     topics: [
       "Barotseland history",
       "Identity and nationhood",

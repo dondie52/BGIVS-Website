@@ -23,6 +23,7 @@ function mapPublication(row: PublicationRow): Publication {
     image: row.cover_path ?? "/images/publications/placeholder.jpg",
     description: row.description ?? "",
     topics: row.topics ?? [],
+    isbn: row.isbn ?? undefined,
   };
 }
 
