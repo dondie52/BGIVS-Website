@@ -24,6 +24,7 @@ function mapPublication(row: PublicationRow): Publication {
     description: row.description ?? "",
     topics: row.topics ?? [],
     isbn: row.isbn ?? undefined,
+    facebookUrl: row.facebook_url ?? undefined,
   };
 }
 

@@ -69,6 +69,7 @@ export type Publication = {
   description: string;
   topics: string[];
   isbn?: string;
+  facebookUrl?: string;
 };
 
 export type PublicationCategory = {

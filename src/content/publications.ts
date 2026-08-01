@@ -137,6 +137,7 @@ export const publications: Publication[] = [
     description:
       "A structured advocacy for identity, justice, and self-determination that examines Barotseland's historical and political journey, the impact of the 1964 Agreement abrogation, and the governance, identity, and nationhood questions shaping the transition period and beyond.",
     isbn: "978-99968-79-62-3",
+    facebookUrl: "https://www.facebook.com/share/1PgwgPaQhD/?mibextid=wwXIfr",
     topics: [
       "Barotseland history",
       "Identity and nationhood",
