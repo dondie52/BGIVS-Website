@@ -15,7 +15,7 @@ export const revalidate = 60;
 export const metadata = createPageMetadata({
   title: "Research and Publications",
   description:
-    "Explore BGIVS books and knowledge resources on the BVSDQ–CSRDQ Framework, business values, corporate citizenship, governance, and sustainable development.",
+    "Explore BGIVS books and knowledge resources on the BVSDQ–CSRDQ Framework®, business values, corporate citizenship, governance, and sustainable development.",
   path: "/research",
 });
 

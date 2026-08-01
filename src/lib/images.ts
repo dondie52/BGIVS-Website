@@ -34,7 +34,7 @@ export const images = {
   publications: {
     bvsdq: {
       src: "/images/publications/bvsdq-csrdq-framework.jpeg",
-      alt: "BVSDQ–CSRDQ Framework book cover",
+      alt: "BVSDQ–CSRDQ Framework® book cover",
       width: 600,
       height: 900,
     },

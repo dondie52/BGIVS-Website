@@ -127,7 +127,7 @@ export const programmes: Programme[] = [
     id: "value-systems-research-development",
     title: "Value Systems Research and Development",
     overview:
-      "Developing, testing, documenting, and improving value-based institutional frameworks, assessment methodologies, strategic tools, policy models, and the BVSDQ–CSRDQ Framework.",
+      "Developing, testing, documenting, and improving value-based institutional frameworks, assessment methodologies, strategic tools, policy models, and the BVSDQ–CSRDQ Framework®.",
     challenges: [
       "Need for rigorous, practical value-systems frameworks",
       "Gaps between theory and institutional application",
@@ -139,7 +139,7 @@ export const programmes: Programme[] = [
       "Assessment methodology development",
       "Strategic tool and policy model design",
       "Documentation and knowledge production",
-      "Continuous refinement of the BVSDQ–CSRDQ Framework",
+      "Continuous refinement of the BVSDQ–CSRDQ Framework®",
     ],
     beneficiaries: [
       "Researchers",

@@ -99,7 +99,7 @@ export default function HomePage() {
         <Container>
           <SectionHeading
             label="Our Framework"
-            title="The BVSDQ–CSRDQ Framework"
+            title="The BVSDQ–CSRDQ Framework®"
             description="A strategic tool that helps organizations translate values and responsibilities into practical, sustainable institutional strategies."
             className="mb-8"
           />

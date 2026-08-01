@@ -17,9 +17,9 @@ import { publications } from "@/content/publications";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "BVSDQ–CSRDQ Framework",
+  title: "BVSDQ–CSRDQ Framework®",
   description:
-    "Explore the BVSDQ–CSRDQ Framework—Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality—as a strategic tool for institutional transformation.",
+    "Explore the BVSDQ–CSRDQ Framework®—Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality—as a strategic tool for institutional transformation.",
   path: "/framework",
 });
 
@@ -163,7 +163,7 @@ export default function FrameworkPage() {
 
       <CallToAction
         title="Apply the Framework in Your Institution"
-        description="Enquire about consulting, training, research collaboration, or publication-based engagement with the BVSDQ–CSRDQ Framework."
+        description="Enquire about consulting, training, research collaboration, or publication-based engagement with the BVSDQ–CSRDQ Framework®."
         primary={{
           label: "Request Institutional Consulting",
           href: "/contact?interest=institutional-consulting",

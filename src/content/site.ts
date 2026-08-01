@@ -3,14 +3,14 @@ export const siteConfig = {
   shortName: "BGIVS",
   tagline: "From Metrics to Meaning",
   description:
-    "Babobiz Global Institute of Value Systems advances research, training, consulting, publishing, governance, corporate responsibility, and sustainable institutional transformation through the BVSDQ–CSRDQ Framework.",
+    "Babobiz Global Institute of Value Systems advances research, training, consulting, publishing, governance, corporate responsibility, and sustainable institutional transformation through the BVSDQ–CSRDQ Framework®.",
   email: "info@BGIVS.com",
   phone: "+267 72 603 182 / +267 77 889 707",
   phoneDisplay: "Orange: 72603182 / Mascom: 77889707",
   phoneHref: "tel:+26772603182",
   emailHref: "mailto:info@BGIVS.com",
   location: "Gaborone, Botswana",
-  frameworkName: "BVSDQ–CSRDQ Framework",
+  frameworkName: "BVSDQ–CSRDQ Framework®",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bgivs-website.vercel.app",
   mission:
     "To advance the science and practice of integrated value systems through the development of frameworks that align performance with purpose, the training of institutions to achieve sustainable excellence, and the publication of knowledge that transforms governance and leadership.",
