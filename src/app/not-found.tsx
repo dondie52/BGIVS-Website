@@ -23,7 +23,7 @@ export default function NotFound() {
         <p className="mt-6 text-sm text-muted">
           Or explore the{" "}
           <Link href="/framework" className="font-semibold text-blue hover:underline">
-            BVSDQ–CSRDQ Framework
+            BVSDQ–CSRDQ Framework®
           </Link>
           .
         </p>

@@ -20,7 +20,7 @@ insert into public.publications (
 ) values
 (
   'bvsdq-csrdq-framework',
-  'BVSDQ–CSRDQ Framework',
+  'BVSDQ–CSRDQ Framework®',
   'A Strategic Tool for Business Successfulness',
   'Dr. Lindunda Wamunyima',
   'Babobiz Knowledge Press',
@@ -227,7 +227,7 @@ insert into public.programmes (
 (
   'value-systems-research-development',
   'Value Systems Research and Development',
-  'Developing, testing, documenting, and improving value-based institutional frameworks, assessment methodologies, strategic tools, policy models, and the BVSDQ–CSRDQ Framework.',
+  'Developing, testing, documenting, and improving value-based institutional frameworks, assessment methodologies, strategic tools, policy models, and the BVSDQ–CSRDQ Framework®.',
   array[
     'Need for rigorous, practical value-systems frameworks',
     'Gaps between theory and institutional application',
@@ -239,7 +239,7 @@ insert into public.programmes (
     'Assessment methodology development',
     'Strategic tool and policy model design',
     'Documentation and knowledge production',
-    'Continuous refinement of the BVSDQ–CSRDQ Framework'
+    'Continuous refinement of the BVSDQ–CSRDQ Framework®'
   ],
   array[
     'Researchers',

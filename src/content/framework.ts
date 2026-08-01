@@ -1,16 +1,16 @@
 import type { FrameworkArea } from "@/types";
 
 export const frameworkIntro = {
-  title: "The BVSDQ–CSRDQ Framework",
+  title: "The BVSDQ–CSRDQ Framework®",
   subtitle: "A Strategic Tool for Business Successfulness",
   summary:
-    "The BVSDQ–CSRDQ Framework integrates internal organizational values, governance, strategy, ethics, performance, and disclosure quality with external corporate responsibility, sustainability, accountability, stakeholder impact, and disclosure quality.",
+    "The BVSDQ–CSRDQ Framework® integrates internal organizational values, governance, strategy, ethics, performance, and disclosure quality with external corporate responsibility, sustainability, accountability, stakeholder impact, and disclosure quality.",
   explanation:
     "It is a strategic and measurable tool that helps organizations translate values and responsibilities into practical, actionable, and sustainable institutional strategies.",
   bvsdqFull: "Business Value System Disclosure Quality",
   csrdqFull: "Corporate Social Responsibility Disclosure Quality",
   disclaimer:
-    "This website provides an overview of the BVSDQ–CSRDQ Framework. Full technical methodology is available through official BGIVS publications, research, training, and consulting engagements.",
+    "This website provides an overview of the BVSDQ–CSRDQ Framework®. Full technical methodology is available through official BGIVS publications, research, training, and consulting engagements.",
 };
 
 export const frameworkAreas: FrameworkArea[] = [
@@ -111,7 +111,7 @@ export const sealMeanings = [
       "Research, education, publishing, and knowledge production.",
   },
   {
-    title: "BVSDQ–CSRDQ",
+    title: "BVSDQ–CSRDQ®",
     description:
       "The institute’s integrated value-systems framework.",
   },

@@ -42,7 +42,7 @@ export const navGroups: NavGroup[] = [
     label: "Knowledge",
     href: "/research#resources",
     items: [
-      { label: "BVSDQ–CSRDQ Framework", href: "/framework" },
+      { label: "BVSDQ–CSRDQ Framework®", href: "/framework" },
       { label: "Research and Publications", href: "/research" },
       { label: "Institutional Documents", href: "/research#institutional-guides" },
       { label: "BGIVS Organogram", href: "/knowledge/institutional-documents/bgivs-organogram" },

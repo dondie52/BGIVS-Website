@@ -80,7 +80,7 @@ export const knowledgeResources: KnowledgeResource[] = [
 export const publications: Publication[] = [
   {
     slug: "bvsdq-csrdq-framework",
-    title: "BVSDQ–CSRDQ Framework",
+    title: "BVSDQ–CSRDQ Framework®",
     subtitle: "A Strategic Tool for Business Successfulness",
     author: "Dr. Lindunda Wamunyima",
     publisher: "Babobiz Knowledge Press",

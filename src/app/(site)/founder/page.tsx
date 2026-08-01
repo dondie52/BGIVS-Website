@@ -13,7 +13,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Founder",
   description:
-    "Meet Dr. Lindunda Wamunyima, Founder of Babobiz Global Institute of Value Systems and developer of the BVSDQ–CSRDQ Framework.",
+    "Meet Dr. Lindunda Wamunyima, Founder of Babobiz Global Institute of Value Systems and developer of the BVSDQ–CSRDQ Framework®.",
   path: "/founder",
 });
 
@@ -83,7 +83,7 @@ export default function FounderPage() {
         <Container>
           <SectionHeading
             title="Framework Development"
-            description="Dr. Wamunyima is the developer of the BVSDQ–CSRDQ Model, integrating Business Value System Disclosure Quality with Corporate Social Responsibility Disclosure Quality."
+            description="Dr. Wamunyima is the developer of the BVSDQ–CSRDQ Model®, integrating Business Value System Disclosure Quality with Corporate Social Responsibility Disclosure Quality."
           />
           <p className="mt-6 max-w-3xl text-muted">
             The framework supports institutions seeking to align internal values, governance,

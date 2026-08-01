@@ -14,7 +14,7 @@ export const organizationCategories: ContactOption[] = [
 ];
 
 export const interestCategories: ContactOption[] = [
-  { value: "bvsdq-csrdq-framework", label: "BVSDQ–CSRDQ Framework" },
+  { value: "bvsdq-csrdq-framework", label: "BVSDQ–CSRDQ Framework®" },
   { value: "governance-reform", label: "Governance reform" },
   { value: "institutional-consulting", label: "Institutional consulting" },
   { value: "corporate-value-alignment", label: "Corporate value alignment" },

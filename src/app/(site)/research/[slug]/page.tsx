@@ -4,7 +4,6 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
-import { SocialSharePlaceholder } from "@/components/ui/SocialSharePlaceholder";
 import { CallToAction } from "@/components/ui/CallToAction";
 import {
   getPublishedPublicationBySlug,
@@ -100,10 +99,6 @@ export default async function PublicationDetailPage({ params }: Props) {
                 >
                   Enquire About This Book
                 </Button>
-              </div>
-
-              <div className="mt-8">
-                <SocialSharePlaceholder title={publication.title} />
               </div>
 
               {publication.isbn ? (
