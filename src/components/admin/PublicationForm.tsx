@@ -32,6 +32,12 @@ export function PublicationForm({
           defaultValue={publication?.isbn ?? ""}
           hint="Leave blank until the official ISBN is issued."
         />
+        <Field
+          label="Facebook page URL"
+          name="facebook_url"
+          defaultValue={publication?.facebook_url ?? ""}
+          hint="Leave blank until an official social channel is confirmed."
+        />
         <label className="text-sm">
           <span className="mb-1 block font-semibold text-navy">Type</span>
           <select

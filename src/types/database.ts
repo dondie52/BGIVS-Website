@@ -180,6 +180,7 @@ export type Database = {
           cover_path: string | null;
           document_path: string | null;
           isbn: string | null;
+          facebook_url: string | null;
           topics: string[];
           status: ContentStatus;
           featured: boolean;
@@ -200,6 +201,7 @@ export type Database = {
           cover_path?: string | null;
           document_path?: string | null;
           isbn?: string | null;
+          facebook_url?: string | null;
           topics?: string[];
           status?: ContentStatus;
           featured?: boolean;
@@ -220,6 +222,7 @@ export type Database = {
           cover_path?: string | null;
           document_path?: string | null;
           isbn?: string | null;
+          facebook_url?: string | null;
           topics?: string[];
           status?: ContentStatus;
           featured?: boolean;
