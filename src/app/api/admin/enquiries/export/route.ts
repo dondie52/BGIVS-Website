@@ -4,6 +4,8 @@ import { toCsv } from "@/lib/csv";
 import { createClient } from "@/lib/supabase/server";
 import type { EnquiryStatus } from "@/types/database";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: Request) {
   await requireAdminUser();
 

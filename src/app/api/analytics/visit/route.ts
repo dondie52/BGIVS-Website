@@ -7,6 +7,8 @@ import { getFormRuntimeEnv } from "@/lib/env";
 import { sha256Hex } from "@/lib/crypto-hash";
 import { enforceRateLimit } from "@/lib/rate-limit";
 
+export const dynamic = "force-dynamic";
+
 const visitSchema = z.object({
   visitorId: z.string().min(8).max(128),
   sessionId: z.string().min(8).max(128),

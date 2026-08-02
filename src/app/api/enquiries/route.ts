@@ -5,6 +5,8 @@ import { getServerEnv } from "@/lib/env";
 import { createErrorId, PublicMessages } from "@/lib/errors";
 import { sendEnquiryNotificationEmail } from "@/lib/notify/email";
 import { enforceRateLimit, verifyTurnstile } from "@/lib/rate-limit";
+
+export const dynamic = "force-dynamic";
 import {
   enquiryFieldErrors,
   enquirySchema,
