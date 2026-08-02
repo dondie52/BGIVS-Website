@@ -6,7 +6,7 @@ export const siteConfig = {
     "Babobiz Global Institute of Value Systems advances research, training, consulting, publishing, governance, corporate responsibility, and sustainable institutional transformation through the BVSDQ–CSRDQ Framework.",
   email: "info@BGIVS.com",
   phone: "+267 72 603 182 / +267 77 889 707",
-  phoneDisplay: "Orange: 72603182 / Mascom: 77889707",
+  phoneDisplay: "+267 72 603 182 (Orange) / +267 77 889 707 (Mascom)",
   phoneHref: "tel:+26772603182",
   emailHref: "mailto:info@BGIVS.com",
   location: "Gaborone, Botswana",
