@@ -19,7 +19,7 @@ export function getPublicEnv() {
         process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     ),
     siteUrl:
-      process.env.NEXT_PUBLIC_SITE_URL ?? "https://bgivs-website.vercel.app",
+      process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bgivs.co.bw",
   };
 }
 
@@ -37,7 +37,7 @@ export function getFormRuntimeEnv() {
     siteUrl:
       process.env.NEXT_PUBLIC_SITE_URL ??
       process.env.SITE_URL ??
-      "https://bgivs-website.vercel.app",
+      "https://www.bgivs.co.bw",
   };
 }
 

@@ -86,11 +86,11 @@ cp .env.example .env.local
 | `NEXT_PUBLIC_SUPABASE_URL` | Next.js + browser | Project URL |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | Next.js + browser | Anon / publishable key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Next.js server, Edge Functions | Bypasses RLS; keep secret |
-| `NEXT_PUBLIC_SITE_URL` | Metadata, emails | Default `https://bgivs-website.vercel.app` |
+| `NEXT_PUBLIC_SITE_URL` | Metadata, emails | Default `https://www.bgivs.co.bw` |
 | `ADMIN_NOTIFICATION_EMAIL` | Edge Functions | Admin inbox for enquiries / book requests |
 | `RESEND_API_KEY` | Edge Functions | Optional locally; missing key marks notification failed without crashing the form |
 | `RESEND_FROM_EMAIL` | Edge Functions | Optional; defaults to Resend test sender |
-| `SITE_URL` | Edge Functions | Used in admin deep links; defaults to the Vercel site URL |
+| `SITE_URL` | Edge Functions | Used in admin deep links; defaults to `https://www.bgivs.co.bw` |
 | `RATE_LIMIT_SECRET` | API routes | Salt for hashed IP rate-limit buckets |
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Client (optional) | Cloudflare Turnstile |
 | `TURNSTILE_SECRET_KEY` | API routes (optional) | Empty = verification skipped |

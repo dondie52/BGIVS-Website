@@ -10,7 +10,6 @@ const supabaseHost = (() => {
 })();
 
 const nextConfig: NextConfig = {
-  output: "export",
   poweredByHeader: false,
   images: {
     formats: ["image/avif", "image/webp"],
@@ -23,7 +22,28 @@ const nextConfig: NextConfig = {
           },
         ]
       : [],
-    unoptimized: true,
+  },
+  async headers() {
+    return [
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/knowledge/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+        ],
+      },
+    ];
   },
 };
 
