@@ -11,7 +11,7 @@ export const siteConfig = {
   emailHref: "mailto:info@BGIVS.com",
   location: "Gaborone, Botswana",
   frameworkName: "BVSDQ–CSRDQ Framework®",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://bgivs-website.vercel.app",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.bgivs.co.bw",
   mission:
     "To advance the science and practice of integrated value systems through the development of frameworks that align performance with purpose, the training of institutions to achieve sustainable excellence, and the publication of knowledge that transforms governance and leadership.",
   vision:

@@ -90,7 +90,7 @@ function mailConfig() {
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL ??
     process.env.SITE_URL ??
-    "https://bgivs-website.vercel.app";
+    "https://www.bgivs.co.bw";
 
   return { apiKey, adminEmail, fromEmail, siteUrl };
 }
