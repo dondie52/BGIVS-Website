@@ -70,6 +70,7 @@ export type Publication = {
   topics: string[];
   isbn?: string;
   facebookUrl?: string;
+  payhipUrl?: string;
 };
 
 export type PublicationCategory = {

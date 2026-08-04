@@ -99,6 +99,11 @@ export default async function PublicationDetailPage({ params }: Props) {
                 >
                   Enquire About This Book
                 </Button>
+                {publication.payhipUrl ? (
+                  <Button href={publication.payhipUrl} variant="outline" external>
+                    Get PDF Version
+                  </Button>
+                ) : null}
                 {publication.facebookUrl ? (
                   <Button href={publication.facebookUrl} variant="outline" external>
                     Follow on Facebook
