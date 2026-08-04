@@ -89,6 +89,7 @@ export const publications: Publication[] = [
     description:
       "A practical framework integrating Business Value System Disclosure Quality and Corporate Social Responsibility Disclosure Quality into a unified and measurable institutional approach. The publication examines how ethics, governance, strategy, transparency, stakeholder trust, and responsible business practices can support sustainable organizational performance.",
     isbn: "978-99968-79-66-1",
+    payhipUrl: "https://payhip.com/b/cA6on",
     topics: [
       "Business values",
       "Governance",
@@ -113,6 +114,7 @@ export const publications: Publication[] = [
     description:
       "An African-centred framework examining how business values and corporate citizenship can strengthen governance, stakeholder trust, inclusive growth, responsible enterprise development, and national sustainability.",
     isbn: "978-99968-79-64-7",
+    payhipUrl: "https://payhip.com/b/F08Ng",
     topics: [
       "Ethical leadership",
       "Corporate governance",
