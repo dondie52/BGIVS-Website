@@ -10,7 +10,12 @@ const structuredData = {
   name: siteConfig.name,
   alternateName: siteConfig.shortName,
   url: siteConfig.url,
-  logo: `${siteConfig.url}/images/bgivs-logo.jpeg`,
+  logo: {
+    "@type": "ImageObject",
+    url: `${siteConfig.url}/images/bgivs-institutional-seal.png`,
+    width: 1024,
+    height: 1024,
+  },
   description: siteConfig.description,
   email: siteConfig.email,
   telephone: siteConfig.phoneDisplay,
