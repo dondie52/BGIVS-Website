@@ -1,6 +1,8 @@
 import { AdminHeader } from "@/components/admin/AdminHeader";
+import { ChangePasswordForm } from "@/components/admin/ChangePasswordForm";
 import { FlashMessage } from "@/components/admin/FlashMessage";
 import { updateSettingsAction } from "@/lib/admin/actions/settings";
+import { requireAdminUser } from "@/lib/admin/auth";
 import { PUBLIC_SETTINGS_KEYS } from "@/lib/admin/helpers";
 import { createClient } from "@/lib/supabase/server";
 import { siteConfig } from "@/content/site";
@@ -16,6 +18,7 @@ function asString(value: unknown): string {
 }
 
 export default async function SettingsPage({ searchParams }: Props) {
+  const { user } = await requireAdminUser();
   const sp = await searchParams;
   const saved = sp.saved === "1" || sp.saved === "true";
   const error = typeof sp.error === "string" ? sp.error : null;
@@ -65,6 +68,10 @@ export default async function SettingsPage({ searchParams }: Props) {
           Save settings
         </button>
       </form>
+
+      <div className="mt-6">
+        <ChangePasswordForm email={user.email} />
+      </div>
     </div>
   );
 }
