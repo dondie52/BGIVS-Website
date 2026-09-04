@@ -3,6 +3,14 @@ import { NextResponse, type NextRequest } from "next/server";
 import type { Database } from "@/types/database";
 
 export async function updateSession(request: NextRequest) {
+  const pathname = request.nextUrl.pathname;
+
+  // Only /admin routes need an authenticated user; skip the Supabase auth
+  // round-trip on every public page request to keep TTFB fast.
+  if (!pathname.startsWith("/admin")) {
+    return NextResponse.next({ request });
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -35,14 +43,12 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const pathname = request.nextUrl.pathname;
-  const isAdminRoute = pathname.startsWith("/admin");
   const isAuthRoute =
     pathname === "/admin/login" ||
     pathname === "/admin/forgot-password" ||
     pathname === "/admin/reset-password";
 
-  if (isAdminRoute && !isAuthRoute && !user) {
+  if (!isAuthRoute && !user) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/admin/login";
     redirectUrl.searchParams.set("next", pathname);
