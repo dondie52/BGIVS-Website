@@ -114,7 +114,15 @@ export async function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-5 text-sm text-white/65 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
           <p>
-            © {year} {name}. All rights reserved.
+            © {year} {name}. All rights reserved. Designed by{" "}
+            <a
+              href="https://techlabbw.co.bw/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white hover:underline"
+            >
+              Tech Lab Botswana
+            </a>
           </p>
           <div className="flex gap-4">
             <Link href="/privacy" className="hover:text-white hover:underline">
