@@ -23,6 +23,7 @@ export function HomeHero() {
           <BgivsLogo
             className="hero-logo"
             sizes="(max-width: 640px) 92vw, 520px"
+            priority
           />
         </div>
       </Container>
